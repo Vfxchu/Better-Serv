@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LUXE Realty — Premium Properties in Dubai & India</title>
+    <title>Better Serv Properties — Premium Properties in Dubai & India</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
@@ -569,7 +569,87 @@
         font-size: 0.95rem;
       }
 
-      /* ─── CARDS ─── */
+      /* ─── TABS ─── */
+      .tab-nav {
+        display: inline-flex;
+        background: var(--bg-alt);
+        padding: 6px;
+        border-radius: var(--radius-pill);
+        margin-bottom: 40px;
+        border: 1px solid var(--border);
+      }
+      .tab-btn {
+        padding: 10px 28px;
+        font-size: 0.88rem;
+        font-weight: 700;
+        border-radius: var(--radius-pill);
+        border: none;
+        background: transparent;
+        color: var(--text-mid);
+        cursor: pointer;
+        transition: all 0.3s var(--ease);
+      }
+      .tab-btn.active {
+        background: var(--blue);
+        color: #fff;
+        box-shadow: var(--shadow-sm);
+      }
+
+      /* ─── LOGO MARQUEE ─── */
+      .marquee-container {
+        width: 100%;
+        overflow: hidden;
+        padding: 40px 0;
+        mask-image: linear-gradient(
+          to right,
+          transparent,
+          black 20%,
+          black 80%,
+          transparent
+        );
+        -webkit-mask-image: linear-gradient(
+          to right,
+          transparent,
+          black 20%,
+          black 80%,
+          transparent
+        );
+      }
+      .marquee-track {
+        display: flex;
+        gap: 80px;
+        width: max-content;
+        animation: marquee 30s linear infinite;
+      }
+      .marquee-track img {
+        height: 48px;
+        width: auto;
+        filter: grayscale(1) opacity(0.6) brightness(1.2);
+        transition: all 0.3s;
+        object-fit: contain;
+      }
+      .marquee-track img:hover {
+        filter: grayscale(0) opacity(1) brightness(1);
+        transform: scale(1.1);
+      }
+      @keyframes marquee {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+
+      .dev-card {
+        background: var(--bg-card);
+        padding: 24px;
+        border-radius: var(--radius);
+        text-align: center;
+        border: 1px solid var(--border);
+      }
+      .dev-card p {
+        font-size: 0.8rem;
+        color: var(--blue);
+        font-weight: 700;
+        margin-top: 12px;
+      }
       .prop-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -725,10 +805,13 @@
         background: var(--bg-card);
         border: 1px solid var(--border);
         border-radius: var(--radius);
-        padding: 32px 28px;
-        transition: all 0.35s var(--ease);
+        padding: 40px 32px;
+        transition: all 0.4s var(--ease);
         position: relative;
         overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
       }
       .fc::before {
         content: "";
@@ -736,66 +819,92 @@
         top: 0;
         left: 0;
         width: 100%;
-        height: 3px;
+        height: 4px;
         background: var(--blue);
         transform: scaleX(0);
         transform-origin: left;
-        transition: transform 0.4s;
+        transition: transform 0.4s var(--ease);
       }
       .fc:hover::before {
         transform: scaleX(1);
       }
       .fc:hover {
-        transform: translateY(-4px);
-        box-shadow: var(--shadow-md);
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-lg);
         border-color: transparent;
       }
       .fc .ib {
-        width: 52px;
-        height: 52px;
-        border-radius: 14px;
+        width: 60px;
+        height: 60px;
+        border-radius: 16px;
         background: var(--blue-light);
+        color: var(--blue);
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-bottom: 18px;
-        font-size: 1.4rem;
+        margin-bottom: 24px;
+        transition: all 0.3s;
+        border: 1px solid rgba(0, 85, 255, 0.1);
+      }
+      .fc:hover .ib {
+        background: var(--blue);
+        color: #fff;
+        transform: rotate(-4deg) scale(1.05);
+      }
+      .fc .ib svg {
+        width: 28px;
+        height: 28px;
+        stroke: currentColor;
+        stroke-width: 1.8;
       }
       .fc h3 {
-        font-size: 1rem;
+        font-size: 1.25rem;
         font-weight: 700;
-        margin-bottom: 8px;
+        margin-bottom: 12px;
+        color: var(--text);
       }
       .fc p {
         color: var(--text-mid);
-        font-size: 0.86rem;
-        line-height: 1.6;
+        font-size: 0.95rem;
+        line-height: 1.7;
       }
 
       .fcd {
-        background: rgba(255, 255, 255, 0.04);
-        border: 1px solid rgba(255, 255, 255, 0.07);
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
         border-radius: var(--radius);
-        padding: 32px 28px;
-        transition: all 0.35s var(--ease);
+        padding: 40px 32px;
+        transition: all 0.4s var(--ease);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
       .fcd:hover {
-        background: rgba(255, 255, 255, 0.07);
-        transform: translateY(-4px);
+        background: rgba(255, 255, 255, 0.06);
+        transform: translateY(-8px);
+        border-color: rgba(255, 255, 255, 0.15);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
       }
       .fcd .ib {
+        width: 64px;
+        height: 64px;
         background: rgba(0, 85, 255, 0.15);
+        color: var(--blue);
+        margin-bottom: 24px;
+        border-radius: 18px;
+        border: 1px solid rgba(0, 85, 255, 0.2);
       }
       .fcd h4 {
         color: #fff;
         font-weight: 700;
-        font-size: 0.95rem;
-        margin-bottom: 8px;
+        font-size: 1.15rem;
+        margin-bottom: 12px;
       }
       .fcd p {
         color: rgba(255, 255, 255, 0.5);
-        font-size: 0.82rem;
-        line-height: 1.6;
+        font-size: 0.92rem;
+        line-height: 1.7;
       }
 
       .stats-strip {
@@ -958,25 +1067,31 @@
         transform: translateY(-3px);
       }
       .vc .vi {
-        width: 48px;
-        height: 48px;
+        width: 52px;
+        height: 52px;
         border-radius: 12px;
         background: var(--blue-light);
+        color: var(--blue);
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 1.2rem;
         flex-shrink: 0;
       }
+      .vc .vi svg {
+        width: 26px;
+        height: 26px;
+        stroke: currentColor;
+        stroke-width: 2;
+      }
       .vc h4 {
-        font-size: 0.95rem;
+        font-size: 1.05rem;
         font-weight: 700;
-        margin-bottom: 4px;
+        margin-bottom: 6px;
       }
       .vc p {
         color: var(--text-mid);
-        font-size: 0.84rem;
-        line-height: 1.55;
+        font-size: 0.88rem;
+        line-height: 1.6;
       }
 
       .team-grid {
@@ -1341,6 +1456,23 @@
     </div>
 
     <script>
+      const ICONS = {
+        build: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M2.7 10.3a2.41 2.41 0 0 0 0 3.41l7.59 7.59a2.41 2.41 0 0 0 3.41 0l7.59-7.59a2.41 2.41 0 0 0 0-3.41l-7.59-7.59a2.41 2.41 0 0 0-3.41 0Z"/><path d="M7 14h.01"/><path d="M10 11h.01"/><path d="M10 17h.01"/><path d="M14 14h.01"/><path d="M17 11h.01"/><path d="M17 17h.01"/></svg>',
+        key: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6"/><path d="m15.5 7.5 3 3L22 7l-3-3Z"/></svg>',
+        chart: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 3v18h18"/><path d="m19 19-7-8-3 3-3-3"/></svg>',
+        gear: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2Z"/><circle cx="12" cy="12" r="3"/></svg>',
+        target: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>',
+        shield: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>',
+        award: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>',
+        zap: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>',
+        leaf: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8a8 8 0 0 1-10 10Z"/><path d="M17.6 14c-.7-1.5-1.5-1.5-3-1"/><path d="M15 22v-4"/></svg>',
+        globe: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>',
+        users: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
+        dollar: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>',
+        trend: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>',
+        building: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect width="8" height="18" x="3" y="3" rx="2"/><path d="M7 10h11"/><path d="M21 21H3"/><rect width="3" height="12" x="14" y="9" rx="1"/></svg>',
+        star: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>'
+      };
       const HS = [
         "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1400&h=800&fit=crop",
         "https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=1400&h=800&fit=crop",
@@ -1349,218 +1481,84 @@
       ];
       const SV = [
         {
-          i: "🏗️",
+          i: ICONS.build,
           t: "Property Development",
           d: "World-class residential and commercial developments across Dubai and India with premium finishes.",
         },
         {
-          i: "🔑",
+          i: ICONS.key,
           t: "Sales & Leasing",
           d: "Full-cycle support for buying, selling, or leasing premium properties with expert negotiation.",
         },
         {
-          i: "📊",
+          i: ICONS.chart,
           t: "Investment Advisory",
           d: "Data-driven investment guidance to maximize your real estate portfolio returns.",
         },
         {
-          i: "🏠",
+          i: ICONS.gear,
           t: "Property Management",
           d: "Comprehensive maintenance, tenant management, and revenue optimization.",
         },
       ];
       const DP = [
-        {
-          id: 11,
-          t: "Marina Bay Penthouse",
-          l: "Dubai Marina",
-          p: "AED 8.5M",
-          img: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=600&h=400&fit=crop",
-          b: 4,
-          a: "3,200 sqft",
-          tg: "Penthouse",
-        },
-        {
-          id: 12,
-          t: "Palm Jumeirah Villa",
-          l: "Palm Jumeirah",
-          p: "AED 15M",
-          img: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=600&h=400&fit=crop",
-          b: 6,
-          a: "6,500 sqft",
-          tg: "Villa",
-        },
-        {
-          id: 13,
-          t: "Downtown Loft",
-          l: "Downtown Dubai",
-          p: "AED 3.2M",
-          img: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&h=400&fit=crop",
-          b: 2,
-          a: "1,450 sqft",
-          tg: "Apartment",
-        },
-        {
-          id: 14,
-          t: "Creek Harbour Apt",
-          l: "Dubai Creek",
-          p: "AED 2.8M",
-          img: "https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=600&h=400&fit=crop",
-          b: 3,
-          a: "1,800 sqft",
-          tg: "Apartment",
-        },
-        {
-          id: 15,
-          t: "JBR Beachfront",
-          l: "JBR, Dubai",
-          p: "AED 5.5M",
-          img: "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=600&h=400&fit=crop",
-          b: 3,
-          a: "2,400 sqft",
-          tg: "Beachfront",
-        },
-        {
-          id: 16,
-          t: "Business Bay Tower",
-          l: "Business Bay",
-          p: "AED 4.1M",
-          img: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&h=400&fit=crop",
-          b: 2,
-          a: "1,650 sqft",
-          tg: "Apartment",
-        },
-        {
-          id: 17,
-          t: "Al Barari Garden",
-          l: "Al Barari",
-          p: "AED 12M",
-          img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&h=400&fit=crop",
-          b: 5,
-          a: "5,800 sqft",
-          tg: "Villa",
-        },
-        {
-          id: 18,
-          t: "DIFC Living Suite",
-          l: "DIFC",
-          p: "AED 6.8M",
-          img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=400&fit=crop",
-          b: 3,
-          a: "2,900 sqft",
-          tg: "Luxury",
-        },
+        { id: 11, t: "Marina Bay Penthouse", l: "Dubai Marina", p: "AED 8.5M", img: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=600&h=400&fit=crop", b: 4, a: "3,200 sqft", tg: "Penthouse", m: "buy" },
+        { id: 12, t: "Palm Jumeirah Villa", l: "Palm Jumeirah", p: "AED 15M", img: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=600&h=400&fit=crop", b: 6, a: "6,500 sqft", tg: "Villa", m: "buy" },
+        { id: 13, t: "Al Barari Garden", l: "Al Barari", p: "AED 12M", img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&h=400&fit=crop", b: 5, a: "5,800 sqft", tg: "Villa", m: "buy" },
+        { id: 14, t: "Downtown Luxury Apt", l: "Downtown Dubai", p: "AED 25,000/mo", img: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&h=400&fit=crop", b: 2, a: "1,400 sqft", tg: "Apartment", m: "rent" },
+        { id: 15, t: "Business Bay Studio", l: "Business Bay", p: "AED 10,000/mo", img: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&h=400&fit=crop", b: 1, a: "850 sqft", tg: "Studio", m: "rent" },
+        { id: 16, t: "Dubai Hills Villa", l: "Dubai Hills", p: "AED 18,000/mo", img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=400&fit=crop", b: 3, a: "2,900 sqft", tg: "Villa", m: "rent" }
       ];
       const IP = [
-        {
-          id: 1,
-          t: "Skyline Residences",
-          l: "Mumbai, Maharashtra",
-          p: "₹2.5 Cr",
-          img: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&h=400&fit=crop",
-          b: 3,
-          a: "1,800 sqft",
-          tg: "High-Rise",
-        },
-        {
-          id: 2,
-          t: "Garden Villas",
-          l: "Bangalore, Karnataka",
-          p: "₹1.8 Cr",
-          img: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&h=400&fit=crop",
-          b: 4,
-          a: "2,400 sqft",
-          tg: "Villa",
-        },
-        {
-          id: 3,
-          t: "Lake View Towers",
-          l: "Hyderabad, Telangana",
-          p: "₹1.2 Cr",
-          img: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&h=400&fit=crop",
-          b: 3,
-          a: "1,650 sqft",
-          tg: "Apartment",
-        },
-        {
-          id: 4,
-          t: "Palm Grove Estate",
-          l: "Kochi, Kerala",
-          p: "₹95 L",
-          img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&h=400&fit=crop",
-          b: 3,
-          a: "2,100 sqft",
-          tg: "Estate",
-        },
-        {
-          id: 5,
-          t: "Royal Heights",
-          l: "Delhi NCR",
-          p: "₹3.1 Cr",
-          img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=400&fit=crop",
-          b: 4,
-          a: "2,800 sqft",
-          tg: "Penthouse",
-        },
-        {
-          id: 6,
-          t: "Sunset Apartments",
-          l: "Pune, Maharashtra",
-          p: "₹85 L",
-          img: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&h=400&fit=crop",
-          b: 2,
-          a: "1,200 sqft",
-          tg: "Apartment",
-        },
-        {
-          id: 7,
-          t: "Marine Drive Residency",
-          l: "Mumbai",
-          p: "₹4.5 Cr",
-          img: "https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=600&h=400&fit=crop",
-          b: 3,
-          a: "2,200 sqft",
-          tg: "Sea View",
-        },
-        {
-          id: 8,
-          t: "Whitefield Orchards",
-          l: "Bangalore",
-          p: "₹1.4 Cr",
-          img: "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=600&h=400&fit=crop",
-          b: 3,
-          a: "1,900 sqft",
-          tg: "Villa",
-        },
+        { id: 1, t: "Skyline Residences", l: "Mumbai, Maharashtra", p: "₹2.5 Cr", img: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&h=400&fit=crop", b: 3, a: "1,800 sqft", tg: "High-Rise", m: "buy" },
+        { id: 2, t: "Garden Villas", l: "Bangalore, Karnataka", p: "₹1.8 Cr", img: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&h=400&fit=crop", b: 4, a: "2,400 sqft", tg: "Villa", m: "buy" },
+        { id: 3, t: "Marine Drive Residency", l: "Mumbai", p: "₹4.5 Cr", img: "https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=600&h=400&fit=crop", b: 3, a: "2,200 sqft", tg: "Apartment", m: "buy" },
+        { id: 4, t: "Gurgaon Modern Suite", l: "Gurgaon", p: "₹95,000/mo", img: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=600&h=400&fit=crop", b: 2, a: "1,400 sqft", tg: "Apartment", m: "rent" },
+        { id: 5, t: "Whitefield Loft", l: "Bangalore", p: "₹65,000/mo", img: "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=600&h=400&fit=crop", b: 1, a: "950 sqft", tg: "Loft", m: "rent" }
+      ];
+      const DD = [
+        { n: "Emaar Properties", l: "https://logos-world.net/wp-content/uploads/2023/01/Emaar-Logo.png" },
+        { n: "DAMAC Properties", l: "https://logos-world.net/wp-content/uploads/2023/02/Damac-Properties-Logo.png" },
+        { n: "Nakheel", l: "https://logos-world.net/wp-content/uploads/2023/04/Nakheel-Logo.png" },
+        { n: "Sobha Realty", l: "https://logos-world.net/wp-content/uploads/2023/04/Sobha-Realty-Logo.png" },
+        { n: "Meraas", l: "https://logos-world.net/wp-content/uploads/2023/04/Meraas-Logo.png" },
+        { n: "Binghatti", l: "https://logos-world.net/wp-content/uploads/2023/04/Binghatti-Logo.png" }
+      ];
+      const ID = [
+        { n: "DLF Limited", l: "https://logos-world.net/wp-content/uploads/2023/04/DLF-Logo.png" },
+        { n: "Godrej Properties", l: "https://logos-world.net/wp-content/uploads/2023/04/Godrej-Properties-Logo.png" },
+        { n: "Tata Housing", l: "https://logos-world.net/wp-content/uploads/2023/04/Tata-Housing-Logo.png" },
+        { n: "Prestige Group", l: "https://logos-world.net/wp-content/uploads/2023/04/Prestige-Group-Logo.png" },
+        { n: "LODHA Group", l: "https://logos-world.net/wp-content/uploads/2023/04/Lodha-Group-Logo.png" }
       ];
       const WU = [
         {
-          i: "✓",
+          i: ICONS.users,
           t: "Expert Agents",
           d: "Industry veterans with 10+ years experience",
         },
         {
-          i: "🛡️",
+          i: ICONS.shield,
           t: "Verified Listings",
           d: "Every property is personally inspected",
         },
         {
-          i: "🌍",
+          i: ICONS.globe,
           t: "Global Reach",
           d: "Offices in Dubai, Mumbai & Bangalore",
         },
         {
-          i: "💰",
+          i: ICONS.dollar,
           t: "Best Value",
           d: "Competitive pricing with no hidden fees",
         },
         {
-          i: "📱",
+          i: ICONS.users,
           t: "24/7 Support",
           d: "Always available via phone, email or chat",
         },
         {
-          i: "⚡",
+          i: ICONS.zap,
           t: "Fast Closing",
           d: "Streamlined process from offer to keys",
         },
@@ -1602,7 +1600,7 @@
         {
           n: "Sarah Al-Maktoum",
           r: "Homeowner, Dubai",
-          tx: "Professional, transparent, and incredibly efficient. I found my dream villa through LUXE in just two weeks.",
+          tx: "Professional, transparent, and incredibly efficient. I found my dream villa through Better Serv in just two weeks.",
         },
         {
           n: "Amit Sharma",
@@ -1612,37 +1610,37 @@
         {
           n: "Priya Nair",
           r: "First-time Buyer, Kerala",
-          tx: "LUXE made my first property purchase stress-free. Their team guided me through every step with patience.",
+          tx: "Better Serv made my first property purchase stress-free. Their team guided me through every step with patience.",
         },
       ];
       const VL = [
         {
-          i: "🎯",
+          i: ICONS.target,
           t: "Client-First Approach",
           d: "Every decision is guided by what serves our clients best.",
         },
         {
-          i: "🔍",
+          i: ICONS.shield,
           t: "Transparency",
           d: "No hidden fees, no surprises. Complete clarity at every stage.",
         },
         {
-          i: "🤝",
+          i: ICONS.shield,
           t: "Integrity",
           d: "Lasting relationships founded on trust and ethical practices.",
         },
         {
-          i: "🏆",
+          i: ICONS.award,
           t: "Excellence",
           d: "The highest standards in service, analysis, and client care.",
         },
         {
-          i: "💡",
+          i: ICONS.zap,
           t: "Innovation",
           d: "Latest technology and data analytics for smarter decisions.",
         },
         {
-          i: "🌱",
+          i: ICONS.leaf,
           t: "Sustainability",
           d: "Promoting eco-friendly developments and sustainable practices.",
         },
@@ -1689,7 +1687,7 @@
 <div class="hero-content"><div class="section-tag reveal d1">Luxury Real Estate</div><h1 class="reveal d2">Find Your Perfect<br><span>Dream Home</span></h1><p class="reveal d3">Premium properties across Dubai and India. From waterfront penthouses to heritage villas, experience real estate redefined.</p><div class="hero-btns reveal d5"><button class="btn btn-blue" onclick="nav('dubai')">Dubai Properties <span class="btn-icon">→</span></button><button class="btn btn-outline" onclick="nav('india')">India Properties <span class="btn-icon">→</span></button></div></div>
 <div class="hero-dots" id="hDots">${HS.map((_, i) => `<button class="hero-dot${i === 0 ? " active" : ""}" onclick="goSlide(${i})"></button>`).join("")}</div></section>
 
-<section class="section" style="background:var(--bg)"><div class="section-inner about-split"><div class="reveal fl"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&h=500&fit=crop" alt="About" class="about-img"></div><div class="reveal fr d2"><div class="section-tag">About LUXE Realty</div><h2 class="section-title">Redefining Real Estate Excellence</h2><p class="section-subtitle" style="margin-bottom:24px">With over a decade of expertise in both the Indian and Dubai property markets, we connect discerning buyers with exceptional properties. Our team ensures every transaction is seamless, transparent, and rewarding.</p><button class="btn btn-dark" onclick="nav('about')">Learn More <span class="btn-icon">→</span></button></div></div></section>
+<section class="section" style="background:var(--bg)"><div class="section-inner about-split"><div class="reveal fl"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&h=500&fit=crop" alt="About" class="about-img"></div><div class="reveal fr d2"><div class="section-tag">About Better Serv Properties</div><h2 class="section-title">Redefining Real Estate Excellence</h2><p class="section-subtitle" style="margin-bottom:24px">With over a decade of expertise in both the Indian and Dubai property markets, we connect discerning buyers with exceptional properties. Our team ensures every transaction is seamless, transparent, and rewarding.</p><button class="btn btn-dark" onclick="nav('about')">Learn More <span class="btn-icon">→</span></button></div></div></section>
 
 <section class="section" style="background:var(--bg-alt)"><div class="section-inner" style="text-align:center"><div class="section-tag reveal" style="justify-content:center">What We Do</div><h2 class="section-title reveal d1">Our Services</h2><p class="section-subtitle reveal d2" style="margin:0 auto 48px">Comprehensive real estate solutions tailored to your unique needs</p><div class="feat-grid">${SV.map((s, i) => `<div class="fc reveal d${i + 2}"><div class="ib">${s.i}</div><h3>${s.t}</h3><p>${s.d}</p></div>`).join("")}</div></div></section>
 
@@ -1697,7 +1695,7 @@
 
 <section class="section" style="background:var(--bg-alt)"><div class="section-inner"><div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;margin-bottom:36px"><div class="reveal"><div class="section-tag">Featured</div><h2 class="section-title" style="margin-bottom:0">India Properties</h2></div><button class="btn btn-outline-dark reveal d2" onclick="nav('india')">View All <span class="btn-icon">→</span></button></div><div class="reveal d3">${sl(IP, "hs2")}</div></div></section>
 
-<section class="section" style="background:var(--bg-dark)"><div class="section-inner" style="text-align:center"><div class="section-tag reveal" style="justify-content:center">Why Us</div><h2 class="section-title reveal d1" style="color:#fff">Why Choose LUXE Realty</h2><p class="section-subtitle reveal d2" style="color:rgba(255,255,255,0.45);margin:0 auto 48px">The trusted name in premium real estate across two continents</p><div class="feat-grid">${WU.map((w, i) => `<div class="fcd reveal d${i + 2}"><div class="ib">${w.i}</div><h4>${w.t}</h4><p>${w.d}</p></div>`).join("")}</div></div></section>
+<section class="section" style="background:var(--bg-dark)"><div class="section-inner" style="text-align:center"><div class="section-tag reveal" style="justify-content:center">Why Us</div><h2 class="section-title reveal d1" style="color:#fff">Why Choose Better Serv Properties</h2><p class="section-subtitle reveal d2" style="color:rgba(255,255,255,0.45);margin:0 auto 48px">The trusted name in premium real estate across two continents</p><div class="feat-grid">${WU.map((w, i) => `<div class="fcd reveal d${i + 2}"><div class="ib">${w.i}</div><h4>${w.t}</h4><p>${w.d}</p></div>`).join("")}</div></div></section>
 
 <section class="section" style="padding:60px 24px;background:var(--bg)"><div class="section-inner"><div class="stats-strip" id="statsBar">${ST.map((s) => `<div><div class="stat-num" data-target="${s.v}" data-suffix="${s.s}">0${s.s}</div><div class="stat-label">${s.l}</div></div>`).join("")}</div></div></section>
 
@@ -1711,9 +1709,9 @@ ${ft()}</div>`;
 
       function aboutPg() {
         return `<div class="page">
-<div class="page-banner"><div class="section-tag reveal">Who We Are</div><h1 class="reveal d1">About LUXE Realty</h1><p class="reveal d2">A decade of excellence in premium real estate</p></div>
+<div class="page-banner"><div class="section-tag reveal">Who We Are</div><h1 class="reveal d1">About Better Serv Properties</h1><p class="reveal d2">A decade of excellence in premium real estate</p></div>
 
-<section class="section" style="background:var(--bg)"><div class="section-inner about-split"><div class="reveal fl"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&h=500&fit=crop" alt="Our Story" class="about-img"></div><div class="reveal fr d2"><div class="section-tag">Our Story</div><h2 class="section-title">Built on Trust, Driven by Excellence</h2><p class="section-subtitle" style="margin-bottom:16px">Founded in 2014, LUXE Realty began with a simple vision — to bridge the gap between premium property markets in Dubai and India. What started as a small team has grown into a trusted name across two continents.</p><p class="section-subtitle" style="margin-bottom:16px">Our founder, Vishnu S., recognized that international property buyers needed more than just listings — they needed a partner who understood both markets intimately. Today, LUXE Realty serves over 1,200 satisfied clients worldwide.</p><p class="section-subtitle">We specialize in luxury residential properties, commercial spaces, and investment opportunities. Every property is personally vetted to ensure it meets our stringent quality standards.</p></div></div></section>
+<section class="section" style="background:var(--bg)"><div class="section-inner about-split"><div class="reveal fl"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&h=500&fit=crop" alt="Our Story" class="about-img"></div><div class="reveal fr d2"><div class="section-tag">Our Story</div><h2 class="section-title">Built on Trust, Driven by Excellence</h2><p class="section-subtitle" style="margin-bottom:16px">Founded in 2014, Better Serv Properties began with a simple vision — to bridge the gap between premium property markets in Dubai and India. What started as a small team has grown into a trusted name across two continents.</p><p class="section-subtitle" style="margin-bottom:16px">Our founder, Vishnu S., recognized that international property buyers needed more than just listings — they needed a partner who understood both markets intimately. Today, Better Serv Properties serves over 1,200 satisfied clients worldwide.</p><p class="section-subtitle">We specialize in luxury residential properties, commercial spaces, and investment opportunities. Every property is personally vetted to ensure it meets our stringent quality standards.</p></div></div></section>
 
 <section class="section" style="background:var(--bg-alt)"><div class="section-inner"><div style="text-align:center;margin-bottom:48px"><div class="section-tag reveal" style="justify-content:center">What Drives Us</div><h2 class="section-title reveal d1">Mission & Vision</h2></div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px"><div class="fc reveal d2" style="border-left:4px solid var(--blue);padding-left:28px"><h3 style="color:var(--blue);margin-bottom:12px">Our Mission</h3><p>To provide exceptional real estate services that empower our clients to make informed property decisions with transparency, integrity, and unmatched expertise across Dubai and India.</p></div><div class="fc reveal d3" style="border-left:4px solid var(--gold);padding-left:28px"><h3 style="color:var(--gold);margin-bottom:12px">Our Vision</h3><p>To become the most trusted cross-border real estate consultancy, recognized for excellence, innovation, and unwavering commitment to client satisfaction across global markets.</p></div></div></div></section>
 
@@ -1727,79 +1725,58 @@ ${ft()}</div>`;
 
 <section class="section" style="background:var(--bg)"><div class="section-inner" style="text-align:center"><div class="section-tag reveal" style="justify-content:center">Client Stories</div><h2 class="section-title reveal d1">What People Say</h2><div class="test-grid" style="margin-top:40px">${TM.map((t, i) => `<div class="tc reveal d${i + 2}"><div class="stars">★★★★★</div><p class="qt">"${t.tx}"</p><div class="au">${t.n}</div><div class="rl">${t.r}</div></div>`).join("")}</div></div></section>
 
+<section class="section" style="background:var(--bg-alt)"><div class="section-inner" style="text-align:center">
+<div class="section-tag reveal" style="justify-content:center">Our Partners</div>
+<h2 class="section-title reveal d1">Global Real Estate Developers</h2>
+<p class="section-subtitle reveal d2" style="margin:0 auto 40px">Better Serv Properties is a preferred partner for world-class developers across Dubai and India.</p>
+<div style="margin-bottom:48px">
+<h4 style="margin-bottom:20px;color:rgba(0,0,0,0.4)">Dubai Developers</h4>
+<div class="marquee-container">
+<div class="marquee-track">${DD.concat(DD).map((d) => `<div class="dev-card"><img src="${d.l}" alt="${d.n}"><p>${d.n}</p></div>`).join("")}</div>
+</div>
+</div>
+<div>
+<h4 style="margin-bottom:20px;color:rgba(0,0,0,0.4)">India Developers</h4>
+<div class="marquee-container">
+<div class="marquee-track">${ID.concat(ID).map((d) => `<div class="dev-card"><img src="${d.l}" alt="${d.n}"><p>${d.n}</p></div>`).join("")}</div>
+</div>
+</div>
+</div></section>
+
 <section class="section" style="background:var(--bg-dark);text-align:center;padding:80px 24px"><div class="section-inner"><h2 class="section-title reveal" style="color:#fff">Want to Work With Us?</h2><p class="section-subtitle reveal d1" style="color:rgba(255,255,255,0.5);margin:0 auto 32px">Let's discuss how we can help you achieve your property goals.</p><div class="reveal d2"><button class="btn btn-blue" onclick="nav('contact')">Contact Us <span class="btn-icon">→</span></button></div></div></section>
 ${ft()}</div>`;
       }
 
-      function propPg(type) {
+      function propPg(type, mode = "buy") {
         const isDubai = type === "dubai",
-          props = isDubai ? DP : IP;
+          allProps = isDubai ? DP : IP,
+          devs = isDubai ? DD : ID,
+          props = allProps.filter((p) => p.m === mode);
         const title = isDubai ? "Properties in Dubai" : "Properties in India";
         const sub = isDubai
           ? "Exclusive luxury properties across Dubai's most prestigious communities"
           : "Premium residences across India's top metropolitan cities";
         const tag = isDubai ? "Dubai Portfolio" : "India Portfolio";
-        const whyTitle = isDubai
-          ? "Why Invest in Dubai?"
-          : "Why Invest in India?";
-        const whySub = isDubai
-          ? "Tax-free returns, world-class infrastructure, and a thriving global community"
-          : "Rapid urbanization, growing demand, and exceptional value in premium segments";
-        const feats = isDubai
-          ? [
-              {
-                i: "🏛️",
-                t: "Zero Tax",
-                d: "No property tax, no income tax — maximize your investment returns.",
-              },
-              {
-                i: "✈️",
-                t: "Global Hub",
-                d: "World-class infrastructure connecting you to every major city.",
-              },
-              {
-                i: "📈",
-                t: "High ROI",
-                d: "Consistent rental yields of 5-8% across prime locations.",
-              },
-              {
-                i: "🔒",
-                t: "Safe Investment",
-                d: "Strong RERA framework ensuring transparency and protection.",
-              },
-            ]
-          : [
-              {
-                i: "📈",
-                t: "Rapid Growth",
-                d: "India's real estate market projected to reach $1 trillion by 2030.",
-              },
-              {
-                i: "🏗️",
-                t: "Infrastructure Boom",
-                d: "New metros, highways, and smart cities creating investment hotspots.",
-              },
-              {
-                i: "💰",
-                t: "Affordable Luxury",
-                d: "Premium properties at a fraction of global prices.",
-              },
-              {
-                i: "🌐",
-                t: "NRI Friendly",
-                d: "Simplified regulations and dedicated overseas investor support.",
-              },
-            ];
+
         return `<div class="page">
 <div class="page-banner"><div class="section-tag reveal">${tag}</div><h1 class="reveal d1">${title}</h1><p class="reveal d2">${sub}</p></div>
 
-<section class="section" style="background:var(--bg)"><div class="section-inner"><div style="margin-bottom:36px" class="reveal"><p style="color:var(--text-mid);font-size:0.92rem">Showing <strong>${props.length}</strong> properties</p></div><div class="prop-grid">${props.map((p, i) => `<div class="reveal d${Math.min(i + 1, 6)}">${pc(p)}</div>`).join("")}</div></div></section>
+<section class="section" style="background:var(--bg)"><div class="section-inner" style="text-align:center">
+<div class="tab-nav">
+<button class="tab-btn ${mode === "buy" ? "active" : ""}" onclick="nav('${type}','buy')">For Sale</button>
+<button class="tab-btn ${mode === "rent" ? "active" : ""}" onclick="nav('${type}','rent')">For Rent</button>
+</div>
+<div class="prop-grid">${props.map(pc).join("")}</div></div></section>
 
-<section class="section" style="background:var(--bg-alt)"><div class="section-inner" style="text-align:center"><div class="section-tag reveal" style="justify-content:center">${isDubai ? "Why Dubai" : "Why India"}</div><h2 class="section-title reveal d1">${whyTitle}</h2><p class="section-subtitle reveal d2" style="margin:0 auto 48px">${whySub}</p><div class="feat-grid">${feats.map((f, i) => `<div class="fc reveal d${i + 2}"><div class="ib">${f.i}</div><h3>${f.t}</h3><p>${f.d}</p></div>`).join("")}</div></div></section>
-
-<section class="section" style="background:var(--bg)"><div class="section-inner" style="text-align:center"><div class="section-tag reveal" style="justify-content:center">How It Works</div><h2 class="section-title reveal d1" style="margin-bottom:56px">Our Process</h2><div class="timeline" id="timeline">${PR.map((s, i) => `<div class="ts reveal d${i + 3}"><div class="ts-num">${s.n}</div>${i < PR.length - 1 ? '<div class="ts-line" data-line></div>' : ""}<h4>${s.t}</h4><p>${s.d}</p></div>`).join("")}</div></div></section>
-
-<section class="section" style="background:var(--bg-dark);text-align:center;padding:80px 24px"><div class="section-inner"><h2 class="section-title reveal" style="color:#fff">Interested in ${isDubai ? "Dubai" : "Indian"} Properties?</h2><p class="section-subtitle reveal d1" style="color:rgba(255,255,255,0.5);margin:0 auto 32px">Our experts are ready to help you find the perfect property.</p><div class="reveal d2"><button class="btn btn-blue" onclick="nav('contact')">Get in Touch <span class="btn-icon">→</span></button></div></div></section>
+<section class="section" style="background:var(--bg-alt)"><div class="section-inner" style="text-align:center">
+<div class="section-tag reveal" style="justify-content:center">Our Partners</div>
+<h2 class="section-title reveal d1">Top Developers in ${isDubai ? "Dubai" : "India"}</h2>
+<p class="section-subtitle reveal d2" style="margin:0 auto 40px">We have extensive options and pre-launch access with these world-class developers.</p>
+<div class="marquee-container">
+<div class="marquee-track">${devs.concat(devs).map((d) => `<div class="dev-card"><img src="${d.l}" alt="${d.n}"><p>${d.n}</p></div>`).join("")}</div>
+</div>
+<div class="reveal d3" style="margin-top:32px"><p style="color:var(--blue);font-weight:600">✨ Better Serv Properties is a preferred partner for these developers, offering you exclusive price benefits.</p></div>
+</div></section>
 ${ft()}</div>`;
       }
 
@@ -1832,7 +1809,7 @@ ${ft()}</div>`;
         hInt = null,
         curSl = 0;
 
-      function nav(page) {
+      function nav(page, sub = "buy") {
         if (hInt) {
           clearInterval(hInt);
           hInt = null;
@@ -1849,10 +1826,10 @@ ${ft()}</div>`;
             app.innerHTML = aboutPg();
             break;
           case "dubai":
-            app.innerHTML = propPg("dubai");
+            app.innerHTML = propPg("dubai", sub);
             break;
           case "india":
-            app.innerHTML = propPg("india");
+            app.innerHTML = propPg("india", sub);
             break;
           case "contact":
             app.innerHTML = contactPg();
