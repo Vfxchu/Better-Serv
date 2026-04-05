@@ -290,7 +290,7 @@ function initCounters() {
 }
 
 /* ─────────────────────────────────────────────
-   DESKTOP NAV – scroll shrink + smooth scroll
+   DESKTOP NAV – scroll shrink
 ───────────────────────────────────────────── */
 function initDesktopNav() {
   const nav = document.querySelector('.capsule-nav');
@@ -299,30 +299,18 @@ function initDesktopNav() {
       nav.classList.toggle('scrolled', window.scrollY > 80);
     }, { passive: true });
   }
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      const target = document.querySelector(a.getAttribute('href'));
-      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
-    });
-  });
 }
 
 /* ─────────────────────────────────────────────
-   MOBILE BOTTOM NAV – active state
+   MOBILE BOTTOM NAV – active state by URL
 ───────────────────────────────────────────── */
 function initMobileNav() {
-  const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.mobile-nav a');
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        navLinks.forEach(a => {
-          a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id);
-        });
-      }
-    });
-  }, { threshold: 0.4 });
-  sections.forEach(s => io.observe(s));
+  let currentFile = window.location.pathname.split('/').pop() || 'index.html';
+  navLinks.forEach(a => {
+    const hrefFile = a.getAttribute('href').split('/').pop() || 'index.html';
+    a.classList.toggle('active', hrefFile === currentFile);
+  });
 }
 
 /* ─────────────────────────────────────────────
