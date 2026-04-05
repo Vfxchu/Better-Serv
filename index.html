@@ -1,448 +1,1996 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Better Real Estate – Premium Dubai & India Properties</title>
-<meta name="description" content="Better Real Estate offers premium luxury properties in Dubai and India. Find your dream home with expert guidance from our award-winning team."/>
-<link rel="stylesheet" href="style.css"/>
-<!-- Swiper -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LUXE Realty — Premium Properties in Dubai & India</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #ffffff;
+        --bg-alt: #f7f8fa;
+        --bg-dark: #0a0a0f;
+        --bg-card: #ffffff;
+        --blue: #0055ff;
+        --blue-hover: #0044cc;
+        --blue-light: rgba(0, 85, 255, 0.08);
+        --blue-glow: rgba(0, 85, 255, 0.25);
+        --gold: #c9a84c;
+        --text: #1a1a1a;
+        --text-mid: #555;
+        --text-light: #888;
+        --border: #e8e8e8;
+        --radius: 16px;
+        --radius-sm: 10px;
+        --radius-pill: 50px;
+        --shadow-sm: 0 2px 12px rgba(0, 0, 0, 0.06);
+        --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.08);
+        --shadow-lg: 0 16px 64px rgba(0, 0, 0, 0.12);
+        --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.07);
+        --font-body: "DM Sans", sans-serif;
+        --font-display: "Playfair Display", serif;
+        --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: var(--font-body);
+        color: var(--text);
+        background: var(--bg);
+        overflow-x: hidden;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      button {
+        font-family: var(--font-body);
+        cursor: pointer;
+      }
 
-<!-- LOADER -->
-<div id="loader">
-  <div class="loader-logo">Better <span>Real Estate</span></div>
-  <div class="loader-track"><div id="loader-bar"></div></div>
-  <span id="loader-pct">Loading…</span>
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes scaleIn {
+        from {
+          opacity: 0;
+          transform: scale(0.92);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+      @keyframes heroSlideIn {
+        from {
+          opacity: 0;
+          transform: scale(1.06);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(28px);
+        transition:
+          opacity 0.7s var(--ease),
+          transform 0.7s var(--ease);
+      }
+      .reveal.fl {
+        transform: translateX(-28px);
+      }
+      .reveal.fr {
+        transform: translateX(28px);
+      }
+      .reveal.fs {
+        transform: scale(0.9);
+      }
+      .reveal.vis {
+        opacity: 1;
+        transform: translate(0) scale(1);
+      }
+      .reveal.d1 {
+        transition-delay: 0.1s;
+      }
+      .reveal.d2 {
+        transition-delay: 0.2s;
+      }
+      .reveal.d3 {
+        transition-delay: 0.3s;
+      }
+      .reveal.d4 {
+        transition-delay: 0.4s;
+      }
+      .reveal.d5 {
+        transition-delay: 0.5s;
+      }
+      .reveal.d6 {
+        transition-delay: 0.6s;
+      }
+      .reveal.d7 {
+        transition-delay: 0.7s;
+      }
+      .reveal.d8 {
+        transition-delay: 0.8s;
+      }
+      .page {
+        animation: fadeUp 0.45s ease forwards;
+      }
+
+      /* ─── HEADER ─── */
+      .cap-hdr {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 9000;
+        background: transparent;
+        padding: 0 48px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+        transition: background 0.35s ease, box-shadow 0.35s ease;
+        border: none;
+        border-radius: 0;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        box-shadow: none;
+      }
+      .cap-hdr.scrolled {
+        background: rgba(10, 10, 15, 0.97);
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+      }
+      .cap-hdr .logo {
+        display: flex;
+        align-items: center;
+        margin-right: auto;
+      }
+      .cap-hdr .logo img {
+        height: 140px;
+        width: auto;
+        object-fit: contain;
+        padding: 0;
+        transition: transform 0.3s ease;
+      }
+      .cap-hdr .logo:hover img {
+        transform: scale(1.02);
+      }
+      .cap-hdr .dnav {
+        display: flex;
+        gap: 4px;
+      }
+      .cap-hdr .dnav a {
+        color: rgba(255, 255, 255, 0.65);
+        font-size: 0.78rem;
+        font-weight: 500;
+        padding: 8px 13px;
+        border-radius: var(--radius-pill);
+        transition: all 0.25s;
+        letter-spacing: 0.02em;
+        white-space: nowrap;
+      }
+      .cap-hdr .dnav a:hover,
+      .cap-hdr .dnav a.active {
+        color: #fff;
+        background: rgba(255, 255, 255, 0.08);
+      }
+      .cap-hdr .cta-btn {
+        background: var(--blue);
+        color: #fff;
+        border: none;
+        border-radius: var(--radius-pill);
+        padding: 9px 20px;
+        font-size: 0.76rem;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        transition: all 0.25s;
+        white-space: nowrap;
+      }
+      .cap-hdr .cta-btn:hover {
+        background: var(--blue-hover);
+        transform: translateY(-1px);
+      }
+
+      .mob-bar {
+        display: none;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 9000;
+        background: rgba(10, 10, 15, 0.96);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        justify-content: space-around;
+        padding: 8px 0 max(8px, env(safe-area-inset-bottom));
+        border-top: 1px solid rgba(255, 255, 255, 0.07);
+      }
+      .mob-bar a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3px;
+        color: rgba(255, 255, 255, 0.4);
+        font-size: 0.6rem;
+        font-weight: 500;
+        min-width: 48px;
+        min-height: 44px;
+        justify-content: center;
+        transition: color 0.2s;
+      }
+      .mob-bar a svg {
+        width: 20px;
+        height: 20px;
+        stroke: currentColor;
+        fill: none;
+        stroke-width: 1.8;
+      }
+      .mob-bar a.active {
+        color: var(--blue);
+      }
+      @media (max-width: 768px) {
+        .mob-bar {
+          display: flex !important;
+        }
+        .cap-hdr .dnav,
+        .cap-hdr .cta-btn {
+          display: none !important;
+        }
+        .cap-hdr {
+          padding: 12px 24px;
+          max-width: 100%;
+          width: 100%;
+          left: 0;
+          right: 0;
+          transform: none;
+          justify-content: center;
+          background: rgba(10, 10, 15, 0.1);
+        }
+        .cap-hdr.scrolled {
+          background: rgba(10, 10, 15, 0.98);
+        }
+        .cap-hdr .logo {
+          margin-right: 0;
+          justify-content: center;
+          width: 100%;
+        }
+        .cap-hdr .logo img {
+          height: 80px;
+        }
+        .hero-content {
+          text-align: center;
+          padding: 180px 20px 80px;
+        }
+        .hero-content .section-tag {
+          justify-content: center;
+        }
+        .hero-content p {
+          margin: 0 auto 32px;
+        }
+        .hero-btns {
+          justify-content: center;
+        }
+        .section {
+          padding: 60px 20px;
+        }
+      }
+
+      /* ─── BUTTONS ─── */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-family: var(--font-body);
+        font-weight: 700;
+        font-size: 0.88rem;
+        padding: 14px 30px;
+        border-radius: var(--radius-sm);
+        border: none;
+        cursor: pointer;
+        transition: all 0.35s var(--ease);
+        min-height: 48px;
+        letter-spacing: 0.01em;
+      }
+      .btn-blue {
+        background: var(--blue);
+        color: #fff;
+      }
+      .btn-blue:hover {
+        background: var(--blue-hover);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px var(--blue-glow);
+      }
+      .btn-dark {
+        background: var(--bg-dark);
+        color: #fff;
+      }
+      .btn-dark:hover {
+        background: #222;
+        transform: translateY(-2px);
+      }
+      .btn-outline {
+        background: transparent;
+        color: #fff;
+        border: 1.5px solid rgba(255, 255, 255, 0.3);
+      }
+      .btn-outline:hover {
+        border-color: #fff;
+        background: rgba(255, 255, 255, 0.06);
+      }
+      .btn-outline-dark {
+        background: transparent;
+        color: var(--text);
+        border: 1.5px solid var(--border);
+      }
+      .btn-outline-dark:hover {
+        border-color: var(--blue);
+        color: var(--blue);
+      }
+      .btn-icon {
+        font-size: 1rem;
+        transition: transform 0.2s;
+      }
+      .btn:hover .btn-icon {
+        transform: translateX(3px);
+      }
+
+      /* ─── SECTIONS ─── */
+      .section {
+        padding: 100px 24px;
+      }
+      .section-inner {
+        max-width: 1140px;
+        margin: 0 auto;
+      }
+      .section-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        color: var(--blue);
+        font-weight: 700;
+        font-size: 0.72rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+      }
+      .section-tag::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--blue);
+        display: inline-block;
+      }
+      .section-title {
+        font-family: var(--font-display);
+        font-size: clamp(1.8rem, 4vw, 2.8rem);
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        line-height: 1.15;
+        margin-bottom: 16px;
+      }
+      .section-subtitle {
+        color: var(--text-mid);
+        font-size: 1.02rem;
+        line-height: 1.7;
+        max-width: 560px;
+      }
+
+      /* ─── HERO ─── */
+      .hero {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        background: var(--bg-dark);
+      }
+      .hero-slide {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        background-size: cover;
+        background-position: center;
+        transition: none;
+      }
+      .hero-slide::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to right,
+          rgba(0, 0, 0, 0.85) 0%,
+          rgba(0, 0, 0, 0.4) 50%,
+          rgba(0, 0, 0, 0.1) 100%
+        );
+      }
+      @media (max-width: 768px) {
+        .hero-slide::after {
+          background: rgba(0, 0, 0, 0.65);
+        }
+      }
+      .hero-slide.active {
+        opacity: 1;
+        animation: heroSlideIn 1s ease forwards;
+      }
+      .hero-dots {
+        position: absolute;
+        bottom: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 10px;
+        z-index: 10;
+      }
+      .hero-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        background: transparent;
+        cursor: pointer;
+        transition: all 0.3s;
+        padding: 0;
+      }
+      .hero-dot.active {
+        background: #fff;
+        border-color: #fff;
+        width: 28px;
+        border-radius: 10px;
+      }
+      .hero-content {
+        position: relative;
+        z-index: 5;
+        max-width: 1140px;
+        width: 100%;
+        padding: 160px 48px 100px;
+        margin: 0 auto;
+        text-align: left;
+      }
+      .hero-content .section-tag {
+        color: var(--gold);
+        justify-content: flex-start;
+      }
+      .hero-content .section-tag::before {
+        background: var(--gold);
+      }
+      .hero-content h1 {
+        font-family: var(--font-display);
+        font-size: clamp(2.4rem, 6vw, 4rem);
+        font-weight: 800;
+        color: #fff;
+        line-height: 1.08;
+        letter-spacing: -0.03em;
+        margin-bottom: 20px;
+      }
+      .hero-content h1 span {
+        color: var(--blue);
+      }
+      .hero-content p {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 1.1rem;
+        line-height: 1.7;
+        max-width: 580px;
+        margin: 0 0 40px;
+      }
+      .hero-btns {
+        display: flex;
+        gap: 12px;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+      }
+
+      /* ─── PAGE BANNER ─── */
+      .page-banner {
+        position: relative;
+        padding: 160px 24px 80px;
+        background: var(--bg-dark);
+        text-align: center;
+        overflow: hidden;
+      }
+      .page-banner::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(
+            circle at 30% 50%,
+            rgba(0, 85, 255, 0.1) 0%,
+            transparent 60%
+          ),
+          radial-gradient(
+            circle at 80% 20%,
+            rgba(201, 168, 76, 0.06) 0%,
+            transparent 50%
+          );
+      }
+      .page-banner .section-tag {
+        justify-content: center;
+        position: relative;
+      }
+      .page-banner h1 {
+        font-family: var(--font-display);
+        font-size: clamp(2rem, 5vw, 3.2rem);
+        font-weight: 800;
+        color: #fff;
+        letter-spacing: -0.02em;
+        position: relative;
+      }
+      .page-banner p {
+        color: rgba(255, 255, 255, 0.5);
+        position: relative;
+        margin-top: 12px;
+        font-size: 0.95rem;
+      }
+
+      /* ─── CARDS ─── */
+      .prop-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 24px;
+      }
+      .prop-card {
+        background: var(--bg-card);
+        border-radius: var(--radius);
+        overflow: hidden;
+        box-shadow: var(--shadow-card);
+        transition:
+          transform 0.35s var(--ease),
+          box-shadow 0.35s var(--ease);
+      }
+      .prop-card:hover {
+        transform: translateY(-6px);
+        box-shadow: var(--shadow-lg);
+      }
+      .prop-card .iw {
+        position: relative;
+        overflow: hidden;
+        height: 220px;
+      }
+      .prop-card .iw img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s;
+      }
+      .prop-card:hover .iw img {
+        transform: scale(1.06);
+      }
+      .prop-card .badge-tag {
+        position: absolute;
+        top: 14px;
+        left: 14px;
+        background: var(--blue);
+        color: #fff;
+        font-size: 0.68rem;
+        font-weight: 700;
+        padding: 5px 12px;
+        border-radius: var(--radius-pill);
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+      .prop-card .bd {
+        padding: 20px 22px;
+      }
+      .prop-card .bd h4 {
+        font-size: 1.05rem;
+        font-weight: 700;
+        margin-bottom: 4px;
+      }
+      .prop-card .loc {
+        font-size: 0.82rem;
+        color: var(--text-light);
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        margin-bottom: 10px;
+      }
+      .prop-card .meta {
+        display: flex;
+        gap: 16px;
+        margin-bottom: 14px;
+        font-size: 0.76rem;
+        color: var(--text-light);
+      }
+      .prop-card .rw {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .prop-card .price {
+        font-weight: 800;
+        font-size: 1.12rem;
+        color: var(--blue);
+      }
+      .prop-card .vb {
+        background: var(--blue-light);
+        color: var(--blue);
+        border: none;
+        border-radius: var(--radius-sm);
+        padding: 8px 16px;
+        font-size: 0.78rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.25s;
+        font-family: var(--font-body);
+      }
+      .prop-card .vb:hover {
+        background: var(--blue);
+        color: #fff;
+      }
+
+      .slider-wrap {
+        position: relative;
+      }
+      .slider-track {
+        display: flex;
+        gap: 20px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding: 20px 4px;
+        scrollbar-width: none;
+      }
+      .slider-track::-webkit-scrollbar {
+        display: none;
+      }
+      .slider-track .prop-card {
+        min-width: 300px;
+        flex-shrink: 0;
+        scroll-snap-align: start;
+      }
+      .sb {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        border: 1.5px solid var(--border);
+        background: rgba(255, 255, 255, 0.95);
+        color: var(--text);
+        font-size: 1.1rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: var(--shadow-md);
+        transition: all 0.25s;
+        backdrop-filter: blur(8px);
+      }
+      .sb:hover {
+        background: var(--blue);
+        color: #fff;
+        border-color: var(--blue);
+      }
+      .sb.l {
+        left: -12px;
+      }
+      .sb.r {
+        right: -12px;
+      }
+
+      .feat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 24px;
+      }
+      .fc {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 32px 28px;
+        transition: all 0.35s var(--ease);
+        position: relative;
+        overflow: hidden;
+      }
+      .fc::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: var(--blue);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.4s;
+      }
+      .fc:hover::before {
+        transform: scaleX(1);
+      }
+      .fc:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-md);
+        border-color: transparent;
+      }
+      .fc .ib {
+        width: 52px;
+        height: 52px;
+        border-radius: 14px;
+        background: var(--blue-light);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 18px;
+        font-size: 1.4rem;
+      }
+      .fc h3 {
+        font-size: 1rem;
+        font-weight: 700;
+        margin-bottom: 8px;
+      }
+      .fc p {
+        color: var(--text-mid);
+        font-size: 0.86rem;
+        line-height: 1.6;
+      }
+
+      .fcd {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        border-radius: var(--radius);
+        padding: 32px 28px;
+        transition: all 0.35s var(--ease);
+      }
+      .fcd:hover {
+        background: rgba(255, 255, 255, 0.07);
+        transform: translateY(-4px);
+      }
+      .fcd .ib {
+        background: rgba(0, 85, 255, 0.15);
+      }
+      .fcd h4 {
+        color: #fff;
+        font-weight: 700;
+        font-size: 0.95rem;
+        margin-bottom: 8px;
+      }
+      .fcd p {
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 0.82rem;
+        line-height: 1.6;
+      }
+
+      .stats-strip {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 20px;
+        background: linear-gradient(135deg, #0a0a0f, #12122a);
+        border-radius: 20px;
+        padding: 48px 36px;
+        box-shadow: var(--shadow-lg);
+      }
+      .stat-num {
+        font-family: var(--font-display);
+        font-size: clamp(2rem, 4vw, 2.8rem);
+        font-weight: 800;
+        color: var(--blue);
+        text-align: center;
+      }
+      .stat-label {
+        font-size: 0.78rem;
+        color: rgba(255, 255, 255, 0.5);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-top: 4px;
+        text-align: center;
+      }
+
+      .timeline {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0;
+        position: relative;
+      }
+      .ts {
+        flex: 1 1 200px;
+        max-width: 240px;
+        text-align: center;
+        padding: 0 18px;
+        position: relative;
+      }
+      .ts-num {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: var(--blue);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        font-size: 1rem;
+        margin: 0 auto 16px;
+        box-shadow: 0 4px 20px var(--blue-glow);
+      }
+      .ts-line {
+        position: absolute;
+        top: 28px;
+        left: 62%;
+        width: 76%;
+        height: 2px;
+        background: var(--blue);
+        opacity: 0;
+        transition: opacity 0.6s;
+      }
+      .ts-line.vis {
+        opacity: 0.2;
+      }
+      .ts h4 {
+        font-weight: 700;
+        font-size: 0.95rem;
+        margin-bottom: 6px;
+      }
+      .ts p {
+        color: var(--text-mid);
+        font-size: 0.82rem;
+        line-height: 1.5;
+      }
+      @media (max-width: 640px) {
+        .ts-line {
+          display: none;
+        }
+      }
+
+      .test-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 24px;
+      }
+      .tc {
+        background: var(--bg-alt);
+        border-radius: var(--radius);
+        padding: 30px;
+        border: 1px solid var(--border);
+        transition: all 0.35s var(--ease);
+      }
+      .tc:hover {
+        box-shadow: var(--shadow-md);
+        border-color: transparent;
+      }
+      .tc .stars {
+        color: #f5a623;
+        font-size: 0.9rem;
+        letter-spacing: 2px;
+        margin-bottom: 14px;
+      }
+      .tc .qt {
+        color: var(--text-mid);
+        font-size: 0.9rem;
+        line-height: 1.65;
+        margin-bottom: 18px;
+        font-style: italic;
+      }
+      .tc .au {
+        font-weight: 700;
+        font-size: 0.88rem;
+      }
+      .tc .rl {
+        color: var(--text-light);
+        font-size: 0.76rem;
+        margin-top: 2px;
+      }
+
+      .about-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+        align-items: center;
+      }
+      @media (max-width: 768px) {
+        .about-split {
+          grid-template-columns: 1fr !important;
+        }
+      }
+      .about-img {
+        width: 100%;
+        border-radius: var(--radius);
+        object-fit: cover;
+        box-shadow: var(--shadow-lg);
+        aspect-ratio: 4/3;
+      }
+      .val-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 28px;
+      }
+      .vc {
+        display: flex;
+        gap: 18px;
+        align-items: flex-start;
+        padding: 24px;
+        border-radius: var(--radius);
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        transition: all 0.35s var(--ease);
+      }
+      .vc:hover {
+        box-shadow: var(--shadow-md);
+        border-color: transparent;
+        transform: translateY(-3px);
+      }
+      .vc .vi {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        background: var(--blue-light);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        flex-shrink: 0;
+      }
+      .vc h4 {
+        font-size: 0.95rem;
+        font-weight: 700;
+        margin-bottom: 4px;
+      }
+      .vc p {
+        color: var(--text-mid);
+        font-size: 0.84rem;
+        line-height: 1.55;
+      }
+
+      .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 24px;
+      }
+      .team-c {
+        text-align: center;
+      }
+      .team-c .av {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 0 auto 14px;
+        border: 3px solid var(--blue-light);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      }
+      .team-c h4 {
+        font-size: 0.95rem;
+        font-weight: 700;
+      }
+      .team-c p {
+        color: var(--text-light);
+        font-size: 0.8rem;
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        gap: 48px;
+        align-items: start;
+      }
+      @media (max-width: 768px) {
+        .contact-grid {
+          grid-template-columns: 1fr !important;
+        }
+      }
+      .cic {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+        padding: 20px;
+        border-radius: var(--radius);
+        background: var(--bg-alt);
+        border: 1px solid var(--border);
+        margin-bottom: 16px;
+        transition: all 0.25s;
+      }
+      .cic:hover {
+        border-color: var(--blue);
+        box-shadow: var(--shadow-sm);
+      }
+      .cic .ci {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        background: var(--blue-light);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        font-size: 1.1rem;
+      }
+      .cic h4 {
+        font-size: 0.88rem;
+        font-weight: 700;
+        margin-bottom: 2px;
+      }
+      .cic p {
+        color: var(--text-mid);
+        font-size: 0.84rem;
+      }
+
+      .fb {
+        background: var(--bg-card);
+        border-radius: var(--radius);
+        padding: 36px;
+        box-shadow: var(--shadow-md);
+        border: 1px solid var(--border);
+      }
+      .fr {
+        margin-bottom: 18px;
+      }
+      .fr label {
+        display: block;
+        font-size: 0.74rem;
+        font-weight: 700;
+        color: var(--text-mid);
+        margin-bottom: 7px;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+      }
+      .fr input,
+      .fr textarea,
+      .fr select {
+        width: 100%;
+        padding: 13px 16px;
+        border: 1.5px solid var(--border);
+        border-radius: var(--radius-sm);
+        font-size: 0.92rem;
+        font-family: var(--font-body);
+        background: var(--bg-alt);
+        outline: none;
+        transition: border-color 0.25s;
+        color: var(--text);
+      }
+      .fr input:focus,
+      .fr textarea:focus,
+      .fr select:focus {
+        border-color: var(--blue);
+      }
+      .fr textarea {
+        resize: vertical;
+        min-height: 100px;
+      }
+      .f2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+      }
+      @media (max-width: 600px) {
+        .f2 {
+          grid-template-columns: 1fr;
+        }
+      }
+      .form-ok {
+        text-align: center;
+        padding: 50px 0;
+      }
+      .form-ok .ck {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        background: var(--blue-light);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 16px;
+        font-size: 1.8rem;
+      }
+      .form-ok h3 {
+        font-family: var(--font-display);
+        font-size: 1.4rem;
+        margin-bottom: 6px;
+      }
+      .form-ok p {
+        color: var(--text-mid);
+      }
+
+      .footer {
+        background: var(--bg-dark);
+        color: rgba(255, 255, 255, 0.55);
+        padding: 64px 24px 0;
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 2.2fr 1fr 1fr 1fr;
+        gap: 40px;
+        max-width: 1140px;
+        margin: 0 auto;
+      }
+      @media (max-width: 768px) {
+        .footer-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .footer {
+          padding-bottom: 70px;
+        }
+      }
+      .footer .fl {
+        display: block;
+        margin-bottom: 14px;
+      }
+      .footer .fl img {
+        height: 130px;
+        width: auto;
+        object-fit: contain;
+        filter: brightness(1.1);
+      }
+      .footer p {
+        font-size: 0.84rem;
+        line-height: 1.65;
+        max-width: 280px;
+      }
+      .footer h4 {
+        color: #fff;
+        font-size: 0.78rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 18px;
+      }
+      .footer a {
+        display: block;
+        color: rgba(255, 255, 255, 0.45);
+        font-size: 0.84rem;
+        margin-bottom: 10px;
+        transition: color 0.2s;
+      }
+      .footer a:hover {
+        color: #fff;
+      }
+      .footer-btm {
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        margin-top: 48px;
+        padding: 20px 0;
+        text-align: center;
+        font-size: 0.76rem;
+        color: rgba(255, 255, 255, 0.25);
+      }
+
+      .modal-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.55);
+        z-index: 9999;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        backdrop-filter: blur(4px);
+      }
+      .modal-overlay.open {
+        display: flex;
+        animation: fadeIn 0.25s;
+      }
+      .modal {
+        background: #fff;
+        border-radius: var(--radius);
+        max-width: 480px;
+        width: 100%;
+        padding: 32px;
+        box-shadow: 0 24px 80px rgba(0, 0, 0, 0.25);
+        animation: scaleIn 0.3s ease;
+        max-height: 90vh;
+        overflow-y: auto;
+      }
+      .modal-hd {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 18px;
+      }
+      .modal-hd h3 {
+        font-family: var(--font-display);
+        font-size: 1.2rem;
+      }
+      .modal-x {
+        background: none;
+        border: none;
+        font-size: 1.4rem;
+        color: var(--text-light);
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition: background 0.2s;
+      }
+      .modal-x:hover {
+        background: var(--bg-alt);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="cap-hdr" id="mainHeader">
+      <a href="#" data-page="home" class="logo">
+        <img src="Better Serv Logo-02.png" alt="Better Serv Logo" />
+      </a>
+      <nav class="dnav" id="desktopNav">
+        <a href="#" data-page="home" class="active">Home</a>
+        <a href="#" data-page="about">About Us</a>
+        <a href="#" data-page="dubai">Dubai</a>
+        <a href="#" data-page="india">India</a>
+        <a href="#" data-page="contact">Contact</a>
+      </nav>
+      <button class="cta-btn" onclick="nav('contact')">Get in Touch</button>
+    </header>
+
+    <nav class="mob-bar" id="mobileBar">
+      <a href="#" data-page="home" class="active">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+          <polyline points="9 22 9 12 15 12 15 22"></polyline>
+        </svg>
+        Home
+      </a>
+      <a href="#" data-page="dubai">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 10h16M12 22V2M4 22V10M20 22V10M8 22V14M16 22V14"></path>
+        </svg>
+        Dubai
+      </a>
+      <a href="#" data-page="india">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M2 22v-4h20v4M4 18V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12M9 18v-6h6v6"></path>
+        </svg>
+        India
+      </a>
+      <a href="#" data-page="about">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M12 16v-4M12 8h.01"></path>
+        </svg>
+        About
+      </a>
+      <a href="#" data-page="contact">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+          <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+        </svg>
+        Contact
+      </a>
+    </nav>
+
+    <main id="app"></main>
+
+    <div class="modal-overlay" id="eqModal">
+      <div class="modal">
+        <div class="modal-hd">
+          <h3 id="mT">Enquiry</h3>
+          <button class="modal-x" onclick="closeM()">✕</button>
+        </div>
+        <p
+          id="mS"
+          style="
+            color: var(--text-mid);
+            font-size: 0.88rem;
+            margin-bottom: 20px;
+          "
+        ></p>
+        <div id="mF">
+          <div class="fr">
+            <label>Name</label><input type="text" placeholder="Full name" />
+          </div>
+          <div class="fr">
+            <label>Email</label
+            ><input type="email" placeholder="you@email.com" />
+          </div>
+          <div class="fr">
+            <label>Phone</label><input type="tel" placeholder="+971 or +91" />
+          </div>
+          <div class="fr">
+            <label>Message</label
+            ><textarea rows="3" placeholder="I'm interested..."></textarea>
+          </div>
+          <button class="btn btn-blue" style="width: 100%" onclick="subM()">
+            Submit Enquiry <span class="btn-icon">→</span>
+          </button>
+        </div>
+        <div id="mOk" style="display: none">
+          <div class="form-ok">
+            <div class="ck">✓</div>
+            <h3>Thank You!</h3>
+            <p>Our team will contact you within 24 hours.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const HS = [
+        "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1400&h=800&fit=crop",
+        "https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=1400&h=800&fit=crop",
+        "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1400&h=800&fit=crop",
+        "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1400&h=800&fit=crop",
+      ];
+      const SV = [
+        {
+          i: "🏗️",
+          t: "Property Development",
+          d: "World-class residential and commercial developments across Dubai and India with premium finishes.",
+        },
+        {
+          i: "🔑",
+          t: "Sales & Leasing",
+          d: "Full-cycle support for buying, selling, or leasing premium properties with expert negotiation.",
+        },
+        {
+          i: "📊",
+          t: "Investment Advisory",
+          d: "Data-driven investment guidance to maximize your real estate portfolio returns.",
+        },
+        {
+          i: "🏠",
+          t: "Property Management",
+          d: "Comprehensive maintenance, tenant management, and revenue optimization.",
+        },
+      ];
+      const DP = [
+        {
+          id: 11,
+          t: "Marina Bay Penthouse",
+          l: "Dubai Marina",
+          p: "AED 8.5M",
+          img: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=600&h=400&fit=crop",
+          b: 4,
+          a: "3,200 sqft",
+          tg: "Penthouse",
+        },
+        {
+          id: 12,
+          t: "Palm Jumeirah Villa",
+          l: "Palm Jumeirah",
+          p: "AED 15M",
+          img: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=600&h=400&fit=crop",
+          b: 6,
+          a: "6,500 sqft",
+          tg: "Villa",
+        },
+        {
+          id: 13,
+          t: "Downtown Loft",
+          l: "Downtown Dubai",
+          p: "AED 3.2M",
+          img: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&h=400&fit=crop",
+          b: 2,
+          a: "1,450 sqft",
+          tg: "Apartment",
+        },
+        {
+          id: 14,
+          t: "Creek Harbour Apt",
+          l: "Dubai Creek",
+          p: "AED 2.8M",
+          img: "https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=600&h=400&fit=crop",
+          b: 3,
+          a: "1,800 sqft",
+          tg: "Apartment",
+        },
+        {
+          id: 15,
+          t: "JBR Beachfront",
+          l: "JBR, Dubai",
+          p: "AED 5.5M",
+          img: "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=600&h=400&fit=crop",
+          b: 3,
+          a: "2,400 sqft",
+          tg: "Beachfront",
+        },
+        {
+          id: 16,
+          t: "Business Bay Tower",
+          l: "Business Bay",
+          p: "AED 4.1M",
+          img: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&h=400&fit=crop",
+          b: 2,
+          a: "1,650 sqft",
+          tg: "Apartment",
+        },
+        {
+          id: 17,
+          t: "Al Barari Garden",
+          l: "Al Barari",
+          p: "AED 12M",
+          img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&h=400&fit=crop",
+          b: 5,
+          a: "5,800 sqft",
+          tg: "Villa",
+        },
+        {
+          id: 18,
+          t: "DIFC Living Suite",
+          l: "DIFC",
+          p: "AED 6.8M",
+          img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=400&fit=crop",
+          b: 3,
+          a: "2,900 sqft",
+          tg: "Luxury",
+        },
+      ];
+      const IP = [
+        {
+          id: 1,
+          t: "Skyline Residences",
+          l: "Mumbai, Maharashtra",
+          p: "₹2.5 Cr",
+          img: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&h=400&fit=crop",
+          b: 3,
+          a: "1,800 sqft",
+          tg: "High-Rise",
+        },
+        {
+          id: 2,
+          t: "Garden Villas",
+          l: "Bangalore, Karnataka",
+          p: "₹1.8 Cr",
+          img: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&h=400&fit=crop",
+          b: 4,
+          a: "2,400 sqft",
+          tg: "Villa",
+        },
+        {
+          id: 3,
+          t: "Lake View Towers",
+          l: "Hyderabad, Telangana",
+          p: "₹1.2 Cr",
+          img: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&h=400&fit=crop",
+          b: 3,
+          a: "1,650 sqft",
+          tg: "Apartment",
+        },
+        {
+          id: 4,
+          t: "Palm Grove Estate",
+          l: "Kochi, Kerala",
+          p: "₹95 L",
+          img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&h=400&fit=crop",
+          b: 3,
+          a: "2,100 sqft",
+          tg: "Estate",
+        },
+        {
+          id: 5,
+          t: "Royal Heights",
+          l: "Delhi NCR",
+          p: "₹3.1 Cr",
+          img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=400&fit=crop",
+          b: 4,
+          a: "2,800 sqft",
+          tg: "Penthouse",
+        },
+        {
+          id: 6,
+          t: "Sunset Apartments",
+          l: "Pune, Maharashtra",
+          p: "₹85 L",
+          img: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&h=400&fit=crop",
+          b: 2,
+          a: "1,200 sqft",
+          tg: "Apartment",
+        },
+        {
+          id: 7,
+          t: "Marine Drive Residency",
+          l: "Mumbai",
+          p: "₹4.5 Cr",
+          img: "https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=600&h=400&fit=crop",
+          b: 3,
+          a: "2,200 sqft",
+          tg: "Sea View",
+        },
+        {
+          id: 8,
+          t: "Whitefield Orchards",
+          l: "Bangalore",
+          p: "₹1.4 Cr",
+          img: "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=600&h=400&fit=crop",
+          b: 3,
+          a: "1,900 sqft",
+          tg: "Villa",
+        },
+      ];
+      const WU = [
+        {
+          i: "✓",
+          t: "Expert Agents",
+          d: "Industry veterans with 10+ years experience",
+        },
+        {
+          i: "🛡️",
+          t: "Verified Listings",
+          d: "Every property is personally inspected",
+        },
+        {
+          i: "🌍",
+          t: "Global Reach",
+          d: "Offices in Dubai, Mumbai & Bangalore",
+        },
+        {
+          i: "💰",
+          t: "Best Value",
+          d: "Competitive pricing with no hidden fees",
+        },
+        {
+          i: "📱",
+          t: "24/7 Support",
+          d: "Always available via phone, email or chat",
+        },
+        {
+          i: "⚡",
+          t: "Fast Closing",
+          d: "Streamlined process from offer to keys",
+        },
+      ];
+      const ST = [
+        { v: 500, s: "+", l: "Properties Sold" },
+        { v: 10, s: "+", l: "Years Experience" },
+        { v: 1200, s: "+", l: "Happy Clients" },
+        { v: 50, s: "+", l: "Expert Agents" },
+      ];
+      const PR = [
+        {
+          n: "01",
+          t: "Consultation",
+          d: "Share your requirements, budget, and preferred locations",
+        },
+        {
+          n: "02",
+          t: "Curated Selection",
+          d: "We handpick properties matching your exact criteria",
+        },
+        {
+          n: "03",
+          t: "Property Viewing",
+          d: "Virtual or in-person tours at your convenience",
+        },
+        {
+          n: "04",
+          t: "Closing & Handover",
+          d: "Seamless paperwork, financing, and key handover",
+        },
+      ];
+      const TM = [
+        {
+          n: "Rajesh Menon",
+          r: "Investor, Mumbai",
+          tx: "Exceptional service from start to finish. They helped me secure a prime Dubai Marina apartment at a fantastic price.",
+        },
+        {
+          n: "Sarah Al-Maktoum",
+          r: "Homeowner, Dubai",
+          tx: "Professional, transparent, and incredibly efficient. I found my dream villa through LUXE in just two weeks.",
+        },
+        {
+          n: "Amit Sharma",
+          r: "NRI Investor, London",
+          tx: "As an overseas buyer, their end-to-end support was invaluable. Highly recommend for international investments.",
+        },
+        {
+          n: "Priya Nair",
+          r: "First-time Buyer, Kerala",
+          tx: "LUXE made my first property purchase stress-free. Their team guided me through every step with patience.",
+        },
+      ];
+      const VL = [
+        {
+          i: "🎯",
+          t: "Client-First Approach",
+          d: "Every decision is guided by what serves our clients best.",
+        },
+        {
+          i: "🔍",
+          t: "Transparency",
+          d: "No hidden fees, no surprises. Complete clarity at every stage.",
+        },
+        {
+          i: "🤝",
+          t: "Integrity",
+          d: "Lasting relationships founded on trust and ethical practices.",
+        },
+        {
+          i: "🏆",
+          t: "Excellence",
+          d: "The highest standards in service, analysis, and client care.",
+        },
+        {
+          i: "💡",
+          t: "Innovation",
+          d: "Latest technology and data analytics for smarter decisions.",
+        },
+        {
+          i: "🌱",
+          t: "Sustainability",
+          d: "Promoting eco-friendly developments and sustainable practices.",
+        },
+      ];
+      const TEM = [
+        {
+          n: "Vishnu S.",
+          r: "Founder & CEO",
+          img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face",
+        },
+        {
+          n: "Aisha Rahman",
+          r: "Head of Dubai Ops",
+          img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&h=300&fit=crop&crop=face",
+        },
+        {
+          n: "Arjun Mehta",
+          r: "India Sales Director",
+          img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face",
+        },
+        {
+          n: "Fatima Al-Sayed",
+          r: "Legal & Compliance",
+          img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=face",
+        },
+      ];
+
+      const pin =
+        '<svg style="width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;flex-shrink:0" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>';
+
+      function pc(p) {
+        return `<div class="prop-card"><div class="iw"><img src="${p.img}" alt="${p.t}" loading="lazy"><span class="badge-tag">${p.tg}</span></div><div class="bd"><h4>${p.t}</h4><div class="loc">${pin} ${p.l}</div><div class="meta"><span>🛏 ${p.b} Beds</span><span>📐 ${p.a}</span></div><div class="rw"><span class="price">${p.p}</span><button class="vb" onclick="openM('${p.t}','${p.l} — ${p.p}')">Enquire</button></div></div></div>`;
+      }
+      function sl(props, id) {
+        return `<div class="slider-wrap"><button class="sb l" onclick="ss('${id}',-1)">←</button><div class="slider-track" id="${id}">${props.map(pc).join("")}</div><button class="sb r" onclick="ss('${id}',1)">→</button></div>`;
+      }
+      function ft() {
+        return `<div class="footer"><div class="footer-grid"><div><div class="fl"><img src="Better Serv Logo-02.png" alt="Better Serv Properties" /></div><p>Premium real estate services connecting discerning buyers with exceptional properties across Dubai and India.</p></div><div><h4>Quick Links</h4><a href="#" onclick="nav('home');return false">Home</a><a href="#" onclick="nav('about');return false">About Us</a><a href="#" onclick="nav('dubai');return false">Dubai Properties</a><a href="#" onclick="nav('india');return false">India Properties</a><a href="#" onclick="nav('contact');return false">Contact</a></div><div><h4>Services</h4><a href="#">Sales &amp; Leasing</a><a href="#">Investment Advisory</a><a href="#">Property Management</a><a href="#">Development</a></div><div><h4>Contact</h4><a href="#">📍 Business Bay, Dubai</a><a href="#">📞 +971 50 123 4567</a><a href="mailto:vishnuss80@gmail.com">✉️ vishnuss80@gmail.com</a></div></div><div class="footer-btm">© 2026 Better Serv Properties. All rights reserved.</div></div>`;
+      }
+
+      function homePg() {
+        return `<div class="page">
+<section class="hero"><div class="hero-slides" id="hSlides">${HS.map((s, i) => `<div class="hero-slide${i === 0 ? " active" : ""}" style="background-image:url('${s}')"></div>`).join("")}</div>
+<div class="hero-content"><div class="section-tag reveal d1">Luxury Real Estate</div><h1 class="reveal d2">Find Your Perfect<br><span>Dream Home</span></h1><p class="reveal d3">Premium properties across Dubai and India. From waterfront penthouses to heritage villas, experience real estate redefined.</p><div class="hero-btns reveal d5"><button class="btn btn-blue" onclick="nav('dubai')">Dubai Properties <span class="btn-icon">→</span></button><button class="btn btn-outline" onclick="nav('india')">India Properties <span class="btn-icon">→</span></button></div></div>
+<div class="hero-dots" id="hDots">${HS.map((_, i) => `<button class="hero-dot${i === 0 ? " active" : ""}" onclick="goSlide(${i})"></button>`).join("")}</div></section>
+
+<section class="section" style="background:var(--bg)"><div class="section-inner about-split"><div class="reveal fl"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&h=500&fit=crop" alt="About" class="about-img"></div><div class="reveal fr d2"><div class="section-tag">About LUXE Realty</div><h2 class="section-title">Redefining Real Estate Excellence</h2><p class="section-subtitle" style="margin-bottom:24px">With over a decade of expertise in both the Indian and Dubai property markets, we connect discerning buyers with exceptional properties. Our team ensures every transaction is seamless, transparent, and rewarding.</p><button class="btn btn-dark" onclick="nav('about')">Learn More <span class="btn-icon">→</span></button></div></div></section>
+
+<section class="section" style="background:var(--bg-alt)"><div class="section-inner" style="text-align:center"><div class="section-tag reveal" style="justify-content:center">What We Do</div><h2 class="section-title reveal d1">Our Services</h2><p class="section-subtitle reveal d2" style="margin:0 auto 48px">Comprehensive real estate solutions tailored to your unique needs</p><div class="feat-grid">${SV.map((s, i) => `<div class="fc reveal d${i + 2}"><div class="ib">${s.i}</div><h3>${s.t}</h3><p>${s.d}</p></div>`).join("")}</div></div></section>
+
+<section class="section" style="background:var(--bg)"><div class="section-inner"><div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;margin-bottom:36px"><div class="reveal"><div class="section-tag">Featured</div><h2 class="section-title" style="margin-bottom:0">Dubai Properties</h2></div><button class="btn btn-outline-dark reveal d2" onclick="nav('dubai')">View All <span class="btn-icon">→</span></button></div><div class="reveal d3">${sl(DP, "hs1")}</div></div></section>
+
+<section class="section" style="background:var(--bg-alt)"><div class="section-inner"><div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;margin-bottom:36px"><div class="reveal"><div class="section-tag">Featured</div><h2 class="section-title" style="margin-bottom:0">India Properties</h2></div><button class="btn btn-outline-dark reveal d2" onclick="nav('india')">View All <span class="btn-icon">→</span></button></div><div class="reveal d3">${sl(IP, "hs2")}</div></div></section>
+
+<section class="section" style="background:var(--bg-dark)"><div class="section-inner" style="text-align:center"><div class="section-tag reveal" style="justify-content:center">Why Us</div><h2 class="section-title reveal d1" style="color:#fff">Why Choose LUXE Realty</h2><p class="section-subtitle reveal d2" style="color:rgba(255,255,255,0.45);margin:0 auto 48px">The trusted name in premium real estate across two continents</p><div class="feat-grid">${WU.map((w, i) => `<div class="fcd reveal d${i + 2}"><div class="ib">${w.i}</div><h4>${w.t}</h4><p>${w.d}</p></div>`).join("")}</div></div></section>
+
+<section class="section" style="padding:60px 24px;background:var(--bg)"><div class="section-inner"><div class="stats-strip" id="statsBar">${ST.map((s) => `<div><div class="stat-num" data-target="${s.v}" data-suffix="${s.s}">0${s.s}</div><div class="stat-label">${s.l}</div></div>`).join("")}</div></div></section>
+
+<section class="section" style="background:var(--bg-alt)"><div class="section-inner" style="text-align:center"><div class="section-tag reveal" style="justify-content:center">How It Works</div><h2 class="section-title reveal d1" style="margin-bottom:56px">Our Process</h2><div class="timeline" id="timeline">${PR.map((s, i) => `<div class="ts reveal d${i + 3}"><div class="ts-num">${s.n}</div>${i < PR.length - 1 ? '<div class="ts-line" data-line></div>' : ""}<h4>${s.t}</h4><p>${s.d}</p></div>`).join("")}</div></div></section>
+
+<section class="section" style="background:var(--bg)"><div class="section-inner" style="text-align:center"><div class="section-tag reveal" style="justify-content:center">Testimonials</div><h2 class="section-title reveal d1">What Our Clients Say</h2><p class="section-subtitle reveal d2" style="margin:0 auto 48px">Trusted by investors, homeowners, and NRIs worldwide</p><div class="test-grid">${TM.map((t, i) => `<div class="tc reveal d${i + 2}"><div class="stars">★★★★★</div><p class="qt">"${t.tx}"</p><div class="au">${t.n}</div><div class="rl">${t.r}</div></div>`).join("")}</div></div></section>
+
+<section class="section" style="background:var(--bg-dark);text-align:center;padding:80px 24px"><div class="section-inner"><div class="section-tag reveal" style="justify-content:center;color:var(--gold)">Get Started</div><h2 class="section-title reveal d1" style="color:#fff;margin-bottom:20px">Ready to Find Your Dream Home?</h2><p class="section-subtitle reveal d2" style="color:rgba(255,255,255,0.5);margin:0 auto 36px">Let our experts guide you to the perfect property.</p><div class="reveal d3"><button class="btn btn-blue" onclick="nav('contact')">Contact Us Now <span class="btn-icon">→</span></button></div></div></section>
+${ft()}</div>`;
+      }
+
+      function aboutPg() {
+        return `<div class="page">
+<div class="page-banner"><div class="section-tag reveal">Who We Are</div><h1 class="reveal d1">About LUXE Realty</h1><p class="reveal d2">A decade of excellence in premium real estate</p></div>
+
+<section class="section" style="background:var(--bg)"><div class="section-inner about-split"><div class="reveal fl"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&h=500&fit=crop" alt="Our Story" class="about-img"></div><div class="reveal fr d2"><div class="section-tag">Our Story</div><h2 class="section-title">Built on Trust, Driven by Excellence</h2><p class="section-subtitle" style="margin-bottom:16px">Founded in 2014, LUXE Realty began with a simple vision — to bridge the gap between premium property markets in Dubai and India. What started as a small team has grown into a trusted name across two continents.</p><p class="section-subtitle" style="margin-bottom:16px">Our founder, Vishnu S., recognized that international property buyers needed more than just listings — they needed a partner who understood both markets intimately. Today, LUXE Realty serves over 1,200 satisfied clients worldwide.</p><p class="section-subtitle">We specialize in luxury residential properties, commercial spaces, and investment opportunities. Every property is personally vetted to ensure it meets our stringent quality standards.</p></div></div></section>
+
+<section class="section" style="background:var(--bg-alt)"><div class="section-inner"><div style="text-align:center;margin-bottom:48px"><div class="section-tag reveal" style="justify-content:center">What Drives Us</div><h2 class="section-title reveal d1">Mission & Vision</h2></div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px"><div class="fc reveal d2" style="border-left:4px solid var(--blue);padding-left:28px"><h3 style="color:var(--blue);margin-bottom:12px">Our Mission</h3><p>To provide exceptional real estate services that empower our clients to make informed property decisions with transparency, integrity, and unmatched expertise across Dubai and India.</p></div><div class="fc reveal d3" style="border-left:4px solid var(--gold);padding-left:28px"><h3 style="color:var(--gold);margin-bottom:12px">Our Vision</h3><p>To become the most trusted cross-border real estate consultancy, recognized for excellence, innovation, and unwavering commitment to client satisfaction across global markets.</p></div></div></div></section>
+
+<section class="section" style="background:var(--bg)"><div class="section-inner"><div style="text-align:center;margin-bottom:48px"><div class="section-tag reveal" style="justify-content:center">Our Foundation</div><h2 class="section-title reveal d1">Core Values</h2></div><div class="val-grid">${VL.map((v, i) => `<div class="vc reveal d${i + 2}"><div class="vi">${v.i}</div><div><h4>${v.t}</h4><p>${v.d}</p></div></div>`).join("")}</div></div></section>
+
+<section class="section" style="padding:60px 24px;background:var(--bg-alt)"><div class="section-inner"><div class="stats-strip" id="statsBar">${ST.map((s) => `<div><div class="stat-num" data-target="${s.v}" data-suffix="${s.s}">0${s.s}</div><div class="stat-label">${s.l}</div></div>`).join("")}</div></div></section>
+
+<section class="section" style="background:var(--bg)"><div class="section-inner" style="text-align:center"><div class="section-tag reveal" style="justify-content:center">The People</div><h2 class="section-title reveal d1">Our Leadership Team</h2><p class="section-subtitle reveal d2" style="margin:0 auto 48px">Experienced professionals dedicated to delivering excellence</p><div class="team-grid">${TEM.map((t, i) => `<div class="team-c reveal d${i + 2}"><img src="${t.img}" alt="${t.n}" class="av"><h4>${t.n}</h4><p>${t.r}</p></div>`).join("")}</div></div></section>
+
+<section class="section" style="background:var(--bg-alt)"><div class="section-inner" style="text-align:center"><div class="section-tag reveal" style="justify-content:center">What We Offer</div><h2 class="section-title reveal d1">Our Services</h2><div class="feat-grid" style="margin-top:40px">${SV.map((s, i) => `<div class="fc reveal d${i + 2}"><div class="ib">${s.i}</div><h3>${s.t}</h3><p>${s.d}</p></div>`).join("")}</div></div></section>
+
+<section class="section" style="background:var(--bg)"><div class="section-inner" style="text-align:center"><div class="section-tag reveal" style="justify-content:center">Client Stories</div><h2 class="section-title reveal d1">What People Say</h2><div class="test-grid" style="margin-top:40px">${TM.map((t, i) => `<div class="tc reveal d${i + 2}"><div class="stars">★★★★★</div><p class="qt">"${t.tx}"</p><div class="au">${t.n}</div><div class="rl">${t.r}</div></div>`).join("")}</div></div></section>
+
+<section class="section" style="background:var(--bg-dark);text-align:center;padding:80px 24px"><div class="section-inner"><h2 class="section-title reveal" style="color:#fff">Want to Work With Us?</h2><p class="section-subtitle reveal d1" style="color:rgba(255,255,255,0.5);margin:0 auto 32px">Let's discuss how we can help you achieve your property goals.</p><div class="reveal d2"><button class="btn btn-blue" onclick="nav('contact')">Contact Us <span class="btn-icon">→</span></button></div></div></section>
+${ft()}</div>`;
+      }
+
+      function propPg(type) {
+        const isDubai = type === "dubai",
+          props = isDubai ? DP : IP;
+        const title = isDubai ? "Properties in Dubai" : "Properties in India";
+        const sub = isDubai
+          ? "Exclusive luxury properties across Dubai's most prestigious communities"
+          : "Premium residences across India's top metropolitan cities";
+        const tag = isDubai ? "Dubai Portfolio" : "India Portfolio";
+        const whyTitle = isDubai
+          ? "Why Invest in Dubai?"
+          : "Why Invest in India?";
+        const whySub = isDubai
+          ? "Tax-free returns, world-class infrastructure, and a thriving global community"
+          : "Rapid urbanization, growing demand, and exceptional value in premium segments";
+        const feats = isDubai
+          ? [
+              {
+                i: "🏛️",
+                t: "Zero Tax",
+                d: "No property tax, no income tax — maximize your investment returns.",
+              },
+              {
+                i: "✈️",
+                t: "Global Hub",
+                d: "World-class infrastructure connecting you to every major city.",
+              },
+              {
+                i: "📈",
+                t: "High ROI",
+                d: "Consistent rental yields of 5-8% across prime locations.",
+              },
+              {
+                i: "🔒",
+                t: "Safe Investment",
+                d: "Strong RERA framework ensuring transparency and protection.",
+              },
+            ]
+          : [
+              {
+                i: "📈",
+                t: "Rapid Growth",
+                d: "India's real estate market projected to reach $1 trillion by 2030.",
+              },
+              {
+                i: "🏗️",
+                t: "Infrastructure Boom",
+                d: "New metros, highways, and smart cities creating investment hotspots.",
+              },
+              {
+                i: "💰",
+                t: "Affordable Luxury",
+                d: "Premium properties at a fraction of global prices.",
+              },
+              {
+                i: "🌐",
+                t: "NRI Friendly",
+                d: "Simplified regulations and dedicated overseas investor support.",
+              },
+            ];
+        return `<div class="page">
+<div class="page-banner"><div class="section-tag reveal">${tag}</div><h1 class="reveal d1">${title}</h1><p class="reveal d2">${sub}</p></div>
+
+<section class="section" style="background:var(--bg)"><div class="section-inner"><div style="margin-bottom:36px" class="reveal"><p style="color:var(--text-mid);font-size:0.92rem">Showing <strong>${props.length}</strong> properties</p></div><div class="prop-grid">${props.map((p, i) => `<div class="reveal d${Math.min(i + 1, 6)}">${pc(p)}</div>`).join("")}</div></div></section>
+
+<section class="section" style="background:var(--bg-alt)"><div class="section-inner" style="text-align:center"><div class="section-tag reveal" style="justify-content:center">${isDubai ? "Why Dubai" : "Why India"}</div><h2 class="section-title reveal d1">${whyTitle}</h2><p class="section-subtitle reveal d2" style="margin:0 auto 48px">${whySub}</p><div class="feat-grid">${feats.map((f, i) => `<div class="fc reveal d${i + 2}"><div class="ib">${f.i}</div><h3>${f.t}</h3><p>${f.d}</p></div>`).join("")}</div></div></section>
+
+<section class="section" style="background:var(--bg)"><div class="section-inner" style="text-align:center"><div class="section-tag reveal" style="justify-content:center">How It Works</div><h2 class="section-title reveal d1" style="margin-bottom:56px">Our Process</h2><div class="timeline" id="timeline">${PR.map((s, i) => `<div class="ts reveal d${i + 3}"><div class="ts-num">${s.n}</div>${i < PR.length - 1 ? '<div class="ts-line" data-line></div>' : ""}<h4>${s.t}</h4><p>${s.d}</p></div>`).join("")}</div></div></section>
+
+<section class="section" style="background:var(--bg-dark);text-align:center;padding:80px 24px"><div class="section-inner"><h2 class="section-title reveal" style="color:#fff">Interested in ${isDubai ? "Dubai" : "Indian"} Properties?</h2><p class="section-subtitle reveal d1" style="color:rgba(255,255,255,0.5);margin:0 auto 32px">Our experts are ready to help you find the perfect property.</p><div class="reveal d2"><button class="btn btn-blue" onclick="nav('contact')">Get in Touch <span class="btn-icon">→</span></button></div></div></section>
+${ft()}</div>`;
+      }
+
+      function contactPg() {
+        return `<div class="page">
+<div class="page-banner"><div class="section-tag reveal">Reach Out</div><h1 class="reveal d1">Contact Us</h1><p class="reveal d2">We'd love to hear from you</p></div>
+
+<section class="section" style="background:var(--bg)"><div class="section-inner contact-grid"><div class="reveal fl"><div class="section-tag">Get In Touch</div><h2 class="section-title">Let's Start a Conversation</h2><p class="section-subtitle" style="margin-bottom:32px">Whether you're looking to buy, sell, invest, or simply explore — our team is ready to help.</p>
+<div class="cic reveal d2"><div class="ci">📍</div><div><h4>Dubai Office</h4><p>Office 1204, Business Bay Tower, Dubai, UAE</p></div></div>
+<div class="cic reveal d3"><div class="ci">📍</div><div><h4>India Office</h4><p>4th Floor, Technopark Phase III, Trivandrum, Kerala</p></div></div>
+<div class="cic reveal d4"><div class="ci">📞</div><div><h4>Phone</h4><p>+971 50 123 4567 (Dubai)<br>+91 98765 43210 (India)</p></div></div>
+<div class="cic reveal d5"><div class="ci">✉️</div><div><h4>Email</h4><p>vishnuss80@gmail.com</p></div></div>
+<div class="cic reveal d6"><div class="ci">🕐</div><div><h4>Working Hours</h4><p>Sun–Thu: 9 AM – 6 PM &nbsp;|&nbsp; Fri–Sat: By appointment</p></div></div>
 </div>
 
-<!-- DESKTOP CAPSULE NAV -->
-<nav class="capsule-nav" aria-label="Main navigation">
-  <a href="index.html" class="nav-logo"><img src="./Better Serv Logo-02.png" alt="Better Real Estate"></a>
-  <ul class="nav-links">
-    <li><a href="about.html">About</a></li>
-    <li><a href="services.html">Services</a></li>
-    <li><a href="india.html">India</a></li>
-    <li><a href="dubai.html">Dubai</a></li>
-    <li><a href="why.html">Why Us</a></li>
-    <li><a href="process.html">Process</a></li>
-    <li><a href="reviews.html">Reviews</a></li>
-    <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
-  </ul>
-</nav>
-<!-- MOBILE TOP HEADER -->
-<header class="mobile-top-header" aria-label="Mobile branding">
-  <a href="index.html" class="nav-logo"><img src="./Better Serv Logo-02.png" alt="Better Real Estate"></a>
-</header>
+<div class="reveal fr d2"><div class="fb" id="cFB"><h3 style="font-family:var(--font-display);font-size:1.2rem;margin-bottom:20px">Send Us a Message</h3>
+<div class="f2"><div class="fr"><label>First Name</label><input type="text" placeholder="John"></div><div class="fr"><label>Last Name</label><input type="text" placeholder="Doe"></div></div>
+<div class="f2"><div class="fr"><label>Email</label><input type="email" placeholder="you@email.com"></div><div class="fr"><label>Phone</label><input type="tel" placeholder="+971 or +91"></div></div>
+<div class="fr"><label>Interested In</label><select><option>Select a service</option><option>Buying in Dubai</option><option>Buying in India</option><option>Selling Property</option><option>Investment Advisory</option><option>Property Management</option><option>Other</option></select></div>
+<div class="fr"><label>Message</label><textarea rows="4" placeholder="Tell us about your requirements..."></textarea></div>
+<button class="btn btn-blue" style="width:100%" onclick="subC()">Send Message <span class="btn-icon">→</span></button>
+</div></div></div></section>
 
-<!-- MOBILE BOTTOM NAV -->
-<nav class="mobile-nav" aria-label="Mobile navigation">
-  <ul>
-    <li><a href="index.html" class="active">
-      <svg viewBox="0 0 24 24"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1z"/><path d="M9 21V12h6v9"/></svg>Home</a></li>
-    <li><a href="india.html">
-      <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><rect x="9" y="14" width="6" height="7"/></svg>India</a></li>
-    <li><a href="dubai.html">
-      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>Dubai</a></li>
-    <li><a href="why.html">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>Why Us</a></li>
-    <li><a href="contact.html">
-      <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.22 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.16 6.16l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>Contact</a></li>
-  </ul>
-</nav>
+<section style="background:var(--bg-alt);padding:0"><div style="width:100%;height:360px;background:linear-gradient(135deg,#e8ecf1,#d3dbe6);display:flex;align-items:center;justify-content:center;color:var(--text-light);font-size:0.9rem"><div style="text-align:center"><div style="font-size:2.5rem;margin-bottom:8px">🗺️</div><p>Interactive Map — Integrate Google Maps Here</p><p style="font-size:0.78rem;margin-top:4px">Business Bay, Dubai, UAE</p></div></div></section>
+${ft()}</div>`;
+      }
 
-<!-- ═══════════════════════════════════════════
-     SECTION 1 – HERO
-════════════════════════════════════════════ -->
-<section id="hero">
-  <!-- Canvas: PNG frame sequence plays as looping "video" -->
-  <canvas id="hero-canvas"></canvas>
-  <!-- Dark overlay for text readability -->
-  <div class="hero-overlay"></div>
+      /* ═══ ROUTER ═══ */
+      let curPg = "home",
+        hInt = null,
+        curSl = 0;
 
-  <div class="hero-inner">
-    <div id="hero-content">
-      <span class="hero-eyebrow">Dubai &amp; India's Premier Agency</span>
-      <h1 class="hero-title">Find Your <em>Dream</em><br/>Dubai Home</h1>
-      <p class="hero-sub">Curated luxury real estate across Dubai and India's most prestigious addresses — tailored to your lifestyle and investment goals.</p>
-      <div class="hero-actions">
-        <a href="india.html" class="btn btn-primary">Explore Properties</a>
-        <a href="contact.html" class="btn btn-secondary">Book Consultation</a>
-      </div>
-      <div class="hero-trust">
-        <div class="trust-item"><strong>500+</strong><span>Properties Sold</span></div>
-        <div class="trust-divider"></div>
-        <div class="trust-item"><strong>1000+</strong><span>Happy Clients</span></div>
-        <div class="trust-divider"></div>
-        <div class="trust-item"><strong>15+</strong><span>Years Experience</span></div>
-      </div>
-    </div>
-  </div>
+      function nav(page) {
+        if (hInt) {
+          clearInterval(hInt);
+          hInt = null;
+        }
+        curPg = page;
+        window.scrollTo({ top: 0, behavior: "instant" });
+        const app = document.getElementById("app");
+        switch (page) {
+          case "home":
+            app.innerHTML = homePg();
+            startSlider();
+            break;
+          case "about":
+            app.innerHTML = aboutPg();
+            break;
+          case "dubai":
+            app.innerHTML = propPg("dubai");
+            break;
+          case "india":
+            app.innerHTML = propPg("india");
+            break;
+          case "contact":
+            app.innerHTML = contactPg();
+            break;
+        }
+        document
+          .querySelectorAll(".dnav a,.mob-bar a")
+          .forEach((a) =>
+            a.classList.toggle("active", a.dataset.page === page),
+          );
+        initPg();
+      }
 
-  <div class="hero-scroll-hint">
-    <div class="scroll-mouse"></div>
-    <span>Scroll</span>
-  </div>
-</section>
+      function initPg() {
+        const obs = new IntersectionObserver(
+          (es) => {
+            es.forEach((e) => {
+              if (e.isIntersecting) {
+                e.target.classList.add("vis");
+                obs.unobserve(e.target);
+              }
+            });
+          },
+          { threshold: 0.12 },
+        );
+        document.querySelectorAll(".reveal").forEach((el) => obs.observe(el));
 
-<!-- ═══════════════════════════════════════════
-     SECTION 2 – ABOUT US
-════════════════════════════════════════════ -->
-<section id="about">
-  <div class="container">
-    <div class="about-grid reveal">
-      <div class="about-img-wrap">
-        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80" alt="Luxury villa in Dubai" loading="lazy"/>
-        <div class="about-badge"><strong>15+</strong><span>Years Experience</span></div>
-      </div>
-      <div class="about-text">
-        <span class="section-tag">About Us</span>
-        <h2 class="section-title">Dubai's Most <span>Trusted</span> Real Estate Partner</h2>
-        <p class="section-lead">Better Real Estate bridges the gap between luxury living and smart investment. From Dubai's iconic skyline to India's vibrant cities, we help you own the extraordinary.</p>
-        <div class="about-stats">
-          <div class="about-stat-card"><strong>500+</strong><span>Properties Sold</span></div>
-          <div class="about-stat-card"><strong>1000+</strong><span>Happy Clients</span></div>
-          <div class="about-stat-card"><strong>50+</strong><span>Award Wins</span></div>
-          <div class="about-stat-card"><strong>2</strong><span>Countries</span></div>
-        </div>
-        <a href="contact.html" class="btn btn-primary">Get In Touch</a>
-      </div>
-    </div>
-  </div>
-</section>
+        const bar = document.getElementById("statsBar");
+        if (bar) {
+          let done = false;
+          const so = new IntersectionObserver(
+            ([e]) => {
+              if (e.isIntersecting && !done) {
+                done = true;
+                bar.querySelectorAll(".stat-num").forEach((el) => {
+                  const tgt = +el.dataset.target,
+                    sfx = el.dataset.suffix,
+                    step = Math.ceil(tgt / 125);
+                  let c = 0;
+                  const id = setInterval(() => {
+                    c += step;
+                    if (c >= tgt) {
+                      el.textContent = tgt + sfx;
+                      clearInterval(id);
+                    } else el.textContent = c + sfx;
+                  }, 16);
+                });
+                so.unobserve(bar);
+              }
+            },
+            { threshold: 0.3 },
+          );
+          so.observe(bar);
+        }
 
-<!-- ═══════════════════════════════════════════
-     SECTION 3 – WHAT WE DO
-════════════════════════════════════════════ -->
-<section id="services">
-  <div class="container">
-    <div class="services-header reveal">
-      <span class="section-tag">What We Do</span>
-      <h2 class="section-title">End-to-End Real <span>Estate Services</span></h2>
-      <p class="section-lead">From discovering your ideal property to handing you the keys, we handle every step of your journey.</p>
-    </div>
-    <div class="services-grid">
-      <div class="service-card reveal">
-        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-        <h3>Property Buying</h3>
-        <p>We match you with properties that align with your lifestyle, budget, and investment goals across Dubai and India.</p>
-      </div>
-      <div class="service-card reveal">
-        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
-        <h3>Property Selling</h3>
-        <p>Get maximum value for your property with our data-driven pricing strategy, staging expertise, and global buyer network.</p>
-      </div>
-      <div class="service-card reveal">
-        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg></div>
-        <h3>Property Management</h3>
-        <p>Full-service management of your investment portfolio — tenant relations, maintenance, and maximising rental yields.</p>
-      </div>
-      <div class="service-card reveal">
-        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <h3>Investment Advisory</h3>
-        <p>Expert guidance on high-yield Dubai and India real estate investments with transparent ROI projections.</p>
-      </div>
-      <div class="service-card reveal">
-        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
-        <h3>Legal &amp; Documentation</h3>
-        <p>We handle all paperwork, title deeds, NOCs, and legal due diligence so your transaction is fully protected.</p>
-      </div>
-      <div class="service-card reveal">
-        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-        <h3>Relocation Services</h3>
-        <p>Seamless relocation support — from visa guidance to school recommendations and neighbourhood tours.</p>
-      </div>
-    </div>
-  </div>
-</section>
+        const tl = document.getElementById("timeline");
+        if (tl) {
+          const to = new IntersectionObserver(
+            ([e]) => {
+              if (e.isIntersecting) {
+                tl.querySelectorAll("[data-line]").forEach((l, i) =>
+                  setTimeout(() => l.classList.add("vis"), 300 + i * 200),
+                );
+                to.unobserve(tl);
+              }
+            },
+            { threshold: 0.3 },
+          );
+          to.observe(tl);
+        }
+      }
 
-<!-- ═══════════════════════════════════════════
-     SECTION 4 – INDIA
-════════════════════════════════════════════ -->
-<section id="india" style="padding: 100px 0;">
-  <div class="container">
-    <div class="section-header reveal">
-      <span class="eyebrow">India Collection</span>
-      <h2>Exclusive Indian Properties</h2>
-      <div class="swiper-nav" style="display:flex; gap:12px; margin-top:20px;">
-        <button class="swiper-btn india-prev btn" aria-label="Previous" style="padding:8px 16px;">&larr;</button>
-        <button class="swiper-btn india-next btn" aria-label="Next" style="padding:8px 16px;">&rarr;</button>
-      </div>
-    </div>
-  </div>
-  <div class="swiper swiper-india swiper-fullbleed reveal" style="padding-top:40px;">
-    <div class="swiper-wrapper" id="india-cards"></div>
-  </div>
-</section>
+      function startSlider() {
+        curSl = 0;
+        hInt = setInterval(() => {
+          curSl = (curSl + 1) % HS.length;
+          updSlide();
+        }, 5000);
+      }
+      function goSlide(i) {
+        curSl = i;
+        updSlide();
+      }
+      function updSlide() {
+        document
+          .querySelectorAll(".hero-slide")
+          .forEach((s, i) => s.classList.toggle("active", i === curSl));
+        document
+          .querySelectorAll(".hero-dot")
+          .forEach((d, i) => d.classList.toggle("active", i === curSl));
+      }
+      function ss(id, dir) {
+        const el = document.getElementById(id);
+        if (el) el.scrollBy({ left: dir * 340, behavior: "smooth" });
+      }
 
-<!-- ═══════════════════════════════════════════
-     SECTION 5 – DUBAI
-════════════════════════════════════════════ -->
-<section id="dubai" style="padding: 100px 0;">
-  <div class="container">
-    <div class="section-header reveal">
-      <span class="eyebrow">Dubai Collection</span>
-      <h2>Premium Dubai Residences</h2>
-      <div class="swiper-nav" style="display:flex; gap:12px; margin-top:20px;">
-        <button class="swiper-btn dubai-prev btn" aria-label="Previous" style="padding:8px 16px;">&larr;</button>
-        <button class="swiper-btn dubai-next btn" aria-label="Next" style="padding:8px 16px;">&rarr;</button>
-      </div>
-    </div>
-  </div>
-  <div class="swiper swiper-dubai swiper-fullbleed reveal" style="padding-top:40px;">
-    <div class="swiper-wrapper" id="dubai-cards"></div>
-  </div>
-</section>
+      function openM(t, s) {
+        document.getElementById("mT").textContent = "Enquire: " + t;
+        document.getElementById("mS").textContent = s;
+        document.getElementById("mF").style.display = "block";
+        document.getElementById("mOk").style.display = "none";
+        document.getElementById("eqModal").classList.add("open");
+      }
+      function closeM() {
+        document.getElementById("eqModal").classList.remove("open");
+      }
+      function subM() {
+        document.getElementById("mF").style.display = "none";
+        document.getElementById("mOk").style.display = "block";
+      }
+      document
+        .getElementById("eqModal")
+        .addEventListener("click", function (e) {
+          if (e.target === this) closeM();
+        });
 
-<!-- ═══════════════════════════════════════════
-     SECTION 4 – PROPERTIES IN INDIA
-════════════════════════════════════════════ -->
-<section id="india" class="properties-section">
-  <div class="container">
-    <div class="props-header reveal">
-      <div>
-        <span class="section-tag">India Portfolio</span>
-        <h2 class="section-title">Premium Properties <span>in India</span></h2>
-      </div>
-      <div class="props-nav">
-        <button class="props-nav-btn india-prev" aria-label="Previous">&#8592;</button>
-        <button class="props-nav-btn india-next" aria-label="Next">&#8594;</button>
-      </div>
-    </div>
-  </div>
-  <div class="swiper swiper-india swiper-fullbleed">
-    <div class="swiper-wrapper" id="india-cards"></div>
-  </div>
-</section>
+      function subC() {
+        document.getElementById("cFB").innerHTML =
+          '<div class="form-ok"><div class="ck">✓</div><h3>Message Sent!</h3><p>We\'ll get back to you within 24 hours.</p></div>';
+      }
 
-<!-- ═══════════════════════════════════════════
-     SECTION 8 – OUR PROCESS
-════════════════════════════════════════════ -->
-<section id="process">
-  <div class="container">
-    <div class="process-header reveal">
-      <span class="section-tag">Our Process</span>
-      <h2 class="section-title">From Consultation <span>to Keys</span></h2>
-      <p class="section-lead">A simple, transparent 4-step journey designed around your needs.</p>
-    </div>
-    <div class="process-timeline">
-      <div class="process-step reveal">
-        <div class="step-circle">1</div>
-        <h3>Free Consultation</h3>
-        <p>We begin with a detailed discussion to understand your requirements, budget, and timeline.</p>
-      </div>
-      <div class="process-step reveal">
-        <div class="step-circle">2</div>
-        <h3>Property Shortlisting</h3>
-        <p>Our experts curate a personalised list of verified properties that match your exact criteria.</p>
-      </div>
-      <div class="process-step reveal">
-        <div class="step-circle">3</div>
-        <h3>Site Visits &amp; Negotiation</h3>
-        <p>We arrange visits, handle negotiations, and secure the best deal on your behalf.</p>
-      </div>
-      <div class="process-step reveal">
-        <div class="step-circle">4</div>
-        <h3>Legal Completion</h3>
-        <p>Our legal team manages all documentation and ensures a smooth, hassle-free transaction close.</p>
-      </div>
-    </div>
-  </div>
-</section>
+      window.addEventListener(
+        "scroll",
+        () => {
+          document
+            .getElementById("mainHeader")
+            .classList.toggle("scrolled", window.scrollY > 60);
+        },
+        { passive: true },
+      );
+      document.querySelectorAll("[data-page]").forEach((a) => {
+        a.addEventListener("click", (e) => {
+          e.preventDefault();
+          nav(a.dataset.page);
+        });
+      });
 
-<!-- ═══════════════════════════════════════════
-     SECTION 9 – TESTIMONIALS
-════════════════════════════════════════════ -->
-<section id="testimonials">
-  <div class="container">
-    <div class="testi-header reveal">
-      <span class="section-tag">Testimonials</span>
-      <h2 class="section-title">What Our <span>Clients Say</span></h2>
-      <p class="section-lead">Real stories from real people who found their dream properties with us.</p>
-    </div>
-  </div>
-  <div class="swiper swiper-testimonials swiper-fullbleed">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide"><div class="testi-card">
-          <div class="testi-stars">★★★★★</div>
-          <p class="testi-quote">"Better Real Estate made our Dubai apartment purchase completely stress-free. Their team was available 24/7 and secured us a price 8% below market rate."</p>
-          <div class="testi-author">
-            <img src="https://i.pravatar.cc/96?img=11" alt="Rahul M." class="testi-avatar"/>
-            <div class="testi-author-info"><strong>Rahul Mehta</strong><span>Dubai Marina, UAE</span></div>
-          </div>
-        </div></div>
-        <div class="swiper-slide"><div class="testi-card">
-          <div class="testi-stars">★★★★★</div>
-          <p class="testi-quote">"We relocated from London and Better Real Estate handled everything — from property search to visa guidance. Truly a world-class service."</p>
-          <div class="testi-author">
-            <img src="https://i.pravatar.cc/96?img=23" alt="Sarah K." class="testi-avatar"/>
-            <div class="testi-author-info"><strong>Sarah & James Kohl</strong><span>Palm Jumeirah, UAE</span></div>
-          </div>
-        </div></div>
-        <div class="swiper-slide"><div class="testi-card">
-          <div class="testi-stars">★★★★★</div>
-          <p class="testi-quote">"Sold my Mumbai apartment in under 3 weeks at asking price. The photography and marketing they arranged was outstanding."</p>
-          <div class="testi-author">
-            <img src="https://i.pravatar.cc/96?img=47" alt="Priya S." class="testi-avatar"/>
-            <div class="testi-author-info"><strong>Priya Sharma</strong><span>Mumbai, India</span></div>
-          </div>
-        </div></div>
-        <div class="swiper-slide"><div class="testi-card">
-          <div class="testi-stars">★★★★★</div>
-          <p class="testi-quote">"Their investment advisory service helped me diversify across Dubai and Bangalore. Returns have been exceptional in year one."</p>
-          <div class="testi-author">
-            <img src="https://i.pravatar.cc/96?img=68" alt="Arun P." class="testi-avatar"/>
-            <div class="testi-author-info"><strong>Arun Patel</strong><span>Investor, UK</span></div>
-          </div>
-        </div></div>
-        <div class="swiper-slide"><div class="testi-card">
-          <div class="testi-stars">★★★★★</div>
-          <p class="testi-quote">"The team's knowledge of legal requirements for NRI buyers is unmatched. They made a complex process feel simple."</p>
-          <div class="testi-author">
-            <img src="https://i.pravatar.cc/96?img=32" alt="Deepak N." class="testi-avatar"/>
-            <div class="testi-author-info"><strong>Deepak Nair</strong><span>NRI Buyer, Canada</span></div>
-          </div>
-        </div></div>
-      </div>
-      <div class="testi-pagination"></div>
-    </div>
-</section>
-
-<!-- ═══════════════════════════════════════════
-     SECTION 10 – CONTACT + FOOTER
-════════════════════════════════════════════ -->
-<section id="contact">
-  <div class="container">
-    <div class="contact-grid">
-      <div class="contact-info reveal">
-        <span class="section-tag">Contact Us</span>
-        <h2 class="section-title">Let's Find Your <span>Perfect Property</span></h2>
-        <p>Our experts are ready to guide you. Reach out for a free, no-obligation consultation today.</p>
-        <div class="contact-details">
-          <div class="contact-item">
-            <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-            <div><strong>Dubai Office</strong><br/><span style="color:#555;font-size:.9rem">Business Bay, Tower B, Sheikh Zayed Road, Dubai, UAE</span></div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-            <div><strong>India Office</strong><br/><span style="color:#555;font-size:.9rem">Bandra Kurla Complex, Mumbai, Maharashtra 400051</span></div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.22 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.16 6.16l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
-            <div><strong>+971 50 123 4567</strong><br/><span style="color:#555;font-size:.9rem">Mon–Sat, 9am–7pm GST</span></div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-            <div><strong>vishnuss80@gmail.com</strong><br/><span style="color:#555;font-size:.9rem">We reply within 24 hours</span></div>
-          </div>
-        </div>
-        <div class="map-embed">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.0!2d55.2708!3d25.2048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDEyJzE3LjMiTiA1NcKwMTYnMTQuNyJF!5e0!3m2!1sen!2sae!4v1680000000000" height="220" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Dubai Office Location"></iframe>
-        </div>
-      </div>
-      <div class="contact-form-card reveal">
-        <h3>Send Us a Message</h3>
-        <p>Fill in the form below and one of our consultants will get back to you within 24 hours.</p>
-        <form id="contact-form" novalidate>
-          <div class="form-group"><label for="c-name">Full Name</label><input id="c-name" type="text" name="name" placeholder="Your name" required/></div>
-          <div class="form-group"><label for="c-email">Email Address</label><input id="c-email" type="email" name="email" placeholder="you@example.com" required/></div>
-          <div class="form-group"><label for="c-phone">Phone Number</label><input id="c-phone" type="tel" name="phone" placeholder="+971 or +91 ..."/></div>
-          <div class="form-group"><label for="c-msg">Message</label><textarea id="c-msg" name="message" placeholder="Tell us what you're looking for…" required></textarea></div>
-          <button type="submit" class="btn btn-primary">Send Message &#8594;</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="footer-logo"><img src="./Better Serv Logo-02.png" alt="Better Real Estate"></div>
-        <p>Your trusted partner for luxury real estate across Dubai and India. Turning property dreams into reality since 2009.</p>
-        <div class="social-links">
-          <a href="#" class="social-link" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
-          <a href="#" class="social-link" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
-          <a href="#" class="social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
-          <a href="#" class="social-link" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
-        </div>
-      </div>
-      <div class="footer-col">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="services.html">Our Services</a></li>
-          <li><a href="india.html">India Properties</a></li>
-          <li><a href="dubai.html">Dubai Properties</a></li>
-          <li><a href="process.html">Our Process</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Legal</h4>
-        <ul>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms of Service</a></li>
-          <li><a href="#">Cookie Policy</a></li>
-          <li><a href="#">Disclaimer</a></li>
-          <li><a href="#">Sitemap</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Newsletter</h4>
-        <p style="font-size:.84rem;color:rgba(255,255,255,.45);margin-bottom:16px;line-height:1.6">Get exclusive property listings and market insights delivered to your inbox.</p>
-        <div class="footer-newsletter">
-          <input type="email" placeholder="Your email address"/>
-          <button class="btn btn-primary">Subscribe</button>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>&copy; 2025 Better Real Estate. All rights reserved.</span>
-      <div style="display:flex;gap:20px">
-        <a href="#">Privacy</a><a href="#">Terms</a><a href="#">Cookies</a>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<div class="mobile-footer-spacer"></div>
-
-<!-- ═══════════════════════════════════════════
-     PROPERTY MODAL
-════════════════════════════════════════════ -->
-<div id="property-modal" role="dialog" aria-modal="true" aria-labelledby="modal-property-title">
-  <div class="modal-overlay"></div>
-  <div class="modal-box">
-    <button id="modal-close" aria-label="Close modal">&times;</button>
-    <div class="modal-img-side">
-      <img id="modal-property-img" src="" alt=""/>
-    </div>
-    <div class="modal-form-side">
-      <h3 id="modal-property-title"></h3>
-      <p class="modal-meta" id="modal-property-location"></p>
-      <p class="modal-price" id="modal-property-price"></p>
-      <form id="modal-contact-form" novalidate>
-        <input type="hidden" name="property" id="modal-hidden-property"/>
-        <div class="form-group"><label for="m-name">Your Name</label><input id="m-name" type="text" name="name" placeholder="Full name" required/></div>
-        <div class="form-group"><label for="m-email">Email</label><input id="m-email" type="email" name="email" placeholder="you@example.com" required/></div>
-        <div class="form-group"><label for="m-phone">Phone</label><input id="m-phone" type="tel" name="phone" placeholder="+971 or +91 ..."/></div>
-        <div class="form-group"><label for="m-msg">Message</label><textarea id="m-msg" name="message" placeholder="I'm interested in this property…"></textarea></div>
-        <button type="submit" class="btn btn-primary">Send Enquiry &#8594;</button>
-      </form>
-    </div>
-  </div>
-</div>
-
-<!-- CDN Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-
-<script src="main.js"></script>
-</body>
+      nav("home");
+    </script>
+  </body>
 </html>
