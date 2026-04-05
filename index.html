@@ -1699,6 +1699,24 @@
 
 <section class="section" style="padding:60px 24px;background:var(--bg)"><div class="section-inner"><div class="stats-strip" id="statsBar">${ST.map((s) => `<div><div class="stat-num" data-target="${s.v}" data-suffix="${s.s}">0${s.s}</div><div class="stat-label">${s.l}</div></div>`).join("")}</div></div></section>
 
+<section class="section" style="background:var(--bg-alt)"><div class="section-inner" style="text-align:center">
+<div class="section-tag reveal" style="justify-content:center">Our Partners</div>
+<h2 class="section-title reveal d1">Global Real Estate Developers</h2>
+<p class="section-subtitle reveal d2" style="margin:0 auto 40px">Better Serv Properties is a preferred partner for world-class developers across Dubai and India.</p>
+<div style="margin-bottom:48px">
+<h4 style="margin-bottom:20px;color:rgba(255,255,255,0.4)">Dubai Developers</h4>
+<div class="marquee-container">
+<div class="marquee-track">${DD.concat(DD).map((d) => `<div class="dev-card"><img src="${d.l}" alt="${d.n}"><p>${d.n}</p></div>`).join("")}</div>
+</div>
+</div>
+<div>
+<h4 style="margin-bottom:20px;color:rgba(255,255,255,0.4)">India Developers</h4>
+<div class="marquee-container">
+<div class="marquee-track">${ID.concat(ID).map((d) => `<div class="dev-card"><img src="${d.l}" alt="${d.n}"><p>${d.n}</p></div>`).join("")}</div>
+</div>
+</div>
+</div></section>
+
 <section class="section" style="background:var(--bg-alt)"><div class="section-inner" style="text-align:center"><div class="section-tag reveal" style="justify-content:center">How It Works</div><h2 class="section-title reveal d1" style="margin-bottom:56px">Our Process</h2><div class="timeline" id="timeline">${PR.map((s, i) => `<div class="ts reveal d${i + 3}"><div class="ts-num">${s.n}</div>${i < PR.length - 1 ? '<div class="ts-line" data-line></div>' : ""}<h4>${s.t}</h4><p>${s.d}</p></div>`).join("")}</div></div></section>
 
 <section class="section" style="background:var(--bg)"><div class="section-inner" style="text-align:center"><div class="section-tag reveal" style="justify-content:center">Testimonials</div><h2 class="section-title reveal d1">What Our Clients Say</h2><p class="section-subtitle reveal d2" style="margin:0 auto 48px">Trusted by investors, homeowners, and NRIs worldwide</p><div class="test-grid">${TM.map((t, i) => `<div class="tc reveal d${i + 2}"><div class="stars">★★★★★</div><p class="qt">"${t.tx}"</p><div class="au">${t.n}</div><div class="rl">${t.r}</div></div>`).join("")}</div></div></section>
