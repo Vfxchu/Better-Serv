@@ -753,9 +753,9 @@
         width: 46px;
         height: 46px;
         border-radius: 50%;
-        border: 1.5px solid var(--border);
-        background: rgba(255, 255, 255, 0.95);
-        color: var(--text);
+        border: 1.5px solid var(--blue);
+        background: var(--bg-card);
+        color: #fff;
         font-size: 1.1rem;
         cursor: pointer;
         display: flex;
@@ -769,6 +769,7 @@
         background: var(--blue);
         color: #fff;
         border-color: var(--blue);
+        transform: translateY(-50%) scale(1.1);
       }
       .sb.l {
         left: -12px;
@@ -776,6 +777,21 @@
       .sb.r {
         right: -12px;
       }
+
+      .dev-slider-label {
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--blue);
+        margin-bottom: 12px;
+        padding-left: 4px;
+        border-left: 3px solid var(--blue);
+        padding-left: 10px;
+        display: block;
+        text-align: left;
+      }
+      .dev-block { margin-bottom: 48px; }
 
       .feat-grid {
         display: grid;
@@ -1687,12 +1703,12 @@
 <div class="section-tag reveal" style="justify-content:center">Our Partners</div>
 <h2 class="section-title reveal d1">Global Real Estate Developers</h2>
 <p class="section-subtitle reveal d2" style="margin:0 auto 40px">Better Serv Properties is a preferred partner for world-class developers across Dubai and India.</p>
-<div style="margin-bottom:16px">
-<h4 style="margin-bottom:8px;color:rgba(255,255,255,0.4)">Dubai Developers</h4>
+<div class="dev-block">
+<span class="dev-slider-label">🏙️ Dubai Developers</span>
 ${devSl(DD, "hs3")}
 </div>
-<div>
-<h4 style="margin-bottom:8px;color:rgba(255,255,255,0.4)">India Developers</h4>
+<div class="dev-block">
+<span class="dev-slider-label">🇮🇳 India Developers</span>
 ${devSl(ID, "hs4")}
 </div>
 </div></section>
@@ -1727,12 +1743,12 @@ ${ft()}</div>`;
 <div class="section-tag reveal" style="justify-content:center">Our Partners</div>
 <h2 class="section-title reveal d1">Global Real Estate Developers</h2>
 <p class="section-subtitle reveal d2" style="margin:0 auto 40px">Better Serv Properties is a preferred partner for world-class developers across Dubai and India.</p>
-<div style="margin-bottom:48px">
-<h4 style="margin-bottom:20px;color:rgba(0,0,0,0.4)">Dubai Developers</h4>
+<div class="dev-block">
+<span class="dev-slider-label">🏙️ Dubai Developers</span>
 ${devSl(DD, "hs5")}
 </div>
-<div>
-<h4 style="margin-bottom:20px;color:rgba(0,0,0,0.4)">India Developers</h4>
+<div class="dev-block">
+<span class="dev-slider-label">🇮🇳 India Developers</span>
 ${devSl(ID, "hs6")}
 </div>
 </div></section>
@@ -1766,7 +1782,10 @@ ${ft()}</div>`;
 <div class="section-tag reveal" style="justify-content:center">Our Partners</div>
 <h2 class="section-title reveal d1">Top Developers in ${isDubai ? "Dubai" : "India"}</h2>
 <p class="section-subtitle reveal d2" style="margin:0 auto 40px">We have extensive options and pre-launch access with these world-class developers.</p>
+<div class="dev-block">
+<span class="dev-slider-label">${isDubai ? "🏙️ Dubai Developers" : "🇮🇳 India Developers"}</span>
 ${devSl(devs, "hs7")}
+</div>
 <div class="reveal d3" style="margin-top:32px"><p style="color:var(--blue);font-weight:600">✨ Better Serv Properties is a preferred partner for these developers, offering you exclusive price benefits.</p></div>
 </div></section>
 ${ft()}</div>`;
