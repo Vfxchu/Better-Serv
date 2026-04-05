@@ -617,38 +617,40 @@
       }
       .marquee-track {
         display: flex;
-        gap: 80px;
+        gap: 60px;
         width: max-content;
-        animation: marquee 30s linear infinite;
+        animation: marquee 40s linear infinite;
+        will-change: transform;
+      }
+      .marquee-track .dev-card {
+        flex-shrink: 0;
+        width: 180px;
+        background: transparent;
+        border: none;
+        padding: 0;
       }
       .marquee-track img {
-        height: 48px;
-        width: auto;
-        filter: grayscale(1) opacity(0.6) brightness(1.2);
-        transition: all 0.3s;
+        height: 60px;
+        width: 100%;
+        filter: grayscale(1) invert(1) brightness(0.8) opacity(0.5);
+        transition: all 0.3s var(--ease);
         object-fit: contain;
       }
-      .marquee-track img:hover {
-        filter: grayscale(0) opacity(1) brightness(1);
-        transform: scale(1.1);
+      .marquee-track .dev-card:hover img {
+        filter: grayscale(0) invert(0) brightness(1) opacity(1);
+        transform: translateY(-5px);
       }
-      @keyframes marquee {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(-50%); }
+      .marquee-track p {
+        font-size: 0.7rem;
+        margin-top: 8px;
+        color: var(--text-mid);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        opacity: 0.5;
       }
-
-      .dev-card {
-        background: var(--bg-card);
-        padding: 24px;
-        border-radius: var(--radius);
-        text-align: center;
-        border: 1px solid var(--border);
-      }
-      .dev-card p {
-        font-size: 0.8rem;
+      .marquee-track .dev-card:hover p {
+        opacity: 1;
         color: var(--blue);
-        font-weight: 700;
-        margin-top: 12px;
       }
       .prop-grid {
         display: grid;
@@ -1517,19 +1519,19 @@
         { id: 5, t: "Whitefield Loft", l: "Bangalore", p: "₹65,000/mo", img: "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=600&h=400&fit=crop", b: 1, a: "950 sqft", tg: "Loft", m: "rent" }
       ];
       const DD = [
-        { n: "Emaar Properties", l: "https://logos-world.net/wp-content/uploads/2023/01/Emaar-Logo.png" },
-        { n: "DAMAC Properties", l: "https://logos-world.net/wp-content/uploads/2023/02/Damac-Properties-Logo.png" },
-        { n: "Nakheel", l: "https://logos-world.net/wp-content/uploads/2023/04/Nakheel-Logo.png" },
-        { n: "Sobha Realty", l: "https://logos-world.net/wp-content/uploads/2023/04/Sobha-Realty-Logo.png" },
-        { n: "Meraas", l: "https://logos-world.net/wp-content/uploads/2023/04/Meraas-Logo.png" },
-        { n: "Binghatti", l: "https://logos-world.net/wp-content/uploads/2023/04/Binghatti-Logo.png" }
+        { n: "Emaar Properties", l: "https://www.vectorlogo.zone/logos/emaar/emaar-ar21.svg" },
+        { n: "DAMAC Properties", l: "https://companieslogo.com/img/orig/DAMAC.DU-4560d45d.png" },
+        { n: "Nakheel", l: "https://seeklogo.com/images/N/nakheel-logo-04D792765A-seeklogo.com.png" },
+        { n: "Sobha Realty", l: "https://www.vectorlogo.zone/logos/sobha/sobha-ar21.svg" },
+        { n: "Meraas", l: "https://companieslogo.com/img/orig/MERAAS.DU-7e8c336b.png" },
+        { n: "Binghatti", l: "https://companieslogo.com/img/orig/BINGHATTI.DU-a0b4d5e6.png" }
       ];
       const ID = [
-        { n: "DLF Limited", l: "https://logos-world.net/wp-content/uploads/2023/04/DLF-Logo.png" },
-        { n: "Godrej Properties", l: "https://logos-world.net/wp-content/uploads/2023/04/Godrej-Properties-Logo.png" },
-        { n: "Tata Housing", l: "https://logos-world.net/wp-content/uploads/2023/04/Tata-Housing-Logo.png" },
-        { n: "Prestige Group", l: "https://logos-world.net/wp-content/uploads/2023/04/Prestige-Group-Logo.png" },
-        { n: "LODHA Group", l: "https://logos-world.net/wp-content/uploads/2023/04/Lodha-Group-Logo.png" }
+        { n: "DLF Limited", l: "https://www.vectorlogo.zone/logos/dlf/dlf-ar21.svg" },
+        { n: "Godrej Properties", l: "https://www.vectorlogo.zone/logos/godrej/godrej-ar21.svg" },
+        { n: "Tata Housing", l: "https://www.vectorlogo.zone/logos/tata/tata-ar21.svg" },
+        { n: "Prestige Group", l: "https://companieslogo.com/img/orig/PRESTIGE.NS-1234abcd.png" },
+        { n: "LODHA Group", l: "https://companieslogo.com/img/orig/LODHA.NS-5678efgh.png" }
       ];
       const WU = [
         {
@@ -1704,15 +1706,15 @@
 <h2 class="section-title reveal d1">Global Real Estate Developers</h2>
 <p class="section-subtitle reveal d2" style="margin:0 auto 40px">Better Serv Properties is a preferred partner for world-class developers across Dubai and India.</p>
 <div style="margin-bottom:48px">
-<h4 style="margin-bottom:20px;color:rgba(255,255,255,0.4)">Dubai Developers</h4>
+<h4 style="margin-bottom:20px;color:rgba(0,0,0,0.4)">Dubai Developers</h4>
 <div class="marquee-container">
-<div class="marquee-track">${DD.concat(DD).map((d) => `<div class="dev-card"><img src="${d.l}" alt="${d.n}"><p>${d.n}</p></div>`).join("")}</div>
+<div class="marquee-track">${DD.concat(DD, DD, DD, DD).map((d) => `<div class="dev-card"><img src="${d.l}" alt="${d.n}"><p>${d.n}</p></div>`).join("")}</div>
 </div>
 </div>
 <div>
-<h4 style="margin-bottom:20px;color:rgba(255,255,255,0.4)">India Developers</h4>
+<h4 style="margin-bottom:20px;color:rgba(0,0,0,0.4)">India Developers</h4>
 <div class="marquee-container">
-<div class="marquee-track">${ID.concat(ID).map((d) => `<div class="dev-card"><img src="${d.l}" alt="${d.n}"><p>${d.n}</p></div>`).join("")}</div>
+<div class="marquee-track">${ID.concat(ID, ID, ID, ID).map((d) => `<div class="dev-card"><img src="${d.l}" alt="${d.n}"><p>${d.n}</p></div>`).join("")}</div>
 </div>
 </div>
 </div></section>
@@ -1750,13 +1752,13 @@ ${ft()}</div>`;
 <div style="margin-bottom:48px">
 <h4 style="margin-bottom:20px;color:rgba(0,0,0,0.4)">Dubai Developers</h4>
 <div class="marquee-container">
-<div class="marquee-track">${DD.concat(DD).map((d) => `<div class="dev-card"><img src="${d.l}" alt="${d.n}"><p>${d.n}</p></div>`).join("")}</div>
+<div class="marquee-track">${DD.concat(DD, DD, DD, DD).map((d) => `<div class="dev-card"><img src="${d.l}" alt="${d.n}"><p>${d.n}</p></div>`).join("")}</div>
 </div>
 </div>
 <div>
 <h4 style="margin-bottom:20px;color:rgba(0,0,0,0.4)">India Developers</h4>
 <div class="marquee-container">
-<div class="marquee-track">${ID.concat(ID).map((d) => `<div class="dev-card"><img src="${d.l}" alt="${d.n}"><p>${d.n}</p></div>`).join("")}</div>
+<div class="marquee-track">${ID.concat(ID, ID, ID, ID).map((d) => `<div class="dev-card"><img src="${d.l}" alt="${d.n}"><p>${d.n}</p></div>`).join("")}</div>
 </div>
 </div>
 </div></section>
@@ -1791,7 +1793,7 @@ ${ft()}</div>`;
 <h2 class="section-title reveal d1">Top Developers in ${isDubai ? "Dubai" : "India"}</h2>
 <p class="section-subtitle reveal d2" style="margin:0 auto 40px">We have extensive options and pre-launch access with these world-class developers.</p>
 <div class="marquee-container">
-<div class="marquee-track">${devs.concat(devs).map((d) => `<div class="dev-card"><img src="${d.l}" alt="${d.n}"><p>${d.n}</p></div>`).join("")}</div>
+<div class="marquee-track">${devs.concat(devs, devs, devs).map((d) => `<div class="dev-card"><img src="${d.l}" alt="${d.n}"><p>${d.n}</p></div>`).join("")}</div>
 </div>
 <div class="reveal d3" style="margin-top:32px"><p style="color:var(--blue);font-weight:600">✨ Better Serv Properties is a preferred partner for these developers, offering you exclusive price benefits.</p></div>
 </div></section>
