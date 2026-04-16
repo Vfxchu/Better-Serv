@@ -1,2296 +1,265 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Better Serv Properties — Premium Properties in Dubai & India</title>
+  <title>Better Serv Properties — Premium Properties in Dubai &amp; India</title>
+  <meta name="description" content="Better Serv Properties offers premium real estate services across Dubai and India. Find luxury apartments, villas, and commercial spaces." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <style>
-    :root {
-      --bg: #ffffff;
-      --bg-alt: #f7f8fa;
-      --bg-dark: #0a0a0f;
-      --bg-card: #ffffff;
-      --blue: #0055ff;
-      --blue-hover: #0044cc;
-      --blue-light: rgba(0, 85, 255, 0.08);
-      --blue-glow: rgba(0, 85, 255, 0.25);
-      --gold: #c9a84c;
-      --text: #1a1a1a;
-      --text-mid: #555;
-      --text-light: #888;
-      --border: #e8e8e8;
-      --radius: 16px;
-      --radius-sm: 10px;
-      --radius-pill: 50px;
-      --shadow-sm: 0 2px 12px rgba(0, 0, 0, 0.06);
-      --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.08);
-      --shadow-lg: 0 16px 64px rgba(0, 0, 0, 0.12);
-      --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.07);
-      --font-body: "DM Sans", sans-serif;
-      --font-display: "Playfair Display", serif;
-      --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
-
-    *,
-    *::before,
-    *::after {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: var(--font-body);
-      color: var(--text);
-      background: var(--bg);
-      overflow-x: hidden;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    button {
-      font-family: var(--font-body);
-      cursor: pointer;
-    }
-
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-
-      to {
-        opacity: 1;
-      }
-    }
-
-    @keyframes scaleIn {
-      from {
-        opacity: 0;
-        transform: scale(0.92);
-      }
-
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-
-    @keyframes heroSlideIn {
-      from {
-        opacity: 0;
-        transform: scale(1.06);
-      }
-
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-
-    @keyframes float {
-
-      0%,
-      100% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(-10px);
-      }
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(28px);
-      transition:
-        opacity 0.7s var(--ease),
-        transform 0.7s var(--ease);
-    }
-
-    .reveal.fl {
-      transform: translateX(-28px);
-    }
-
-    .reveal.fr {
-      transform: translateX(28px);
-    }
-
-    .reveal.fs {
-      transform: scale(0.9);
-    }
-
-    .reveal.vis {
-      opacity: 1;
-      transform: translate(0) scale(1);
-    }
-
-    .reveal.d1 {
-      transition-delay: 0.1s;
-    }
-
-    .reveal.d2 {
-      transition-delay: 0.2s;
-    }
-
-    .reveal.d3 {
-      transition-delay: 0.3s;
-    }
-
-    .reveal.d4 {
-      transition-delay: 0.4s;
-    }
-
-    .reveal.d5 {
-      transition-delay: 0.5s;
-    }
-
-    .reveal.d6 {
-      transition-delay: 0.6s;
-    }
-
-    .reveal.d7 {
-      transition-delay: 0.7s;
-    }
-
-    .reveal.d8 {
-      transition-delay: 0.8s;
-    }
-
-    .page {
-      animation: fadeUp 0.45s ease forwards;
-    }
-
-    /* ─── HEADER ─── */
-    .cap-hdr {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 9000;
-      background: transparent;
-      padding: 0 48px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      width: 100%;
-      transition: background 0.35s ease, box-shadow 0.35s ease;
-      border: none;
-      border-radius: 0;
-      backdrop-filter: none;
-      -webkit-backdrop-filter: none;
-      box-shadow: none;
-    }
-
-    .cap-hdr.scrolled {
-      background: rgba(10, 10, 15, 0.97);
-      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
-    }
-
-    .cap-hdr .logo {
-      display: flex;
-      align-items: center;
-      margin-right: auto;
-    }
-
-    .cap-hdr .logo img {
-      height: 160px;
-      width: auto;
-      object-fit: contain;
-      padding: 0;
-      transition: transform 0.3s ease;
-    }
-
-    .cap-hdr .logo:hover img {
-      transform: scale(1.02);
-    }
-
-    .cap-hdr .dnav {
-      display: flex;
-      gap: 4px;
-    }
-
-    .cap-hdr .dnav a {
-      color: rgba(255, 255, 255, 0.65);
-      font-size: 1.08rem;
-      font-weight: 700;
-      padding: 10px 18px;
-      border-radius: var(--radius-pill);
-      transition: all 0.25s;
-      letter-spacing: 0.03em;
-      white-space: nowrap;
-    }
-
-    .cap-hdr .dnav a:hover,
-    .cap-hdr .dnav a.active {
-      color: #fff;
-      background: rgba(255, 255, 255, 0.08);
-    }
-
-    .cap-hdr .cta-btn {
-      background: var(--blue);
-      color: #fff;
-      border: none;
-      border-radius: var(--radius-pill);
-      padding: 9px 20px;
-      font-size: 0.76rem;
-      font-weight: 700;
-      letter-spacing: 0.03em;
-      transition: all 0.25s;
-      white-space: nowrap;
-    }
-
-    .cap-hdr .cta-btn:hover {
-      background: var(--blue-hover);
-      transform: translateY(-1px);
-    }
-
-    .mob-bar {
-      display: none;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      z-index: 9000;
-      background: rgba(10, 10, 15, 0.96);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      justify-content: space-around;
-      padding: 8px 0 max(8px, env(safe-area-inset-bottom));
-      border-top: 1px solid rgba(255, 255, 255, 0.07);
-    }
-
-    .mob-bar a {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 3px;
-      color: rgba(255, 255, 255, 0.4);
-      font-size: 0.6rem;
-      font-weight: 500;
-      min-width: 48px;
-      min-height: 44px;
-      justify-content: center;
-      transition: color 0.2s;
-    }
-
-    .mob-bar a svg {
-      width: 20px;
-      height: 20px;
-      stroke: currentColor;
-      fill: none;
-      stroke-width: 1.8;
-    }
-
-    .mob-bar a.active {
-      color: var(--blue);
-    }
-
-    @media (max-width: 768px) {
-      .mob-bar {
-        display: flex !important;
-      }
-
-      .cap-hdr .dnav,
-      .cap-hdr .cta-btn {
-        display: none !important;
-      }
-
-      .cap-hdr {
-        padding: 12px 24px;
-        max-width: 100%;
-        width: 100%;
-        left: 0;
-        right: 0;
-        transform: none;
-        justify-content: center;
-        background: rgba(10, 10, 15, 0.1);
-      }
-
-      .cap-hdr.scrolled {
-        background: rgba(10, 10, 15, 0.98);
-      }
-
-      .cap-hdr .logo {
-        margin-right: 0;
-        justify-content: center;
-        width: 100%;
-      }
-
-      .cap-hdr .logo img {
-        height: 95px;
-      }
-
-      .hero-content {
-        text-align: center;
-        padding: 180px 20px 80px;
-      }
-
-      .hero-content .section-tag {
-        justify-content: center;
-      }
-
-      .hero-content p {
-        margin: 0 auto 32px;
-      }
-
-      .hero-btns {
-        justify-content: center;
-      }
-
-      .section {
-        padding: 60px 20px;
-      }
-    }
-
-    /* ─── BUTTONS ─── */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-family: var(--font-body);
-      font-weight: 700;
-      font-size: 0.88rem;
-      padding: 14px 30px;
-      border-radius: var(--radius-sm);
-      border: none;
-      cursor: pointer;
-      transition: all 0.35s var(--ease);
-      min-height: 48px;
-      letter-spacing: 0.01em;
-    }
-
-    .btn-blue {
-      background: var(--blue);
-      color: #fff;
-    }
-
-    .btn-blue:hover {
-      background: var(--blue-hover);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px var(--blue-glow);
-    }
-
-    .btn-dark {
-      background: var(--bg-dark);
-      color: #fff;
-    }
-
-    .btn-dark:hover {
-      background: #222;
-      transform: translateY(-2px);
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: #fff;
-      border: 1.5px solid rgba(255, 255, 255, 0.3);
-    }
-
-    .btn-outline:hover {
-      border-color: #fff;
-      background: rgba(255, 255, 255, 0.06);
-    }
-
-    .btn-outline-dark {
-      background: transparent;
-      color: var(--text);
-      border: 1.5px solid var(--border);
-    }
-
-    .btn-outline-dark:hover {
-      border-color: var(--blue);
-      color: var(--blue);
-    }
-
-    .btn-icon {
-      font-size: 1rem;
-      transition: transform 0.2s;
-    }
-
-    .btn:hover .btn-icon {
-      transform: translateX(3px);
-    }
-
-    /* ─── SECTIONS ─── */
-    .section {
-      padding: 100px 24px;
-    }
-
-    .section-inner {
-      max-width: 1140px;
-      margin: 0 auto;
-    }
-
-    .section-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      color: var(--blue);
-      font-weight: 700;
-      font-size: 0.72rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-
-    .section-tag::before {
-      content: "";
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--blue);
-      display: inline-block;
-    }
-
-    .section-title {
-      font-family: var(--font-display);
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      line-height: 1.15;
-      margin-bottom: 16px;
-    }
-
-    .section-subtitle {
-      color: var(--text-mid);
-      font-size: 1.02rem;
-      line-height: 1.7;
-      max-width: 560px;
-    }
-
-    /* ─── HERO ─── */
-    .hero {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      background: var(--bg-dark);
-    }
-
-    .hero-slide {
-      position: absolute;
-      inset: 0;
-      opacity: 0;
-      background-size: cover;
-      background-position: center;
-      transition: none;
-    }
-
-    .hero-slide::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to right,
-          rgba(0, 0, 0, 0.85) 0%,
-          rgba(0, 0, 0, 0.4) 50%,
-          rgba(0, 0, 0, 0.1) 100%);
-    }
-
-    @media (max-width: 768px) {
-      .hero-slide::after {
-        background: rgba(0, 0, 0, 0.65);
-      }
-    }
-
-    .hero-slide.active {
-      opacity: 1;
-      animation: heroSlideIn 1s ease forwards;
-    }
-
-    .hero-dots {
-      position: absolute;
-      bottom: 40px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 10px;
-      z-index: 10;
-    }
-
-    .hero-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      border: 2px solid rgba(255, 255, 255, 0.5);
-      background: transparent;
-      cursor: pointer;
-      transition: all 0.3s;
-      padding: 0;
-    }
-
-    .hero-dot.active {
-      background: #fff;
-      border-color: #fff;
-      width: 28px;
-      border-radius: 10px;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 5;
-      max-width: 1140px;
-      width: 100%;
-      padding: 160px 48px 100px;
-      margin: 0 auto;
-      text-align: left;
-    }
-
-    .hero-content .section-tag {
-      color: var(--gold);
-      justify-content: flex-start;
-    }
-
-    .hero-content .section-tag::before {
-      background: var(--gold);
-    }
-
-    .hero-content h1 {
-      font-family: var(--font-display);
-      font-size: clamp(2.4rem, 6vw, 4rem);
-      font-weight: 800;
-      color: #fff;
-      line-height: 1.08;
-      letter-spacing: -0.03em;
-      margin-bottom: 20px;
-    }
-
-    .hero-content h1 span {
-      color: var(--blue);
-    }
-
-    .hero-content p {
-      color: rgba(255, 255, 255, 0.8);
-      font-size: 1.1rem;
-      line-height: 1.7;
-      max-width: 580px;
-      margin: 0 0 40px;
-    }
-
-    .hero-btns {
-      display: flex;
-      gap: 12px;
-      justify-content: flex-start;
-      flex-wrap: wrap;
-    }
-
-    /* ─── PAGE BANNER ─── */
-    .page-banner {
-      position: relative;
-      padding: 160px 24px 80px;
-      background: var(--bg-dark);
-      text-align: center;
-      overflow: hidden;
-    }
-
-    .page-banner::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at 30% 50%,
-          rgba(0, 85, 255, 0.1) 0%,
-          transparent 60%),
-        radial-gradient(circle at 80% 20%,
-          rgba(201, 168, 76, 0.06) 0%,
-          transparent 50%);
-    }
-
-    .page-banner .section-tag {
-      justify-content: center;
-      position: relative;
-    }
-
-    .page-banner h1 {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      font-weight: 800;
-      color: #fff;
-      letter-spacing: -0.02em;
-      position: relative;
-    }
-
-    .page-banner p {
-      color: rgba(255, 255, 255, 0.5);
-      position: relative;
-      margin-top: 12px;
-      font-size: 0.95rem;
-    }
-
-    /* ─── TABS ─── */
-    .tab-nav {
-      display: inline-flex;
-      background: var(--bg-alt);
-      padding: 6px;
-      border-radius: var(--radius-pill);
-      margin-bottom: 40px;
-      border: 1px solid var(--border);
-    }
-
-    .tab-btn {
-      padding: 10px 28px;
-      font-size: 0.88rem;
-      font-weight: 700;
-      border-radius: var(--radius-pill);
-      border: none;
-      background: transparent;
-      color: var(--text-mid);
-      cursor: pointer;
-      transition: all 0.3s var(--ease);
-    }
-
-    .tab-btn.active {
-      background: var(--blue);
-      color: #fff;
-      box-shadow: var(--shadow-sm);
-    }
-
-    /* ─── LOGO SLIDER ─── */
-    .slider-track .dev-card {
-      min-width: 180px;
-      flex-shrink: 0;
-      scroll-snap-align: start;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: var(--radius);
-      padding: 16px;
-      text-align: center;
-      transition: all 0.3s var(--ease);
-      cursor: pointer;
-    }
-
-    .slider-track .dev-card:hover {
-      background: rgba(255, 255, 255, 0.08);
-      border-color: var(--blue);
-      transform: translateY(-4px);
-    }
-
-    .slider-track .dev-card img {
-      height: 80px;
-      width: 100%;
-      object-fit: contain;
-      border-radius: 8px;
-      transition: all 0.3s var(--ease);
-    }
-
-    .slider-track .dev-card p {
-      font-size: 0.7rem;
-      margin-top: 10px;
-      color: var(--text-mid);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      transition: all 0.3s var(--ease);
-    }
-
-    .slider-track .dev-card:hover p {
-      color: var(--blue);
-    }
-
-    .prop-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 24px;
-    }
-
-    .prop-card {
-      background: var(--bg-card);
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow-card);
-      transition:
-        transform 0.35s var(--ease),
-        box-shadow 0.35s var(--ease);
-    }
-
-    .prop-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-lg);
-    }
-
-    .prop-card .iw {
-      position: relative;
-      overflow: hidden;
-      height: 220px;
-    }
-
-    .prop-card .iw img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s;
-    }
-
-    .prop-card:hover .iw img {
-      transform: scale(1.06);
-    }
-
-    .prop-card .badge-tag {
-      position: absolute;
-      top: 14px;
-      left: 14px;
-      background: var(--blue);
-      color: #fff;
-      font-size: 0.68rem;
-      font-weight: 700;
-      padding: 5px 12px;
-      border-radius: var(--radius-pill);
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
-
-    .prop-card .bd {
-      padding: 20px 22px;
-    }
-
-    .prop-card .bd h4 {
-      font-size: 1.05rem;
-      font-weight: 700;
-      margin-bottom: 4px;
-    }
-
-    .prop-card .loc {
-      font-size: 0.82rem;
-      color: var(--text-light);
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      margin-bottom: 10px;
-    }
-
-    .prop-card .meta {
-      display: flex;
-      gap: 16px;
-      margin-bottom: 14px;
-      font-size: 0.76rem;
-      color: var(--text-light);
-    }
-
-    .prop-card .rw {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .prop-card .price {
-      font-weight: 800;
-      font-size: 1.12rem;
-      color: var(--blue);
-    }
-
-    .prop-card .vb {
-      background: var(--blue-light);
-      color: var(--blue);
-      border: none;
-      border-radius: var(--radius-sm);
-      padding: 8px 16px;
-      font-size: 0.78rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: all 0.25s;
-      font-family: var(--font-body);
-    }
-
-    .prop-card .vb:hover {
-      background: var(--blue);
-      color: #fff;
-    }
-
-    .slider-wrap {
-      position: relative;
-    }
-
-    .slider-track {
-      display: flex;
-      gap: 20px;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      padding: 20px 4px;
-      scrollbar-width: none;
-    }
-
-    .slider-track::-webkit-scrollbar {
-      display: none;
-    }
-
-    .slider-track .prop-card {
-      min-width: 300px;
-      flex-shrink: 0;
-      scroll-snap-align: start;
-    }
-
-    .sb {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 10;
-      width: 46px;
-      height: 46px;
-      border-radius: 50%;
-      border: 1.5px solid var(--blue);
-      background: var(--bg-card);
-      color: #fff;
-      font-size: 1.1rem;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: var(--shadow-md);
-      transition: all 0.25s;
-      backdrop-filter: blur(8px);
-    }
-
-    .sb:hover {
-      background: var(--blue);
-      color: #fff;
-      border-color: var(--blue);
-      transform: translateY(-50%) scale(1.1);
-    }
-
-    .sb.l {
-      left: -12px;
-    }
-
-    .sb.r {
-      right: -12px;
-    }
-
-    .dev-slider-label {
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--blue);
-      margin-bottom: 12px;
-      padding-left: 4px;
-      border-left: 3px solid var(--blue);
-      padding-left: 10px;
-      display: block;
-      text-align: left;
-    }
-
-    .dev-block {
-      margin-bottom: 48px;
-    }
-
-    .feat-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 24px;
-    }
-
-    .fc {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 40px 32px;
-      transition: all 0.4s var(--ease);
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .fc::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 4px;
-      background: var(--blue);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.4s var(--ease);
-    }
-
-    .fc:hover::before {
-      transform: scaleX(1);
-    }
-
-    .fc:hover {
-      transform: translateY(-8px);
-      box-shadow: var(--shadow-lg);
-      border-color: transparent;
-    }
-
-    .fc .ib {
-      width: 60px;
-      height: 60px;
-      border-radius: 16px;
-      background: var(--blue-light);
-      color: var(--blue);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 24px;
-      transition: all 0.3s;
-      border: 1px solid rgba(0, 85, 255, 0.1);
-    }
-
-    .fc:hover .ib {
-      background: var(--blue);
-      color: #fff;
-      transform: rotate(-4deg) scale(1.05);
-    }
-
-    .fc .ib svg {
-      width: 28px;
-      height: 28px;
-      stroke: currentColor;
-      stroke-width: 1.8;
-    }
-
-    .fc h3 {
-      font-size: 1.25rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-      color: var(--text);
-    }
-
-    .fc p {
-      color: var(--text-mid);
-      font-size: 0.95rem;
-      line-height: 1.7;
-    }
-
-    .fcd {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: var(--radius);
-      padding: 40px 32px;
-      transition: all 0.4s var(--ease);
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .fcd:hover {
-      background: rgba(255, 255, 255, 0.06);
-      transform: translateY(-8px);
-      border-color: rgba(255, 255, 255, 0.15);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    }
-
-    .fcd .ib {
-      width: 64px;
-      height: 64px;
-      background: rgba(0, 85, 255, 0.15);
-      color: var(--blue);
-      margin-bottom: 24px;
-      border-radius: 18px;
-      border: 1px solid rgba(0, 85, 255, 0.2);
-    }
-
-    .fcd h4 {
-      color: #fff;
-      font-weight: 700;
-      font-size: 1.15rem;
-      margin-bottom: 12px;
-    }
-
-    .fcd p {
-      color: rgba(255, 255, 255, 0.5);
-      font-size: 0.92rem;
-      line-height: 1.7;
-    }
-
-    .stats-strip {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 20px;
-      background: linear-gradient(135deg, #0a0a0f, #12122a);
-      border-radius: 20px;
-      padding: 48px 36px;
-      box-shadow: var(--shadow-lg);
-    }
-
-    .stat-num {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 4vw, 2.8rem);
-      font-weight: 800;
-      color: var(--blue);
-      text-align: center;
-    }
-
-    .stat-label {
-      font-size: 0.78rem;
-      color: rgba(255, 255, 255, 0.5);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-top: 4px;
-      text-align: center;
-    }
-
-    .timeline {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0;
-      position: relative;
-    }
-
-    .ts {
-      flex: 1 1 200px;
-      max-width: 240px;
-      text-align: center;
-      padding: 0 18px;
-      position: relative;
-    }
-
-    .ts-num {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      background: var(--blue);
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      font-size: 1rem;
-      margin: 0 auto 16px;
-      box-shadow: 0 4px 20px var(--blue-glow);
-    }
-
-    .ts-line {
-      position: absolute;
-      top: 28px;
-      left: 62%;
-      width: 76%;
-      height: 2px;
-      background: var(--blue);
-      opacity: 0;
-      transition: opacity 0.6s;
-    }
-
-    .ts-line.vis {
-      opacity: 0.2;
-    }
-
-    .ts h4 {
-      font-weight: 700;
-      font-size: 0.95rem;
-      margin-bottom: 6px;
-    }
-
-    .ts p {
-      color: var(--text-mid);
-      font-size: 0.82rem;
-      line-height: 1.5;
-    }
-
-    @media (max-width: 640px) {
-      .ts-line {
-        display: none;
-      }
-    }
-
-    .test-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-    }
-
-    .tc {
-      background: var(--bg-alt);
-      border-radius: var(--radius);
-      padding: 30px;
-      border: 1px solid var(--border);
-      transition: all 0.35s var(--ease);
-    }
-
-    .tc:hover {
-      box-shadow: var(--shadow-md);
-      border-color: transparent;
-    }
-
-    .tc .stars {
-      color: #f5a623;
-      font-size: 0.9rem;
-      letter-spacing: 2px;
-      margin-bottom: 14px;
-    }
-
-    .tc .qt {
-      color: var(--text-mid);
-      font-size: 0.9rem;
-      line-height: 1.65;
-      margin-bottom: 18px;
-      font-style: italic;
-    }
-
-    .tc .au {
-      font-weight: 700;
-      font-size: 0.88rem;
-    }
-
-    .tc .rl {
-      color: var(--text-light);
-      font-size: 0.76rem;
-      margin-top: 2px;
-    }
-
-    .about-split {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-      align-items: center;
-    }
-
-    @media (max-width: 768px) {
-      .about-split {
-        grid-template-columns: 1fr !important;
-      }
-    }
-
-    .about-img {
-      width: 100%;
-      border-radius: var(--radius);
-      object-fit: cover;
-      box-shadow: var(--shadow-lg);
-      aspect-ratio: 4/3;
-    }
-
-    .val-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 28px;
-    }
-
-    .vc {
-      display: flex;
-      gap: 18px;
-      align-items: flex-start;
-      padding: 24px;
-      border-radius: var(--radius);
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      transition: all 0.35s var(--ease);
-    }
-
-    .vc:hover {
-      box-shadow: var(--shadow-md);
-      border-color: transparent;
-      transform: translateY(-3px);
-    }
-
-    .vc .vi {
-      width: 52px;
-      height: 52px;
-      border-radius: 12px;
-      background: var(--blue-light);
-      color: var(--blue);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .vc .vi svg {
-      width: 26px;
-      height: 26px;
-      stroke: currentColor;
-      stroke-width: 2;
-    }
-
-    .vc h4 {
-      font-size: 1.05rem;
-      font-weight: 700;
-      margin-bottom: 6px;
-    }
-
-    .vc p {
-      color: var(--text-mid);
-      font-size: 0.88rem;
-      line-height: 1.6;
-    }
-
-    .team-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 24px;
-    }
-
-    .team-c {
-      text-align: center;
-    }
-
-    .team-c .av {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin: 0 auto 14px;
-      border: 3px solid var(--blue-light);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    }
-
-    .team-c h4 {
-      font-size: 0.95rem;
-      font-weight: 700;
-    }
-
-    .team-c p {
-      color: var(--text-light);
-      font-size: 0.8rem;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 48px;
-      align-items: start;
-    }
-
-    @media (max-width: 768px) {
-      .contact-grid {
-        grid-template-columns: 1fr !important;
-      }
-    }
-
-    .cic {
-      display: flex;
-      gap: 16px;
-      align-items: center;
-      padding: 20px;
-      border-radius: var(--radius);
-      background: var(--bg-alt);
-      border: 1px solid var(--border);
-      margin-bottom: 16px;
-      transition: all 0.25s;
-    }
-
-    .cic:hover {
-      border-color: var(--blue);
-      box-shadow: var(--shadow-sm);
-    }
-
-    .cic .ci {
-      width: 48px;
-      height: 48px;
-      border-radius: 12px;
-      background: var(--blue-light);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      font-size: 1.1rem;
-    }
-
-    .cic h4 {
-      font-size: 0.88rem;
-      font-weight: 700;
-      margin-bottom: 2px;
-    }
-
-    .cic p {
-      color: var(--text-mid);
-      font-size: 0.84rem;
-    }
-
-    .fb {
-      background: var(--bg-card);
-      border-radius: var(--radius);
-      padding: 36px;
-      box-shadow: var(--shadow-md);
-      border: 1px solid var(--border);
-    }
-
-    .fr {
-      margin-bottom: 18px;
-    }
-
-    .fr label {
-      display: block;
-      font-size: 0.74rem;
-      font-weight: 700;
-      color: var(--text-mid);
-      margin-bottom: 7px;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-
-    .fr input,
-    .fr textarea,
-    .fr select {
-      width: 100%;
-      padding: 13px 16px;
-      border: 1.5px solid var(--border);
-      border-radius: var(--radius-sm);
-      font-size: 0.92rem;
-      font-family: var(--font-body);
-      background: var(--bg-alt);
-      outline: none;
-      transition: border-color 0.25s;
-      color: var(--text);
-    }
-
-    .fr input:focus,
-    .fr textarea:focus,
-    .fr select:focus {
-      border-color: var(--blue);
-    }
-
-    .fr textarea {
-      resize: vertical;
-      min-height: 100px;
-    }
-
-    .f2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-    }
-
-    @media (max-width: 600px) {
-      .f2 {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .form-ok {
-      text-align: center;
-      padding: 50px 0;
-    }
-
-    .form-ok .ck {
-      width: 64px;
-      height: 64px;
-      border-radius: 50%;
-      background: var(--blue-light);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 16px;
-      font-size: 1.8rem;
-    }
-
-    .form-ok h3 {
-      font-family: var(--font-display);
-      font-size: 1.4rem;
-      margin-bottom: 6px;
-    }
-
-    .form-ok p {
-      color: var(--text-mid);
-    }
-
-    .footer {
-      background: var(--bg-dark);
-      color: rgba(255, 255, 255, 0.55);
-      padding: 64px 24px 0;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 2.2fr 1fr 1fr 1fr;
-      gap: 40px;
-      max-width: 1140px;
-      margin: 0 auto;
-    }
-
-    @media (max-width: 768px) {
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .footer {
-        padding-bottom: 70px;
-      }
-    }
-
-    .footer .fl {
-      display: block;
-      margin-bottom: 14px;
-    }
-
-    .footer .fl img {
-      height: 130px;
-      width: auto;
-      object-fit: contain;
-      filter: brightness(1.1);
-    }
-
-    .footer p {
-      font-size: 0.84rem;
-      line-height: 1.65;
-      max-width: 280px;
-    }
-
-    .footer h4 {
-      color: #fff;
-      font-size: 0.78rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 18px;
-    }
-
-    .footer a {
-      display: block;
-      color: rgba(255, 255, 255, 0.45);
-      font-size: 0.84rem;
-      margin-bottom: 10px;
-      transition: color 0.2s;
-    }
-
-    .footer a:hover {
-      color: #fff;
-    }
-
-    .footer-btm {
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
-      margin-top: 48px;
-      padding: 20px 0;
-      text-align: center;
-      font-size: 0.76rem;
-      color: rgba(255, 255, 255, 0.25);
-    }
-
-    .modal-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.55);
-      z-index: 9999;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      backdrop-filter: blur(4px);
-    }
-
-    .modal-overlay.open {
-      display: flex;
-      animation: fadeIn 0.25s;
-    }
-
-    .modal {
-      background: #fff;
-      border-radius: var(--radius);
-      max-width: 480px;
-      width: 100%;
-      padding: 32px;
-      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.25);
-      animation: scaleIn 0.3s ease;
-      max-height: 90vh;
-      overflow-y: auto;
-    }
-
-    .modal-hd {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 18px;
-    }
-
-    .modal-hd h3 {
-      font-family: var(--font-display);
-      font-size: 1.2rem;
-    }
-
-    .modal-x {
-      background: none;
-      border: none;
-      font-size: 1.4rem;
-      color: var(--text-light);
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      transition: background 0.2s;
-    }
-
-    .modal-x:hover {
-      background: var(--bg-alt);
-    }
-    .app-loader {
-      position: fixed;
-      inset: 0;
-      background: #000000;
-      z-index: 99999;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: opacity 0.4s var(--ease), visibility 0.4s var(--ease);
-    }
-
-    .app-loader.hidden {
-      opacity: 0;
-      visibility: hidden;
-    }
-
-    .loader-logo {
-      height: 220px;
-      width: auto;
-      object-fit: contain;
-      animation: pulse 1.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% {
-        opacity: 1;
-        transform: scale(1);
-      }
-      50% {
-        opacity: 0.5;
-        transform: scale(0.96);
-      }
-    }
-
-    .social-links {
-      display: flex;
-      gap: 16px;
-      margin-top: 16px;
-    }
-
-    .social-links a {
-      font-size: 1.25rem !important;
-      color: rgba(255, 255, 255, 0.45);
-      transition: color 0.25s var(--ease), transform 0.25s var(--ease);
-      display: inline-flex !important;
-      margin-bottom: 0 !important;
-    }
-
-    .social-links a:hover {
-      color: var(--blue);
-      transform: translateY(-2px);
-    }
-  </style>
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
+<body data-page="home">
 
-<body>
+  <!-- ─── LOADER ─── -->
   <div id="app-loader" class="app-loader">
     <img src="logo.png" alt="Loading..." class="loader-logo" />
   </div>
 
+  <!-- ─── HEADER ─── -->
   <header class="cap-hdr" id="mainHeader">
-    <a href="#" data-page="home" class="logo">
-      <img src="logo.png" alt="Better Serv Logo" />
-    </a>
-    <nav class="dnav" id="desktopNav">
-      <a href="#" data-page="home" class="active">Home</a>
-      <a href="#" data-page="about">About Us</a>
-      <a href="#" data-page="dubai">Dubai</a>
-      <a href="#" data-page="india">India</a>
-      <a href="#" data-page="services">Other Services</a>
-      <a href="#" data-page="contact">Contact</a>
+    <a href="index.html" class="logo"><img src="logo.png" alt="Better Serv Logo" /></a>
+    <nav class="dnav">
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="dubai.html">Dubai</a>
+      <a href="india.html">India</a>
+      <a href="services.html">Other Services</a>
+      <a href="contact.html">Contact</a>
     </nav>
-    <button class="cta-btn" data-nav="contact">Get in Touch</button>
+    <a href="contact.html" class="cta-btn">Get in Touch</a>
   </header>
 
-  <nav class="mob-bar" id="mobileBar">
-    <a href="#" data-page="home" class="active">
-      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-        <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-        <polyline points="9 22 9 12 15 12 15 22"></polyline>
-      </svg>
+  <!-- ─── MOBILE NAV ─── -->
+  <nav class="mob-bar">
+    <a href="index.html" class="active">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
       Home
     </a>
-    <a href="#" data-page="dubai">
-      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M4 10h16M12 22V2M4 22V10M20 22V10M8 22V14M16 22V14"></path>
-      </svg>
+    <a href="dubai.html">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h16M12 22V2M4 22V10M20 22V10M8 22V14M16 22V14"></path></svg>
       Dubai
     </a>
-    <a href="#" data-page="india">
-      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M2 22v-4h20v4M4 18V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12M9 18v-6h6v6"></path>
-      </svg>
+    <a href="india.html">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M2 22v-4h20v4M4 18V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12M9 18v-6h6v6"></path></svg>
       India
     </a>
-    <a href="#" data-page="about">
-      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="12" cy="12" r="10"></circle>
-        <path d="M12 16v-4M12 8h.01"></path>
-      </svg>
+    <a href="about.html">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4M12 8h.01"></path></svg>
       About
     </a>
-    <a href="#" data-page="services">
-      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-        <rect width="20" height="14" x="2" y="7" rx="2" ry="2"></rect>
-        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-      </svg>
+    <a href="services.html">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
       Services
     </a>
-    <a href="#" data-page="contact">
-      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-        <rect width="20" height="16" x="2" y="4" rx="2"></rect>
-        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
-      </svg>
+    <a href="contact.html">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
       Contact
     </a>
   </nav>
 
-  <main id="app"></main>
+  <!-- ─── PAGE ─── -->
+  <main class="page">
 
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-slides" id="hSlides"></div>
+      <div class="hero-content">
+        <div class="section-tag reveal d1">Luxury Real Estate</div>
+        <h1 class="reveal d2">Find Your Perfect<br><span>Dream Home</span></h1>
+        <p class="reveal d3">Premium properties across Dubai and India. From waterfront penthouses to heritage villas, experience real estate redefined.</p>
+        <div class="hero-btns reveal d5">
+          <a href="dubai.html" class="btn btn-blue">Dubai Properties <span class="btn-icon">→</span></a>
+          <a href="india.html" class="btn btn-outline">India Properties <span class="btn-icon">→</span></a>
+        </div>
+      </div>
+      <div class="hero-dots" id="hDots"></div>
+    </section>
+
+    <!-- ABOUT SNIPPET -->
+    <section class="section" style="background:var(--bg)">
+      <div class="section-inner about-split">
+        <div class="reveal fl">
+          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&h=500&fit=crop" alt="About" class="about-img">
+        </div>
+        <div class="reveal fr d2">
+          <div class="section-tag">About Better Serv Properties</div>
+          <h2 class="section-title">Redefining Real Estate Excellence</h2>
+          <p class="section-subtitle" style="margin-bottom:24px">With over a decade of expertise in both the Indian and Dubai property markets, we connect discerning buyers with exceptional properties. Our team ensures every transaction is seamless, transparent, and rewarding.</p>
+          <a href="about.html" class="btn btn-dark">Learn More <span class="btn-icon">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section" style="background:var(--bg-alt)">
+      <div class="section-inner" style="text-align:center">
+        <div class="section-tag reveal" style="justify-content:center">What We Do</div>
+        <h2 class="section-title reveal d1">Our Services</h2>
+        <p class="section-subtitle reveal d2" style="margin:0 auto 48px">Comprehensive real estate solutions tailored to your unique needs</p>
+        <div class="feat-grid" id="svc-grid"></div>
+      </div>
+    </section>
+
+    <!-- DUBAI PROPERTIES SLIDER -->
+    <section class="section" style="background:var(--bg)">
+      <div class="section-inner">
+        <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;margin-bottom:36px">
+          <div class="reveal">
+            <div class="section-tag">Featured</div>
+            <h2 class="section-title" style="margin-bottom:0">Dubai Properties</h2>
+          </div>
+          <a href="dubai.html" class="btn btn-outline-dark reveal d2">View All <span class="btn-icon">→</span></a>
+        </div>
+        <div class="reveal d3" id="dubai-sl-wrap"></div>
+      </div>
+    </section>
+
+    <!-- INDIA PROPERTIES SLIDER -->
+    <section class="section" style="background:var(--bg-alt)">
+      <div class="section-inner">
+        <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;margin-bottom:36px">
+          <div class="reveal">
+            <div class="section-tag">Featured</div>
+            <h2 class="section-title" style="margin-bottom:0">India Properties</h2>
+          </div>
+          <a href="india.html" class="btn btn-outline-dark reveal d2">View All <span class="btn-icon">→</span></a>
+        </div>
+        <div class="reveal d3" id="india-sl-wrap"></div>
+      </div>
+    </section>
+
+    <!-- WHY US -->
+    <section class="section" style="background:var(--bg-dark)">
+      <div class="section-inner" style="text-align:center">
+        <div class="section-tag reveal" style="justify-content:center">Why Us</div>
+        <h2 class="section-title reveal d1" style="color:#fff">Why Choose Better Serv Properties</h2>
+        <p class="section-subtitle reveal d2" style="color:rgba(255,255,255,0.45);margin:0 auto 48px">The trusted name in premium real estate across two continents</p>
+        <div class="feat-grid" id="why-grid"></div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="section" style="padding:60px 24px;background:var(--bg)">
+      <div class="section-inner">
+        <div class="stats-strip" id="statsBar"></div>
+      </div>
+    </section>
+
+    <!-- DEVELOPERS -->
+    <section class="section" style="background:var(--bg-alt)">
+      <div class="section-inner" style="text-align:center">
+        <div class="section-tag reveal" style="justify-content:center">Our Partners</div>
+        <h2 class="section-title reveal d1">Global Real Estate Developers</h2>
+        <p class="section-subtitle reveal d2" style="margin:0 auto 40px">Better Serv Properties is a preferred partner for world-class developers across Dubai and India.</p>
+        <div class="dev-block">
+          <span class="dev-slider-label">🏙️ Dubai Developers</span>
+          <div id="dubai-dev-wrap"></div>
+        </div>
+        <div class="dev-block">
+          <span class="dev-slider-label">🇮🇳 India Developers</span>
+          <div id="india-dev-wrap"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="section" style="background:var(--bg-alt)">
+      <div class="section-inner" style="text-align:center">
+        <div class="section-tag reveal" style="justify-content:center">How It Works</div>
+        <h2 class="section-title reveal d1" style="margin-bottom:56px">Our Process</h2>
+        <div class="timeline" id="timeline"></div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section" style="background:var(--bg)">
+      <div class="section-inner" style="text-align:center">
+        <div class="section-tag reveal" style="justify-content:center">Testimonials</div>
+        <h2 class="section-title reveal d1">What Our Clients Say</h2>
+        <p class="section-subtitle reveal d2" style="margin:0 auto 48px">Trusted by investors, homeowners, and NRIs worldwide</p>
+        <div class="test-grid" id="testimonials-grid"></div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section" style="background:var(--bg-dark);text-align:center;padding:80px 24px">
+      <div class="section-inner">
+        <div class="section-tag reveal" style="justify-content:center;color:var(--gold)">Get Started</div>
+        <h2 class="section-title reveal d1" style="color:#fff;margin-bottom:20px">Ready to Find Your Dream Home?</h2>
+        <p class="section-subtitle reveal d2" style="color:rgba(255,255,255,0.5);margin:0 auto 36px">Let our experts guide you to the perfect property.</p>
+        <div class="reveal d3">
+          <a href="contact.html" class="btn btn-blue">Contact Us Now <span class="btn-icon">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <div class="footer-grid">
+        <div>
+          <div class="fl"><img src="logo.png" alt="Better Serv Properties" /></div>
+          <p>Premium real estate services connecting discerning buyers with exceptional properties across Dubai and India.</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="dubai.html">Dubai Properties</a>
+          <a href="india.html">India Properties</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <a href="services.html">Interior Design</a>
+          <a href="services.html">Property Maintenance</a>
+          <a href="services.html">Rental Management</a>
+          <a href="services.html">Legal Support</a>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <a href="#">📍 Business Bay, Dubai</a>
+          <a href="#">📞 +971 50 123 4567</a>
+          <a href="mailto:vishnuss80@gmail.com">✉️ vishnuss80@gmail.com</a>
+          <div class="social-links">
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-btm">© 2026 Better Serv Properties. All rights reserved.</div>
+    </div>
+
+  </main>
+
+  <!-- ─── ENQUIRY MODAL ─── -->
   <div class="modal-overlay" id="eqModal">
     <div class="modal">
       <div class="modal-hd">
         <h3 id="mT">Enquiry</h3>
         <button class="modal-x" data-closem="true">✕</button>
       </div>
-      <p id="mS" style="
-            color: var(--text-mid);
-            font-size: 0.88rem;
-            margin-bottom: 20px;
-          "></p>
+      <p id="mS" style="color:var(--text-mid);font-size:0.88rem;margin-bottom:20px"></p>
       <div id="mF">
-        <div class="fr">
-          <label>Name</label><input type="text" placeholder="Full name" />
-        </div>
-        <div class="fr">
-          <label>Email</label><input type="email" placeholder="you@email.com" />
-        </div>
-        <div class="fr">
-          <label>Phone</label><input type="tel" placeholder="+971 or +91" />
-        </div>
-        <div class="fr">
-          <label>Message</label><textarea rows="3" placeholder="I'm interested..."></textarea>
-        </div>
-        <button class="btn btn-blue" style="width: 100%" data-subm="true">
-          Submit Enquiry <span class="btn-icon">→</span>
-        </button>
+        <div class="fr"><label>Name</label><input type="text" placeholder="Full name" /></div>
+        <div class="fr"><label>Email</label><input type="email" placeholder="you@email.com" /></div>
+        <div class="fr"><label>Phone</label><input type="tel" placeholder="+971 or +91" /></div>
+        <div class="fr"><label>Message</label><textarea rows="3" placeholder="I'm interested..."></textarea></div>
+        <button class="btn btn-blue" style="width:100%" data-subm="true">Submit Enquiry <span class="btn-icon">→</span></button>
       </div>
-      <div id="mOk" style="display: none">
-        <div class="form-ok">
-          <div class="ck">✓</div>
-          <h3>Thank You!</h3>
-          <p>Our team will contact you within 24 hours.</p>
-        </div>
+      <div id="mOk" style="display:none">
+        <div class="form-ok"><div class="ck">✓</div><h3>Thank You!</h3><p>Our team will contact you within 24 hours.</p></div>
       </div>
     </div>
   </div>
 
-  <script>
-    const ICONS = {
-      build: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M2.7 10.3a2.41 2.41 0 0 0 0 3.41l7.59 7.59a2.41 2.41 0 0 0 3.41 0l7.59-7.59a2.41 2.41 0 0 0 0-3.41l-7.59-7.59a2.41 2.41 0 0 0-3.41 0Z"/><path d="M7 14h.01"/><path d="M10 11h.01"/><path d="M10 17h.01"/><path d="M14 14h.01"/><path d="M17 11h.01"/><path d="M17 17h.01"/></svg>',
-      key: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6"/><path d="m15.5 7.5 3 3L22 7l-3-3Z"/></svg>',
-      chart: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 3v18h18"/><path d="m19 19-7-8-3 3-3-3"/></svg>',
-      gear: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2Z"/><circle cx="12" cy="12" r="3"/></svg>',
-      target: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>',
-      shield: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>',
-      award: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>',
-      zap: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>',
-      leaf: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8a8 8 0 0 1-10 10Z"/><path d="M17.6 14c-.7-1.5-1.5-1.5-3-1"/><path d="M15 22v-4"/></svg>',
-      globe: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>',
-      users: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
-      dollar: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>',
-      trend: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>',
-      building: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect width="8" height="18" x="3" y="3" rx="2"/><path d="M7 10h11"/><path d="M21 21H3"/><rect width="3" height="12" x="14" y="9" rx="1"/></svg>',
-      star: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>'
-    };
-    const HS = [
-      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1400&h=800&fit=crop",
-      "https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=1400&h=800&fit=crop",
-      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1400&h=800&fit=crop",
-      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1400&h=800&fit=crop",
-    ];
-    const SV = [
-      {
-        i: ICONS.build,
-        t: "Property Development",
-        d: "World-class residential and commercial developments across Dubai and India with premium finishes.",
-      },
-      {
-        i: ICONS.key,
-        t: "Sales & Leasing",
-        d: "Full-cycle support for buying, selling, or leasing premium properties with expert negotiation.",
-      },
-      {
-        i: ICONS.chart,
-        t: "Investment Advisory",
-        d: "Data-driven investment guidance to maximize your real estate portfolio returns.",
-      },
-      {
-        i: ICONS.gear,
-        t: "Property Management",
-        d: "Comprehensive maintenance, tenant management, and revenue optimization.",
-      },
-    ];
-    const DP = [
-      { id: 11, t: "Marina Bay Penthouse", l: "Dubai Marina", p: "AED 8.5M", img: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=600&h=400&fit=crop", b: 4, a: "3,200 sqft", tg: "Penthouse", m: "buy" },
-      { id: 12, t: "Palm Jumeirah Villa", l: "Palm Jumeirah", p: "AED 15M", img: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=600&h=400&fit=crop", b: 6, a: "6,500 sqft", tg: "Villa", m: "buy" },
-      { id: 13, t: "Al Barari Garden", l: "Al Barari", p: "AED 12M", img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&h=400&fit=crop", b: 5, a: "5,800 sqft", tg: "Villa", m: "buy" },
-      { id: 14, t: "Downtown Luxury Apt", l: "Downtown Dubai", p: "AED 25,000/mo", img: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&h=400&fit=crop", b: 2, a: "1,400 sqft", tg: "Apartment", m: "rent" },
-      { id: 15, t: "Business Bay Studio", l: "Business Bay", p: "AED 10,000/mo", img: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&h=400&fit=crop", b: 1, a: "850 sqft", tg: "Studio", m: "rent" },
-      { id: 16, t: "Dubai Hills Villa", l: "Dubai Hills", p: "AED 18,000/mo", img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=400&fit=crop", b: 3, a: "2,900 sqft", tg: "Villa", m: "rent" }
-    ];
-    const IP = [
-      { id: 1, t: "Skyline Residences", l: "Mumbai, Maharashtra", p: "₹2.5 Cr", img: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&h=400&fit=crop", b: 3, a: "1,800 sqft", tg: "High-Rise", m: "buy" },
-      { id: 2, t: "Garden Villas", l: "Bangalore, Karnataka", p: "₹1.8 Cr", img: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&h=400&fit=crop", b: 4, a: "2,400 sqft", tg: "Villa", m: "buy" },
-      { id: 3, t: "Marine Drive Residency", l: "Mumbai", p: "₹4.5 Cr", img: "https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=600&h=400&fit=crop", b: 3, a: "2,200 sqft", tg: "Apartment", m: "buy" },
-      { id: 4, t: "Gurgaon Modern Suite", l: "Gurgaon", p: "₹95,000/mo", img: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=600&h=400&fit=crop", b: 2, a: "1,400 sqft", tg: "Apartment", m: "rent" },
-      { id: 5, t: "Whitefield Loft", l: "Bangalore", p: "₹65,000/mo", img: "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=600&h=400&fit=crop", b: 1, a: "950 sqft", tg: "Loft", m: "rent" }
-    ];
-    const DD = [
-      { n: "Emaar Properties", l: "developer_images/emaar.png" },
-      { n: "DAMAC Properties", l: "developer_images/damac.png" },
-      { n: "Nakheel", l: "developer_images/nakheel.png" },
-      { n: "Sobha Realty", l: "developer_images/sobha.png" },
-      { n: "Meraas", l: "developer_images/meraas.png" },
-      { n: "Binghatti", l: "developer_images/binghatti.png" }
-    ];
-    const ID = [
-      { n: "DLF Limited", l: "developer_images/dlf.png" },
-      { n: "Godrej Properties", l: "developer_images/godrej.png" },
-      { n: "Tata Housing", l: "developer_images/tata.png" },
-      { n: "Prestige Group", l: "developer_images/prestige.png" },
-      { n: "LODHA Group", l: "developer_images/lodha.png" }
-    ];
-    const WU = [
-      {
-        i: ICONS.users,
-        t: "Expert Agents",
-        d: "Industry veterans with 10+ years experience",
-      },
-      {
-        i: ICONS.shield,
-        t: "Verified Listings",
-        d: "Every property is personally inspected",
-      },
-      {
-        i: ICONS.globe,
-        t: "Global Reach",
-        d: "Offices in Dubai, Mumbai & Bangalore",
-      },
-      {
-        i: ICONS.dollar,
-        t: "Best Value",
-        d: "Competitive pricing with no hidden fees",
-      },
-      {
-        i: ICONS.users,
-        t: "24/7 Support",
-        d: "Always available via phone, email or chat",
-      },
-      {
-        i: ICONS.zap,
-        t: "Fast Closing",
-        d: "Streamlined process from offer to keys",
-      },
-    ];
-    const ST = [
-      { v: 500, s: "+", l: "Properties Sold" },
-      { v: 10, s: "+", l: "Years Experience" },
-      { v: 1200, s: "+", l: "Happy Clients" },
-      { v: 50, s: "+", l: "Expert Agents" },
-    ];
-    const PR = [
-      {
-        n: "01",
-        t: "Consultation",
-        d: "Share your requirements, budget, and preferred locations",
-      },
-      {
-        n: "02",
-        t: "Curated Selection",
-        d: "We handpick properties matching your exact criteria",
-      },
-      {
-        n: "03",
-        t: "Property Viewing",
-        d: "Virtual or in-person tours at your convenience",
-      },
-      {
-        n: "04",
-        t: "Closing & Handover",
-        d: "Seamless paperwork, financing, and key handover",
-      },
-      {
-        n: "05",
-        t: "Extra Mile Service",
-        d: "Post-handover interior design, property management, and ongoing legal support.",
-      },
-    ];
-    const TM = [
-      {
-        n: "Rajesh Menon",
-        r: "Investor, Mumbai",
-        tx: "Exceptional service from start to finish. They helped me secure a prime Dubai Marina apartment at a fantastic price.",
-      },
-      {
-        n: "Sarah Al-Maktoum",
-        r: "Homeowner, Dubai",
-        tx: "Professional, transparent, and incredibly efficient. I found my dream villa through Better Serv in just two weeks.",
-      },
-      {
-        n: "Amit Sharma",
-        r: "NRI Investor, London",
-        tx: "As an overseas buyer, their end-to-end support was invaluable. Highly recommend for international investments.",
-      },
-      {
-        n: "Priya Nair",
-        r: "First-time Buyer, Kerala",
-        tx: "Better Serv made my first property purchase stress-free. Their team guided me through every step with patience.",
-      },
-    ];
-    const VL = [
-      {
-        i: ICONS.target,
-        t: "Client-First Approach",
-        d: "Every decision is guided by what serves our clients best.",
-      },
-      {
-        i: ICONS.shield,
-        t: "Transparency",
-        d: "No hidden fees, no surprises. Complete clarity at every stage.",
-      },
-      {
-        i: ICONS.shield,
-        t: "Integrity",
-        d: "Lasting relationships founded on trust and ethical practices.",
-      },
-      {
-        i: ICONS.award,
-        t: "Excellence",
-        d: "The highest standards in service, analysis, and client care.",
-      },
-      {
-        i: ICONS.zap,
-        t: "Innovation",
-        d: "Latest technology and data analytics for smarter decisions.",
-      },
-      {
-        i: ICONS.leaf,
-        t: "Sustainability",
-        d: "Promoting eco-friendly developments and sustainable practices.",
-      },
-    ];
-    const TEM = [
-      {
-        n: "Vishnu S.",
-        r: "Founder & CEO",
-        img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face",
-      },
-      {
-        n: "Aisha Rahman",
-        r: "Head of Dubai Ops",
-        img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&h=300&fit=crop&crop=face",
-      },
-      {
-        n: "Arjun Mehta",
-        r: "India Sales Director",
-        img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face",
-      },
-      {
-        n: "Fatima Al-Sayed",
-        r: "Legal & Compliance",
-        img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=face",
-      },
-    ];
-
-    const pin =
-      '<svg style="width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;flex-shrink:0" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>';
-
-    function pc(p) {
-      return `<div class="prop-card"><div class="iw"><img src="${p.img}" alt="${p.t}" loading="lazy"><span class="badge-tag">${p.tg}</span></div><div class="bd"><h4>${p.t}</h4><div class="loc">${pin} ${p.l}</div><div class="meta"><span>🛏 ${p.b} Beds</span><span>📐 ${p.a}</span></div><div class="rw"><span class="price">${p.p}</span><button class="vb" data-openm-t="${p.t}" data-openm-s="${p.l} — ${p.p}">Enquire</button></div></div></div>`;
-    }
-    function sl(props, id) {
-      return `<div class="slider-wrap"><button class="sb l" data-ss="${id}" data-ss-dir="-1">←</button><div class="slider-track" id="${id}">${props.map(pc).join("")}</div><button class="sb r" data-ss="${id}" data-ss-dir="1">→</button></div>`;
-    }
-    function devSl(devs, id) {
-      return `<div class="slider-wrap" style="padding: 40px 0;"><button class="sb l" data-ss="${id}" data-ss-dir="-1">←</button><div class="slider-track" id="${id}">${devs.concat(devs).map((d) => `<div class="dev-card"><img src="${d.l}" alt="${d.n}"><p>${d.n}</p></div>`).join("")}</div><button class="sb r" data-ss="${id}" data-ss-dir="1">→</button></div>`;
-    }
-    function ft() {
-      return `<div class="footer"><div class="footer-grid"><div><div class="fl"><img src="logo.png" alt="Better Serv Properties" /></div><p>Premium real estate services connecting discerning buyers with exceptional properties across Dubai and India.</p></div><div><h4>Quick Links</h4><a href="#" data-nav="home">Home</a><a href="#" data-nav="about">About Us</a><a href="#" data-nav="dubai">Dubai Properties</a><a href="#" data-nav="india">India Properties</a><a href="#" data-nav="contact">Contact</a></div><div><h4>Services</h4><a href="#">Sales &amp; Leasing</a><a href="#">Investment Advisory</a><a href="#">Property Management</a><a href="#">Development</a></div><div><h4>Contact</h4><a href="#">📍 Business Bay, Dubai</a><a href="#">📞 +971 50 123 4567</a><a href="mailto:vishnuss80@gmail.com">✉️ vishnuss80@gmail.com</a><div class="social-links"><a href="#"><i class="fa-brands fa-instagram"></i></a><a href="#"><i class="fa-brands fa-tiktok"></i></a><a href="#"><i class="fa-brands fa-linkedin-in"></i></a><a href="#"><i class="fa-brands fa-x-twitter"></i></a><a href="#"><i class="fa-brands fa-facebook-f"></i></a><a href="#"><i class="fa-brands fa-youtube"></i></a></div></div></div><div class="footer-btm">© 2026 Better Serv Properties. All rights reserved.</div></div>`;
-    }
-
-    function homePg() {
-      return `<div class="page">
-<section class="hero"><div class="hero-slides" id="hSlides">${HS.map((s, i) => `<div class="hero-slide${i === 0 ? " active" : ""}" style="background-image:url('${s}')"></div>`).join("")}</div>
-<div class="hero-content"><div class="section-tag reveal d1">Luxury Real Estate</div><h1 class="reveal d2">Find Your Perfect<br><span>Dream Home</span></h1><p class="reveal d3">Premium properties across Dubai and India. From waterfront penthouses to heritage villas, experience real estate redefined.</p><div class="hero-btns reveal d5"><button class="btn btn-blue" data-nav="dubai">Dubai Properties <span class="btn-icon">→</span></button><button class="btn btn-outline" data-nav="india">India Properties <span class="btn-icon">→</span></button></div></div>
-<div class="hero-dots" id="hDots">${HS.map((_, i) => `<button class="hero-dot${i === 0 ? " active" : ""}" data-goslide="${i}"></button>`).join("")}</div></section>
-
-<section class="section" style="background:var(--bg)"><div class="section-inner about-split"><div class="reveal fl"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&h=500&fit=crop" alt="About" class="about-img"></div><div class="reveal fr d2"><div class="section-tag">About Better Serv Properties</div><h2 class="section-title">Redefining Real Estate Excellence</h2><p class="section-subtitle" style="margin-bottom:24px">With over a decade of expertise in both the Indian and Dubai property markets, we connect discerning buyers with exceptional properties. Our team ensures every transaction is seamless, transparent, and rewarding.</p><button class="btn btn-dark" data-nav="about">Learn More <span class="btn-icon">→</span></button></div></div></section>
-
-<section class="section" style="background:var(--bg-alt)"><div class="section-inner" style="text-align:center"><div class="section-tag reveal" style="justify-content:center">What We Do</div><h2 class="section-title reveal d1">Our Services</h2><p class="section-subtitle reveal d2" style="margin:0 auto 48px">Comprehensive real estate solutions tailored to your unique needs</p><div class="feat-grid">${SV.map((s, i) => `<div class="fc reveal d${i + 2}"><div class="ib">${s.i}</div><h3>${s.t}</h3><p>${s.d}</p></div>`).join("")}</div></div></section>
-
-<section class="section" style="background:var(--bg)"><div class="section-inner"><div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;margin-bottom:36px"><div class="reveal"><div class="section-tag">Featured</div><h2 class="section-title" style="margin-bottom:0">Dubai Properties</h2></div><button class="btn btn-outline-dark reveal d2" data-nav="dubai">View All <span class="btn-icon">→</span></button></div><div class="reveal d3">${sl(DP, "hs1")}</div></div></section>
-
-<section class="section" style="background:var(--bg-alt)"><div class="section-inner"><div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;margin-bottom:36px"><div class="reveal"><div class="section-tag">Featured</div><h2 class="section-title" style="margin-bottom:0">India Properties</h2></div><button class="btn btn-outline-dark reveal d2" data-nav="india">View All <span class="btn-icon">→</span></button></div><div class="reveal d3">${sl(IP, "hs2")}</div></div></section>
-
-<section class="section" style="background:var(--bg-dark)"><div class="section-inner" style="text-align:center"><div class="section-tag reveal" style="justify-content:center">Why Us</div><h2 class="section-title reveal d1" style="color:#fff">Why Choose Better Serv Properties</h2><p class="section-subtitle reveal d2" style="color:rgba(255,255,255,0.45);margin:0 auto 48px">The trusted name in premium real estate across two continents</p><div class="feat-grid">${WU.map((w, i) => `<div class="fcd reveal d${i + 2}"><div class="ib">${w.i}</div><h4>${w.t}</h4><p>${w.d}</p></div>`).join("")}</div></div></section>
-
-<section class="section" style="padding:60px 24px;background:var(--bg)"><div class="section-inner"><div class="stats-strip" id="statsBar">${ST.map((s) => `<div><div class="stat-num" data-target="${s.v}" data-suffix="${s.s}">0${s.s}</div><div class="stat-label">${s.l}</div></div>`).join("")}</div></div></section>
-
-<section class="section" style="background:var(--bg-alt)"><div class="section-inner" style="text-align:center">
-<div class="section-tag reveal" style="justify-content:center">Our Partners</div>
-<h2 class="section-title reveal d1">Global Real Estate Developers</h2>
-<p class="section-subtitle reveal d2" style="margin:0 auto 40px">Better Serv Properties is a preferred partner for world-class developers across Dubai and India.</p>
-<div class="dev-block">
-<span class="dev-slider-label">🏙️ Dubai Developers</span>
-${devSl(DD, "hs3")}
-</div>
-<div class="dev-block">
-<span class="dev-slider-label">🇮🇳 India Developers</span>
-${devSl(ID, "hs4")}
-</div>
-</div></section>
-
-<section class="section" style="background:var(--bg-alt)"><div class="section-inner" style="text-align:center"><div class="section-tag reveal" style="justify-content:center">How It Works</div><h2 class="section-title reveal d1" style="margin-bottom:56px">Our Process</h2><div class="timeline" id="timeline">${PR.map((s, i) => `<div class="ts reveal d${i + 3}"><div class="ts-num">${s.n}</div>${i < PR.length - 1 ? '<div class="ts-line" data-line></div>' : ""}<h4>${s.t}</h4><p>${s.d}</p></div>`).join("")}</div></div></section>
-
-<section class="section" style="background:var(--bg)"><div class="section-inner" style="text-align:center"><div class="section-tag reveal" style="justify-content:center">Testimonials</div><h2 class="section-title reveal d1">What Our Clients Say</h2><p class="section-subtitle reveal d2" style="margin:0 auto 48px">Trusted by investors, homeowners, and NRIs worldwide</p><div class="test-grid">${TM.map((t, i) => `<div class="tc reveal d${i + 2}"><div class="stars">★★★★★</div><p class="qt">"${t.tx}"</p><div class="au">${t.n}</div><div class="rl">${t.r}</div></div>`).join("")}</div></div></section>
-
-<section class="section" style="background:var(--bg-dark);text-align:center;padding:80px 24px"><div class="section-inner"><div class="section-tag reveal" style="justify-content:center;color:var(--gold)">Get Started</div><h2 class="section-title reveal d1" style="color:#fff;margin-bottom:20px">Ready to Find Your Dream Home?</h2><p class="section-subtitle reveal d2" style="color:rgba(255,255,255,0.5);margin:0 auto 36px">Let our experts guide you to the perfect property.</p><div class="reveal d3"><button class="btn btn-blue" data-nav="contact">Contact Us Now <span class="btn-icon">→</span></button></div></div></section>
-${ft()}</div>`;
-    }
-
-    function aboutPg() {
-      return `<div class="page">
-<div class="page-banner"><div class="section-tag reveal">Who We Are</div><h1 class="reveal d1">About Better Serv Properties</h1><p class="reveal d2">A decade of excellence in premium real estate</p></div>
-
-<section class="section" style="background:var(--bg)"><div class="section-inner about-split"><div class="reveal fl"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&h=500&fit=crop" alt="Our Story" class="about-img"></div><div class="reveal fr d2"><div class="section-tag">Our Story</div><h2 class="section-title">Built on Trust, Driven by Excellence</h2><p class="section-subtitle" style="margin-bottom:16px">Founded in 2014, Better Serv Properties began with a simple vision — to bridge the gap between premium property markets in Dubai and India. What started as a small team has grown into a trusted name across two continents.</p><p class="section-subtitle" style="margin-bottom:16px">Our founder, Vishnu S., recognized that international property buyers needed more than just listings — they needed a partner who understood both markets intimately. Today, Better Serv Properties serves over 1,200 satisfied clients worldwide.</p><p class="section-subtitle">We specialize in luxury residential properties, commercial spaces, and investment opportunities. Every property is personally vetted to ensure it meets our stringent quality standards.</p></div></div></section>
-
-<section class="section" style="background:var(--bg-alt)"><div class="section-inner"><div style="text-align:center;margin-bottom:48px"><div class="section-tag reveal" style="justify-content:center">What Drives Us</div><h2 class="section-title reveal d1">Mission & Vision</h2></div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px"><div class="fc reveal d2" style="border-left:4px solid var(--blue);padding-left:28px"><h3 style="color:var(--blue);margin-bottom:12px">Our Mission</h3><p>To provide exceptional real estate services that empower our clients to make informed property decisions with transparency, integrity, and unmatched expertise across Dubai and India.</p></div><div class="fc reveal d3" style="border-left:4px solid var(--gold);padding-left:28px"><h3 style="color:var(--gold);margin-bottom:12px">Our Vision</h3><p>To become the most trusted cross-border real estate consultancy, recognized for excellence, innovation, and unwavering commitment to client satisfaction across global markets.</p></div></div></div></section>
-
-<section class="section" style="background:var(--bg)"><div class="section-inner"><div style="text-align:center;margin-bottom:48px"><div class="section-tag reveal" style="justify-content:center">Our Foundation</div><h2 class="section-title reveal d1">Core Values</h2></div><div class="val-grid">${VL.map((v, i) => `<div class="vc reveal d${i + 2}"><div class="vi">${v.i}</div><div><h4>${v.t}</h4><p>${v.d}</p></div></div>`).join("")}</div></div></section>
-
-<section class="section" style="padding:60px 24px;background:var(--bg-alt)"><div class="section-inner"><div class="stats-strip" id="statsBar">${ST.map((s) => `<div><div class="stat-num" data-target="${s.v}" data-suffix="${s.s}">0${s.s}</div><div class="stat-label">${s.l}</div></div>`).join("")}</div></div></section>
-
-<section class="section" style="background:var(--bg)"><div class="section-inner" style="text-align:center"><div class="section-tag reveal" style="justify-content:center">The People</div><h2 class="section-title reveal d1">Our Leadership Team</h2><p class="section-subtitle reveal d2" style="margin:0 auto 48px">Experienced professionals dedicated to delivering excellence</p><div class="team-grid">${TEM.map((t, i) => `<div class="team-c reveal d${i + 2}"><img src="${t.img}" alt="${t.n}" class="av"><h4>${t.n}</h4><p>${t.r}</p></div>`).join("")}</div></div></section>
-
-<section class="section" style="background:var(--bg-alt)"><div class="section-inner" style="text-align:center"><div class="section-tag reveal" style="justify-content:center">What We Offer</div><h2 class="section-title reveal d1">Our Services</h2><div class="feat-grid" style="margin-top:40px">${SV.map((s, i) => `<div class="fc reveal d${i + 2}"><div class="ib">${s.i}</div><h3>${s.t}</h3><p>${s.d}</p></div>`).join("")}</div></div></section>
-
-<section class="section" style="background:var(--bg)"><div class="section-inner" style="text-align:center"><div class="section-tag reveal" style="justify-content:center">Client Stories</div><h2 class="section-title reveal d1">What People Say</h2><div class="test-grid" style="margin-top:40px">${TM.map((t, i) => `<div class="tc reveal d${i + 2}"><div class="stars">★★★★★</div><p class="qt">"${t.tx}"</p><div class="au">${t.n}</div><div class="rl">${t.r}</div></div>`).join("")}</div></div></section>
-
-<section class="section" style="background:var(--bg-alt)"><div class="section-inner" style="text-align:center">
-<div class="section-tag reveal" style="justify-content:center">Our Partners</div>
-<h2 class="section-title reveal d1">Global Real Estate Developers</h2>
-<p class="section-subtitle reveal d2" style="margin:0 auto 40px">Better Serv Properties is a preferred partner for world-class developers across Dubai and India.</p>
-<div class="dev-block">
-<span class="dev-slider-label">🏙️ Dubai Developers</span>
-${devSl(DD, "hs5")}
-</div>
-<div class="dev-block">
-<span class="dev-slider-label">🇮🇳 India Developers</span>
-${devSl(ID, "hs6")}
-</div>
-</div></section>
-
-<section class="section" style="background:var(--bg-dark);text-align:center;padding:80px 24px"><div class="section-inner"><h2 class="section-title reveal" style="color:#fff">Want to Work With Us?</h2><p class="section-subtitle reveal d1" style="color:rgba(255,255,255,0.5);margin:0 auto 32px">Let's discuss how we can help you achieve your property goals.</p><div class="reveal d2"><button class="btn btn-blue" data-nav="contact">Contact Us <span class="btn-icon">→</span></button></div></div></section>
-${ft()}</div>`;
-    }
-
-    function propPg(type, mode = "buy") {
-      const isDubai = type === "dubai",
-        allProps = isDubai ? DP : IP,
-        devs = isDubai ? DD : ID,
-        props = allProps.filter((p) => p.m === mode);
-      const title = isDubai ? "Properties in Dubai" : "Properties in India";
-      const sub = isDubai
-        ? "Exclusive luxury properties across Dubai's most prestigious communities"
-        : "Premium residences across India's top metropolitan cities";
-      const tag = isDubai ? "Dubai Portfolio" : "India Portfolio";
-
-      return `<div class="page">
-<div class="page-banner"><div class="section-tag reveal">${tag}</div><h1 class="reveal d1">${title}</h1><p class="reveal d2">${sub}</p></div>
-
-<section class="section" style="background:var(--bg)"><div class="section-inner" style="text-align:center">
-<div class="tab-nav">
-<button class="tab-btn ${mode === "buy" ? "active" : ""}" data-nav="${type}" data-nav-sub="buy">For Sale</button>
-<button class="tab-btn ${mode === "rent" ? "active" : ""}" data-nav="${type}" data-nav-sub="rent">For Rent</button>
-</div>
-<div class="prop-grid">${props.map(pc).join("")}</div></div></section>
-
-<section class="section" style="background:var(--bg-alt)"><div class="section-inner" style="text-align:center">
-<div class="section-tag reveal" style="justify-content:center">Our Partners</div>
-<h2 class="section-title reveal d1">Top Developers in ${isDubai ? "Dubai" : "India"}</h2>
-<p class="section-subtitle reveal d2" style="margin:0 auto 40px">We have extensive options and pre-launch access with these world-class developers.</p>
-<div class="dev-block">
-<span class="dev-slider-label">${isDubai ? "🏙️ Dubai Developers" : "🇮🇳 India Developers"}</span>
-${devSl(devs, "hs7")}
-</div>
-<div class="reveal d3" style="margin-top:32px"><p style="color:var(--blue);font-weight:600">✨ Better Serv Properties is a preferred partner for these developers, offering you exclusive price benefits.</p></div>
-</div></section>
-${ft()}</div>`;
-    }
-
-    function servicesPg() {
-      return `<div class="page">
-<div class="page-banner"><div class="section-tag reveal">Beyond Handover</div><h1 class="reveal d1">Premier Post-Purchase Services</h1><p class="reveal d2">Experience absolute peace of mind with our end-to-end property ecosystem.</p></div>
-
-<section class="section" style="background:var(--bg)"><div class="section-inner about-split">
-  <div class="reveal fl"><img src="service_assets/interior.png" alt="Interior Design" class="about-img"></div>
-  <div class="reveal fr d2">
-    <div class="section-tag">Bespoke Design</div>
-    <h2 class="section-title">Post-Handover Interior Designing</h2>
-    <p class="section-subtitle" style="margin-bottom:24px">Transform your newly acquired property into a sophisticated home that reflects your lifestyle. Our bespoke interior design services handle everything from conceptualization and luxury furniture sourcing to full fit-out and smart home integration. We bridge the gap between architectural raw space and ultimate luxury living.</p>
-  </div>
-</div></section>
-
-<section class="section" style="background:var(--bg-alt)"><div class="section-inner about-split">
-  <div class="reveal fl d2">
-    <div class="section-tag">Proactive Care</div>
-    <h2 class="section-title">Property Maintenance</h2>
-    <p class="section-subtitle" style="margin-bottom:24px">Preserve and enhance the value of your real estate asset with our proactive maintenance solutions. Our dedicated technical teams provide 24/7 support for HVAC, electrical, plumbing, and structural integrity. We don't just fix problems; we prevent them, ensuring your property remains in impeccable condition year-round.</p>
-  </div>
-  <div class="reveal fr"><img src="service_assets/maintenance.png" alt="Property Maintenance" class="about-img"></div>
-</div></section>
-
-<section class="section" style="background:var(--bg)"><div class="section-inner about-split">
-  <div class="reveal fl"><img src="service_assets/management.png" alt="Property Management" class="about-img"></div>
-  <div class="reveal fr d2">
-    <div class="section-tag">Asset Optimization</div>
-    <h2 class="section-title">Rental & Property Management</h2>
-    <p class="section-subtitle" style="margin-bottom:24px">Maximize your ROI without the day-to-day hassles of being a landlord. Our rental management services handle tenant vetting, lease documentation, rent collection, and marketing. We act as your concierge, ensuring high occupancy rates and seamless logistics for international investors and local homeowners alike.</p>
-  </div>
-</div></section>
-
-<section class="section" style="background:var(--bg-alt)"><div class="section-inner about-split">
-  <div class="reveal fl d2">
-    <div class="section-tag">Compliance & Trust</div>
-    <h2 class="section-title">Legal & Documentation Support</h2>
-    <p class="section-subtitle" style="margin-bottom:24px">Navigate the complexities of property law in Dubai and India with absolute confidence. From title deed transfers and Power of Attorney (POA) representation to NOC processing and visa assistance, our legal support team handles all the red tape. We ensure every transaction is compliant, secure, and completed with speed.</p>
-  </div>
-  <div class="reveal fr"><img src="service_assets/legal.png" alt="Legal Support" class="about-img"></div>
-</div></section>
-
-<section class="section" style="background:var(--bg)"><div class="section-inner about-split">
-  <div class="reveal fl"><img src="service_assets/valuation.png" alt="Valuation" class="about-img"></div>
-  <div class="reveal fr d2">
-    <div class="section-tag">Market Intelligence</div>
-    <h2 class="section-title">Valuation & Resale Services</h2>
-    <p class="section-subtitle" style="margin-bottom:24px">Make informed exit or reinvestment decisions backed by real-time market data. Our certified valuation experts provide accurate property appraisals, while our secondary market specialists formulate strategic resale plans to capture peak market value. We turn your property into a high-performance liquid asset.</p>
-  </div>
-</div></section>
-
-${ft()}</div>`;
-    }
-
-    function contactPg() {
-      return `<div class="page">
-<div class="page-banner"><div class="section-tag reveal">Reach Out</div><h1 class="reveal d1">Contact Us</h1><p class="reveal d2">We'd love to hear from you</p></div>
-
-<section class="section" style="background:var(--bg)"><div class="section-inner contact-grid"><div class="reveal fl"><div class="section-tag">Get In Touch</div><h2 class="section-title">Let's Start a Conversation</h2><p class="section-subtitle" style="margin-bottom:32px">Whether you're looking to buy, sell, invest, or simply explore — our team is ready to help.</p>
-<div class="cic reveal d2"><div class="ci">📍</div><div><h4>Dubai Office</h4><p>Office 1204, Business Bay Tower, Dubai, UAE</p></div></div>
-<div class="cic reveal d3"><div class="ci">📍</div><div><h4>India Office</h4><p>4th Floor, Technopark Phase III, Trivandrum, Kerala</p></div></div>
-<div class="cic reveal d4"><div class="ci">📞</div><div><h4>Phone</h4><p>+971 50 123 4567 (Dubai)<br>+91 98765 43210 (India)</p></div></div>
-<div class="cic reveal d5"><div class="ci">✉️</div><div><h4>Email</h4><p>vishnuss80@gmail.com</p></div></div>
-<div class="cic reveal d6"><div class="ci">🕐</div><div><h4>Working Hours</h4><p>Sun–Thu: 9 AM – 6 PM &nbsp;|&nbsp; Fri–Sat: By appointment</p></div></div>
-</div>
-
-<div class="reveal fr d2"><div class="fb" id="cFB"><h3 style="font-family:var(--font-display);font-size:1.2rem;margin-bottom:20px">Send Us a Message</h3>
-<div class="f2"><div class="fr"><label>First Name</label><input type="text" placeholder="John"></div><div class="fr"><label>Last Name</label><input type="text" placeholder="Doe"></div></div>
-<div class="f2"><div class="fr"><label>Email</label><input type="email" placeholder="you@email.com"></div><div class="fr"><label>Phone</label><input type="tel" placeholder="+971 or +91"></div></div>
-<div class="fr"><label>Interested In</label><select><option>Select a service</option><option>Buying in Dubai</option><option>Buying in India</option><option>Selling Property</option><option>Investment Advisory</option><option>Property Management</option><option>Other</option></select></div>
-<div class="fr"><label>Message</label><textarea rows="4" placeholder="Tell us about your requirements..."></textarea></div>
-<button class="btn btn-blue" style="width:100%" data-subc="true">Send Message <span class="btn-icon">→</span></button>
-</div></div></div></section>
-
-<section style="background:var(--bg-alt);padding:0"><div style="width:100%;height:360px;background:linear-gradient(135deg,#e8ecf1,#d3dbe6);display:flex;align-items:center;justify-content:center;color:var(--text-light);font-size:0.9rem"><div style="text-align:center"><div style="font-size:2.5rem;margin-bottom:8px">🗺️</div><p>Interactive Map — Integrate Google Maps Here</p><p style="font-size:0.78rem;margin-top:4px">Business Bay, Dubai, UAE</p></div></div></section>
-${ft()}</div>`;
-    }
-
-    /* ═══ ROUTER ═══ */
-    let curPg = "home",
-      hInt = null,
-      curSl = 0;
-
-    function nav(page, sub = "buy") {
-      if (hInt) {
-        clearInterval(hInt);
-        hInt = null;
-      }
-      curPg = page;
-      window.scrollTo({ top: 0, behavior: "instant" });
-      const loader = document.getElementById("app-loader");
-      if (loader) loader.classList.remove("hidden");
-      
-      setTimeout(() => {
-        const app = document.getElementById("app");
-        switch (page) {
-          case "home":
-            app.innerHTML = homePg();
-            startSlider();
-            break;
-          case "about":
-            app.innerHTML = aboutPg();
-            break;
-          case "dubai":
-            app.innerHTML = propPg("dubai", sub);
-            break;
-          case "india":
-            app.innerHTML = propPg("india", sub);
-            break;
-          case "services":
-            app.innerHTML = servicesPg();
-            break;
-          case "contact":
-            app.innerHTML = contactPg();
-            break;
-        }
-        document
-          .querySelectorAll(".dnav a,.mob-bar a")
-          .forEach((a) =>
-            a.classList.toggle("active", a.dataset.page === page),
-          );
-        initPg();
-        if (loader) loader.classList.add("hidden");
-      }, 2000);
-    }
-
-    function initPg() {
-      const obs = new IntersectionObserver(
-        (es) => {
-          es.forEach((e) => {
-            if (e.isIntersecting) {
-              e.target.classList.add("vis");
-              obs.unobserve(e.target);
-            }
-          });
-        },
-        { threshold: 0.12 },
-      );
-      document.querySelectorAll(".reveal").forEach((el) => obs.observe(el));
-
-      const bar = document.getElementById("statsBar");
-      if (bar) {
-        let done = false;
-        const so = new IntersectionObserver(
-          ([e]) => {
-            if (e.isIntersecting && !done) {
-              done = true;
-              bar.querySelectorAll(".stat-num").forEach((el) => {
-                const tgt = +el.dataset.target,
-                  sfx = el.dataset.suffix,
-                  step = Math.ceil(tgt / 125);
-                let c = 0;
-                const id = setInterval(() => {
-                  c += step;
-                  if (c >= tgt) {
-                    el.textContent = tgt + sfx;
-                    clearInterval(id);
-                  } else el.textContent = c + sfx;
-                }, 16);
-              });
-              so.unobserve(bar);
-            }
-          },
-          { threshold: 0.3 },
-        );
-        so.observe(bar);
-      }
-
-      const tl = document.getElementById("timeline");
-      if (tl) {
-        const to = new IntersectionObserver(
-          ([e]) => {
-            if (e.isIntersecting) {
-              tl.querySelectorAll("[data-line]").forEach((l, i) =>
-                setTimeout(() => l.classList.add("vis"), 300 + i * 200),
-              );
-              to.unobserve(tl);
-            }
-          },
-          { threshold: 0.3 },
-        );
-        to.observe(tl);
-      }
-    }
-
-    function startSlider() {
-      curSl = 0;
-      hInt = setInterval(() => {
-        curSl = (curSl + 1) % HS.length;
-        updSlide();
-      }, 5000);
-    }
-    function goSlide(i) {
-      curSl = i;
-      updSlide();
-    }
-    function updSlide() {
-      document
-        .querySelectorAll(".hero-slide")
-        .forEach((s, i) => s.classList.toggle("active", i === curSl));
-      document
-        .querySelectorAll(".hero-dot")
-        .forEach((d, i) => d.classList.toggle("active", i === curSl));
-    }
-    function ss(id, dir) {
-      const el = document.getElementById(id);
-      if (el) el.scrollBy({ left: dir * 340, behavior: "smooth" });
-    }
-
-    function openM(t, s) {
-      document.getElementById("mT").textContent = "Enquire: " + t;
-      document.getElementById("mS").textContent = s;
-      document.getElementById("mF").style.display = "block";
-      document.getElementById("mOk").style.display = "none";
-      document.getElementById("eqModal").classList.add("open");
-    }
-    function closeM() {
-      document.getElementById("eqModal").classList.remove("open");
-    }
-    function subM() {
-      document.getElementById("mF").style.display = "none";
-      document.getElementById("mOk").style.display = "block";
-    }
-    document
-      .getElementById("eqModal")
-      .addEventListener("click", function (e) {
-        if (e.target === this) closeM();
-      });
-
-    function subC() {
-      document.getElementById("cFB").innerHTML =
-        '<div class="form-ok"><div class="ck">✓</div><h3>Message Sent!</h3><p>We\'ll get back to you within 24 hours.</p></div>';
-    }
-
-    window.addEventListener(
-      "scroll",
-      () => {
-        document
-          .getElementById("mainHeader")
-          .classList.toggle("scrolled", window.scrollY > 60);
-      },
-      { passive: true },
-    );
-    document.querySelectorAll("[data-page]").forEach((a) => {
-      a.addEventListener("click", (e) => {
-        e.preventDefault();
-        nav(a.dataset.page);
-      });
-    });
-
-    nav("home");
-  </script>
+  <script src="js/data.js"></script>
+  <script src="js/templates.js"></script>
+  <script src="js/app.js"></script>
 </body>
-
 </html>
