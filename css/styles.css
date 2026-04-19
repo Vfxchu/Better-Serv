@@ -666,13 +666,13 @@ button {
 
 /* ─── LOGO SLIDER ─── */
 .slider-track .dev-card {
-  min-width: 260px;
+  min-width: 320px;
   flex-shrink: 0;
   scroll-snap-align: start;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius);
-  padding: 24px;
+  padding: 32px;
   text-align: center;
   transition: all 0.3s var(--ease);
   cursor: pointer;
@@ -681,26 +681,32 @@ button {
 .slider-track .dev-card:hover {
   background: rgba(255, 255, 255, 0.08);
   border-color: var(--blue);
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
 }
 
 .slider-track .dev-card img {
-  height: 110px;
+  height: 140px;
   width: 100%;
   object-fit: contain;
-  border-radius: 8px;
+  margin-bottom: 20px;
   transition: all 0.3s var(--ease);
 }
 
 .slider-track .dev-card p {
-  font-size: 0.8rem;
-  margin-top: 16px;
+  font-size: 0.85rem;
   color: var(--text-mid);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1.2px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  line-height: 1.4;
   transition: all 0.3s var(--ease);
+}
+
+.slider-track .dev-card p strong {
+  display: block;
+  font-size: 1rem;
+  color: #fff;
+  margin-bottom: 4px;
 }
 
 .slider-track .dev-card:hover p {
@@ -874,16 +880,16 @@ button {
 }
 
 .dev-slider-label {
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 2px;
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 3px;
   text-transform: uppercase;
   color: var(--blue);
-  margin-bottom: 12px;
-  border-left: 3px solid var(--blue);
-  padding-left: 10px;
-  display: block;
-  text-align: left;
+  margin: 0 auto 32px;
+  padding-bottom: 12px;
+  display: inline-block;
+  text-align: center;
+  border-bottom: 2px solid var(--blue);
 }
 
 .dev-block {
