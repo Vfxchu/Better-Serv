@@ -669,8 +669,8 @@ button {
   min-width: 320px;
   flex-shrink: 0;
   scroll-snap-align: start;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 32px;
   text-align: center;
@@ -705,7 +705,7 @@ button {
 .slider-track .dev-card p strong {
   display: block;
   font-size: 1rem;
-  color: #fff;
+  color: var(--blue);
   margin-bottom: 4px;
 }
 

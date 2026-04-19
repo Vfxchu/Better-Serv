@@ -23,6 +23,42 @@ function ss(id, dir) {
   if (el) el.scrollBy({ left: dir * 340, behavior: "smooth" });
 }
 
+/* ═══ AUTO SCROLL ═══ */
+function initAutoScroll() {
+  const tracks = document.querySelectorAll(".slider-track");
+  tracks.forEach((track) => {
+    let interval = null;
+    let isHovered = false;
+
+    const start = () => {
+      if (interval) return;
+      interval = setInterval(() => {
+        if (isHovered) return;
+        const max = track.scrollWidth - track.clientWidth;
+        if (track.scrollLeft >= max - 1) {
+          track.scrollTo({ left: 0, behavior: "smooth" });
+        } else {
+          track.scrollBy({ left: 1, behavior: "auto" });
+        }
+      }, 30); // Smooth slow crawl
+    };
+
+    const stop = () => {
+      clearInterval(interval);
+      interval = null;
+    };
+
+    track.addEventListener("mouseenter", () => { isHovered = true; });
+    track.addEventListener("mouseleave", () => { isHovered = false; });
+    
+    // Also pause on touch
+    track.addEventListener("touchstart", () => { isHovered = true; }, { passive: true });
+    track.addEventListener("touchend", () => { isHovered = false; }, { passive: true });
+
+    start();
+  });
+}
+
 /* ═══ PAGE INIT (scroll reveal & counters) ═══ */
 function initPg() {
   const obs = new IntersectionObserver((es) => {
@@ -218,6 +254,7 @@ document.addEventListener("DOMContentLoaded", () => {
   else if (pg === "india")  renderProps("india", "buy");
 
   initPg();
+  initAutoScroll();
 
   const loader = document.getElementById("app-loader");
   setTimeout(() => { if (loader) loader.classList.add("hidden"); }, 800);
