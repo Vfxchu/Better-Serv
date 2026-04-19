@@ -212,7 +212,7 @@ button {
 }
 
 .cap-hdr .logo img {
-  height: 160px;
+  height: 180px;
   width: auto;
   object-fit: contain;
   padding: 0;
@@ -336,7 +336,7 @@ button {
   }
 
   .cap-hdr .logo img {
-    height: 95px;
+    height: 110px;
   }
 
   .hero-content {
@@ -844,20 +844,18 @@ button {
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
-  width: 46px;
-  height: 46px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
-  border: 1.5px solid var(--blue);
-  background: var(--bg-card);
+  border: none;
+  background: var(--blue);
   color: #fff;
-  font-size: 1.1rem;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: var(--shadow-md);
-  transition: all 0.25s;
-  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 15px rgba(0, 85, 255, 0.35);
+  transition: all 0.3s var(--ease);
 }
 
 .sb:hover {
