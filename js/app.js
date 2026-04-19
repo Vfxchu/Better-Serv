@@ -1,21 +1,4 @@
-/* ═══ HERO SLIDER STATE ═══ */
-let curSl = 0, hInt = null;
-
-function startSlider() {
-  curSl = 0;
-  hInt = setInterval(() => {
-    curSl = (curSl + 1) % HS.length;
-    updSlide();
-  }, 5000);
-}
-function goSlide(i) {
-  curSl = i;
-  updSlide();
-}
-function updSlide() {
-  document.querySelectorAll(".hero-slide").forEach((s, i) => s.classList.toggle("active", i === curSl));
-  document.querySelectorAll(".hero-dot").forEach((d, i) => d.classList.toggle("active", i === curSl));
-}
+/* ═══ HERO SLIDER STATE (Removed in favor of Video Background) ═══ */
 
 /* ═══ SLIDER SCROLL ═══ */
 function ss(id, dir) {
@@ -128,12 +111,6 @@ function subC() {
 
 /* ═══ RENDER: HOME ═══ */
 function renderHome() {
-  const slidesEl = document.getElementById("hSlides");
-  const dotsEl   = document.getElementById("hDots");
-  if (slidesEl) slidesEl.innerHTML = HS.map((s, i) => `<div class="hero-slide${i === 0 ? " active" : ""}" style="background-image:url('${s}')"></div>`).join("");
-  if (dotsEl)   dotsEl.innerHTML   = HS.map((_, i) => `<button class="hero-dot${i === 0 ? " active" : ""}" data-goslide="${i}"></button>`).join("");
-  startSlider();
-
   const svcEl = document.getElementById("svc-grid");
   if (svcEl) svcEl.innerHTML = SV.map((s, i) => `<div class="fc reveal d${i+2}"><div class="ib">${s.i}</div><h3>${s.t}</h3><p>${s.d}</p></div>`).join("");
 
@@ -219,9 +196,6 @@ document.addEventListener("click", function (e) {
   } else if ("closem" in el.dataset) {
     e.preventDefault();
     closeM();
-  } else if ("goslide" in el.dataset) {
-    e.preventDefault();
-    goSlide(+el.dataset.goslide);
   } else if ("mode" in el.dataset) {
     e.preventDefault();
     const pg = document.body.dataset.page;
