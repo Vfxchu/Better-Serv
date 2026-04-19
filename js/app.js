@@ -17,13 +17,16 @@ function initAutoScroll() {
       if (interval) return;
       interval = setInterval(() => {
         if (isHovered) return;
+        const card = track.firstElementChild;
+        if (!card) return;
+        const scrollAmount = card.offsetWidth + 24;
         const max = track.scrollWidth - track.clientWidth;
-        if (track.scrollLeft >= max - 1) {
+        if (track.scrollLeft >= max - 10) {
           track.scrollTo({ left: 0, behavior: "smooth" });
         } else {
-          track.scrollBy({ left: 1, behavior: "auto" });
+          track.scrollBy({ left: scrollAmount, behavior: "smooth" });
         }
-      }, 30); // Smooth slow crawl
+      }, 3500);
     };
 
     const stop = () => {
