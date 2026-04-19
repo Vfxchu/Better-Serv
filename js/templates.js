@@ -10,5 +10,5 @@ function sl(props, id) {
 
 /* ─── DEVELOPER SLIDER ─── */
 function devSl(devs, id) {
-  return `<div class="slider-wrap" style="padding:40px 0;"><button class="sb l" data-ss="${id}" data-ss-dir="-1">←</button><div class="slider-track" id="${id}">${devs.concat(devs).map((d) => `<div class="dev-card"><img src="${d.l}" alt="${d.n}"><p>${d.n}</p></div>`).join("")}</div><button class="sb r" data-ss="${id}" data-ss-dir="1">→</button></div>`;
+  return `<div class="slider-wrap" style="padding:40px 0;"><button class="sb l" data-ss="${id}" data-ss-dir="-1">←</button><div class="slider-track" id="${id}">${devs.concat(devs).map((d) => `<div class="dev-card" data-openm-t="${d.n}" data-openm-s="Are you looking for properties related to ${d.n}? Our experts can help you find the perfect match."><img src="${d.l}" alt="${d.n}"><p>${d.n}</p></div>`).join("")}</div><button class="sb r" data-ss="${id}" data-ss-dir="1">→</button></div>`;
 }

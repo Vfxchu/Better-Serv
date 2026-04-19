@@ -666,13 +666,13 @@ button {
 
 /* ─── LOGO SLIDER ─── */
 .slider-track .dev-card {
-  min-width: 180px;
+  min-width: 260px;
   flex-shrink: 0;
   scroll-snap-align: start;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius);
-  padding: 16px;
+  padding: 24px;
   text-align: center;
   transition: all 0.3s var(--ease);
   cursor: pointer;
@@ -682,10 +682,11 @@ button {
   background: rgba(255, 255, 255, 0.08);
   border-color: var(--blue);
   transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
 }
 
 .slider-track .dev-card img {
-  height: 80px;
+  height: 110px;
   width: 100%;
   object-fit: contain;
   border-radius: 8px;
@@ -693,11 +694,12 @@ button {
 }
 
 .slider-track .dev-card p {
-  font-size: 0.7rem;
-  margin-top: 10px;
+  font-size: 0.8rem;
+  margin-top: 16px;
   color: var(--text-mid);
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 1.2px;
   transition: all 0.3s var(--ease);
 }
 
